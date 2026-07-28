@@ -1,0 +1,724 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ============ SEO ============ -->
+  <title>NextLevel Dev — Développeur Full Stack Freelance & IA</title>
+  <meta name="description" content="NextLevel Dev — développeur full stack freelance. Frontend, backend, bases de données, DevOps et intégration IA. Des solutions web sur mesure, rapides et évolutives." />
+  <meta name="keywords" content="développeur freelance, full stack, frontend, backend, DevOps, intégration IA, développement web, NextLevel Dev" />
+  <meta name="author" content="NextLevel Dev" />
+  <meta name="robots" content="index, follow" />
+  <meta name="theme-color" content="#06060B" />
+  <link rel="canonical" href="https://nextleveldev.example/" />
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="NextLevel Dev — Développeur Full Stack Freelance & IA" />
+  <meta property="og:description" content="Frontend, backend, DevOps et IA. Des solutions web sur mesure, rapides et évolutives." />
+  <meta property="og:image" content="https://nextleveldev.example/assets/logo-lockup.png" />
+  <meta property="og:locale" content="fr_FR" />
+  <meta property="og:url" content="https://nextleveldev.example/" />
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="NextLevel Dev — Développeur Full Stack Freelance & IA" />
+  <meta name="twitter:description" content="Frontend, backend, DevOps et IA. Des solutions web sur mesure, rapides et évolutives." />
+  <meta name="twitter:image" content="https://nextleveldev.example/assets/logo-lockup.png" />
+
+  <!-- Icons / PWA -->
+  <link rel="icon" href="assets/logo-mark.png" type="image/png" />
+  <link rel="apple-touch-icon" href="assets/logo-mark.png" />
+  <link rel="manifest" href="manifest.json" />
+
+  <!-- Fonts : préconnexion pour la perf -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" />
+
+  <!-- Données structurées -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "name": "NextLevel Dev",
+    "description": "Développeur full stack freelance : frontend, backend, bases de données, DevOps et intégration IA.",
+    "url": "https://nextleveldev.example/",
+    "image": "https://nextleveldev.example/assets/logo-lockup.png",
+    "priceRange": "€€",
+    "areaServed": "FR",
+    "knowsAbout": ["Frontend", "Backend", "Base de données", "DevOps", "Intelligence Artificielle"],
+    "makesOffer": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement Frontend" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Développement Backend" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Base de données" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "DevOps" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Intégration IA" } }
+    ]
+  }
+  </script>
+
+  <style>
+    /* ============ DESIGN TOKENS ============ */
+    :root {
+      --bg:        #06060B;
+      --bg-elev:   #0D0E1A;
+      --bg-card:   #10121F;
+      --border:    #232640;
+      --violet:    #8B5CF6;
+      --violet-hi: #A78BFA;
+      --blue:      #3B82F6;
+      --cyan:      #22D3EE;
+      --magenta:   #E879F9;
+      --steel:     #C4CBDA;
+      --text:      #ECEFF7;
+      --muted:     #A6AEC4;   /* ratio AA sur fond sombre */
+      --grad: linear-gradient(100deg, var(--cyan), var(--blue) 42%, var(--violet) 72%, var(--magenta));
+      --glow-blue:  0 0 24px rgba(59,130,246,.35);
+      --glow-cyan:  0 0 24px rgba(34,211,238,.35);
+      --radius: 14px;
+      --maxw: 1180px;
+      --ease: cubic-bezier(.22,.61,.36,1);
+    }
+
+    /* ============ RESET / BASE ============ */
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+    @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "Inter", system-ui, -apple-system, sans-serif;
+      line-height: 1.65;
+      overflow-x: hidden;
+      -webkit-font-smoothing: antialiased;
+    }
+    img { max-width: 100%; display: block; }
+    a { color: inherit; text-decoration: none; }
+    ul { list-style: none; }
+
+    /* Focus clavier visible partout */
+    :focus-visible {
+      outline: 3px solid var(--cyan);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* Lien d'évitement (accessibilité) */
+    .skip-link {
+      position: absolute; left: 12px; top: -60px;
+      background: var(--cyan); color: #04121A;
+      padding: 10px 18px; border-radius: 8px; font-weight: 600;
+      z-index: 1000; transition: top .2s var(--ease);
+    }
+    .skip-link:focus { top: 12px; }
+
+    .wrap { width: 100%; max-width: var(--maxw); margin-inline: auto; padding-inline: 24px; }
+
+    .display { font-family: "Rajdhani", sans-serif; letter-spacing: .02em; }
+    .mono { font-family: "JetBrains Mono", monospace; }
+
+    .gradient-text {
+      background: var(--grad);
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
+
+    /* ============ BACKGROUND 3D ============ */
+    #bg-canvas {
+      position: fixed; inset: 0; z-index: 0;
+      pointer-events: none;
+    }
+    .veil { /* dégradé pour lisibilité au-dessus du canvas */
+      position: fixed; inset: 0; z-index: 1; pointer-events: none;
+      background:
+        radial-gradient(60% 50% at 70% 20%, rgba(139,92,246,.12), transparent 70%),
+        radial-gradient(50% 40% at 20% 60%, rgba(34,211,238,.10), transparent 70%);
+    }
+    #trail-canvas { /* traînée du curseur : au-dessus de tout, ne bloque pas les clics */
+      position: fixed; inset: 0; z-index: 999; pointer-events: none;
+    }
+    .content { position: relative; z-index: 2; }
+
+    /* ============ NAV ============ */
+    header {
+      position: sticky; top: 0; z-index: 50;
+      backdrop-filter: blur(12px);
+      background: rgba(6,6,11,.72);
+      border-bottom: 1px solid var(--border);
+    }
+    .nav { display: flex; align-items: center; justify-content: space-between; height: 68px; }
+    .brand { display: flex; align-items: center; gap: 12px; font-family: "Rajdhani"; font-weight: 700; font-size: 1.25rem; letter-spacing: .04em; }
+    .brand img { width: 34px; height: 34px; border-radius: 8px; }
+    .nav-links { display: flex; gap: 28px; align-items: center; }
+    .nav-links a { color: var(--muted); font-weight: 500; font-size: .95rem; transition: color .2s var(--ease); }
+    .nav-links a:hover { color: var(--text); }
+    .nav-cta {
+      padding: 9px 20px; border-radius: 10px;
+      background: var(--grad); color: #05070F; font-weight: 600;
+      transition: transform .2s var(--ease), box-shadow .2s var(--ease);
+    }
+    .nav-cta:hover { transform: translateY(-2px); box-shadow: var(--glow-blue); }
+    .menu-btn {
+      display: none; background: transparent; border: 1px solid var(--border);
+      color: var(--text); width: 44px; height: 44px; border-radius: 10px; cursor: pointer;
+      font-size: 1.3rem;
+    }
+
+    /* ============ HERO ============ */
+    .hero { padding: 64px 0 72px; }
+    .hero-logo {
+      display: block; width: min(440px, 78%); height: auto;
+      margin: 0 auto 46px;
+      filter: drop-shadow(0 10px 34px rgba(139,92,246,.28)) drop-shadow(0 0 18px rgba(34,211,238,.16));
+      animation: floaty 6s ease-in-out infinite;
+    }
+    @keyframes floaty { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-9px); } }
+    @media (prefers-reduced-motion: reduce) { .hero-logo { animation: none; } }
+    .hero-grid { display: grid; grid-template-columns: 1.05fr .95fr; gap: 48px; align-items: center; }
+    .eyebrow {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-family: "JetBrains Mono"; font-size: .8rem; letter-spacing: .1em;
+      color: var(--cyan); border: 1px solid var(--border); border-radius: 999px;
+      padding: 6px 14px; margin-bottom: 22px;
+    }
+    .eyebrow .dot { width: 7px; height: 7px; border-radius: 50%; background: var(--cyan); box-shadow: var(--glow-cyan); }
+    .hero h1 {
+      font-family: "Rajdhani"; font-weight: 700;
+      font-size: clamp(2.6rem, 6vw, 4.6rem); line-height: .98; letter-spacing: .01em;
+      margin-bottom: 20px;
+    }
+    .hero h1 .steel { color: var(--steel); text-shadow: 0 2px 14px rgba(196,203,218,.15); }
+    .hero p.lead { color: var(--muted); font-size: 1.12rem; max-width: 46ch; margin-bottom: 16px; }
+    .tags { display: flex; flex-wrap: wrap; gap: 10px; margin: 26px 0 30px; }
+    .tag {
+      font-family: "JetBrains Mono"; font-size: .78rem; letter-spacing: .06em;
+      color: var(--muted); border: 1px solid var(--border); border-radius: 8px; padding: 6px 12px;
+    }
+    .cta-row { display: flex; flex-wrap: wrap; gap: 14px; }
+    .btn {
+      display: inline-flex; align-items: center; gap: 9px;
+      padding: 13px 26px; border-radius: 12px; font-weight: 600; font-size: 1rem;
+      cursor: pointer; transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease);
+    }
+    .btn-primary { background: var(--grad); color: #05070F; }
+    .btn-primary:hover { transform: translateY(-2px); box-shadow: var(--glow-blue); }
+    .btn-ghost { border: 1px solid var(--border); color: var(--text); background: rgba(255,255,255,.02); }
+    .btn-ghost:hover { border-color: var(--cyan); color: var(--cyan); transform: translateY(-2px); }
+
+    /* ---- Terminal (élément signature, repris de l'identité de marque) ---- */
+    .terminal {
+      background: linear-gradient(160deg, rgba(16,18,31,.95), rgba(10,11,20,.95));
+      border: 1px solid var(--border); border-radius: var(--radius);
+      box-shadow: 0 30px 80px rgba(0,0,0,.55), 0 0 0 1px rgba(139,92,246,.06);
+      overflow: hidden;
+    }
+    .term-bar { display: flex; align-items: center; gap: 8px; padding: 12px 16px; border-bottom: 1px solid var(--border); }
+    .term-bar .d { width: 12px; height: 12px; border-radius: 50%; }
+    .term-bar .d.r { background: #ff5f57; } .term-bar .d.y { background: #febc2e; } .term-bar .d.g { background: #28c840; }
+    .term-bar .file { margin-left: 10px; font-family: "JetBrains Mono"; font-size: .78rem; color: var(--muted); }
+    .term-body { padding: 22px 22px 26px; font-family: "JetBrains Mono"; font-size: .9rem; line-height: 1.85; }
+    .code-line { white-space: pre; }
+    .c-key { color: var(--violet-hi); } .c-var { color: var(--cyan); } .c-str { color: #7dd3a0; }
+    .c-fn { color: var(--blue); } .c-punc { color: var(--muted); } .c-bool { color: var(--magenta); }
+    .cursor { display: inline-block; width: 9px; height: 1.05em; background: var(--cyan); vertical-align: -2px; animation: blink 1s steps(2) infinite; }
+    @keyframes blink { 50% { opacity: 0; } }
+    @media (prefers-reduced-motion: reduce) { .cursor { animation: none; } }
+
+    /* ============ SECTIONS ============ */
+    section { padding: 82px 0; }
+    .sec-head { max-width: 640px; margin-bottom: 48px; }
+    .sec-eyebrow { font-family: "JetBrains Mono"; font-size: .8rem; letter-spacing: .12em; color: var(--cyan); text-transform: uppercase; }
+    .sec-head h2 { font-family: "Rajdhani"; font-weight: 700; font-size: clamp(2rem, 4vw, 3rem); margin: 12px 0 14px; line-height: 1.05; }
+    .sec-head p { color: var(--muted); font-size: 1.05rem; }
+
+    /* ---- Services ---- */
+    .services { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--bg-card); border: 1px solid var(--border); border-radius: var(--radius);
+      padding: 28px 24px; transition: transform .25s var(--ease), border-color .25s var(--ease), box-shadow .25s var(--ease);
+      position: relative; overflow: hidden;
+    }
+    .card::before {
+      content: ""; position: absolute; inset: 0; opacity: 0; transition: opacity .25s var(--ease);
+      background: radial-gradient(120% 90% at 50% 0%, rgba(139,92,246,.14), transparent 60%);
+    }
+    .card:hover { transform: translateY(-6px); border-color: var(--violet); box-shadow: 0 18px 40px rgba(0,0,0,.4); }
+    .card:hover::before { opacity: 1; }
+    .card .ico {
+      width: 52px; height: 52px; border-radius: 12px; display: grid; place-items: center;
+      border: 1px solid var(--border); margin-bottom: 18px; color: var(--cyan);
+      background: rgba(34,211,238,.06);
+    }
+    .card h3 { font-family: "Rajdhani"; font-weight: 600; font-size: 1.3rem; margin-bottom: 8px; letter-spacing: .02em; }
+    .card p { color: var(--muted); font-size: .95rem; }
+
+    /* ---- Process ---- */
+    .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
+    .step { border-left: 2px solid var(--border); padding: 4px 0 4px 22px; position: relative; }
+    .step .num { font-family: "JetBrains Mono"; font-size: .82rem; color: var(--cyan); letter-spacing: .1em; }
+    .step h3 { font-family: "Rajdhani"; font-weight: 700; font-size: 1.5rem; margin: 8px 0 6px; }
+    .step p { color: var(--muted); font-size: .95rem; }
+
+    /* ---- Stats ---- */
+    .stats { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 24px; text-align: center; }
+    .stat .big { font-family: "Rajdhani"; font-weight: 700; font-size: clamp(2.4rem, 5vw, 3.4rem); }
+    .stat .lbl { color: var(--muted); font-size: .9rem; letter-spacing: .04em; }
+
+    /* ---- Contact ---- */
+    .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    form { display: grid; gap: 16px; }
+    .field label { display: block; font-size: .9rem; font-weight: 500; margin-bottom: 6px; }
+    .field input, .field textarea {
+      width: 100%; background: var(--bg-elev); border: 1px solid var(--border); border-radius: 10px;
+      padding: 13px 15px; color: var(--text); font-family: inherit; font-size: 1rem; transition: border-color .2s var(--ease);
+    }
+    .field input:focus, .field textarea:focus { border-color: var(--cyan); outline: none; }
+    .field textarea { resize: vertical; min-height: 130px; }
+
+    /* ============ FOOTER ============ */
+    footer { border-top: 1px solid var(--border); padding: 46px 0 40px; }
+    .foot { display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 18px; }
+    .foot .motto { font-family: "JetBrains Mono"; font-size: .9rem; color: var(--muted); }
+    .foot .motto b { color: var(--magenta); font-weight: 500; }
+    .foot small { color: var(--muted); }
+
+    /* ============ ANIMATIONS RÉVÉLATION ============ */
+    .reveal { opacity: 0; transform: translateY(24px); transition: opacity .6s var(--ease), transform .6s var(--ease); }
+    .reveal.in { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) {
+      .reveal { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ============ RESPONSIVE ============ */
+    @media (max-width: 900px) {
+      .hero-grid { grid-template-columns: 1fr; }
+      .contact-grid { grid-template-columns: 1fr; }
+      .nav-links { display: none; }
+      .nav-links.open {
+        display: flex; flex-direction: column; position: absolute; top: 68px; left: 0; right: 0;
+        background: var(--bg-elev); border-bottom: 1px solid var(--border); padding: 20px 24px; gap: 16px;
+      }
+      .menu-btn { display: block; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Aller au contenu principal</a>
+
+  <!-- Fond 3D animé (décoratif) -->
+  <canvas id="bg-canvas" aria-hidden="true"></canvas>
+  <div class="veil" aria-hidden="true"></div>
+  <!-- Traînée du curseur (décoratif) -->
+  <canvas id="trail-canvas" aria-hidden="true"></canvas>
+
+  <div class="content">
+    <!-- ===================== NAV ===================== -->
+    <header>
+      <nav class="nav wrap" aria-label="Navigation principale">
+        <a class="brand" href="#" aria-label="NextLevel Dev, accueil">
+          <img src="assets/logo-mark.png" alt="" width="34" height="34" />
+          <span>NextLevel<span class="gradient-text">Dev</span></span>
+        </a>
+        <ul class="nav-links" id="navlinks">
+          <li><a href="#services">Services</a></li>
+          <li><a href="#process">Méthode</a></li>
+          <li><a href="#stats">Résultats</a></li>
+          <li><a class="nav-cta" href="#contact">Démarrer un projet</a></li>
+        </ul>
+        <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navlinks">☰</button>
+      </nav>
+    </header>
+
+    <main id="main">
+      <!-- ===================== HERO ===================== -->
+      <section class="hero wrap" aria-labelledby="hero-title">
+        <img class="hero-logo reveal" src="assets/logo-lockup-transparent.png"
+             alt="NextLevel Dev" width="1032" height="732" fetchpriority="high" />
+        <div class="hero-grid">
+          <div>
+            <span class="eyebrow"><span class="dot"></span>FULL STACK · AI POWERED · UNLIMITED SOLUTIONS</span>
+            <h1 id="hero-title">
+              <span class="steel">Je transforme vos idées</span><br />
+              en <span class="gradient-text">produits web</span><br />
+              <span class="steel">de niveau supérieur.</span>
+            </h1>
+            <p class="lead">
+              Développeur full stack freelance. Je conçois, construis et automatise des
+              applications rapides, évolutives et augmentées par l'IA — du frontend au déploiement.
+            </p>
+            <div class="tags" aria-hidden="true">
+              <span class="tag">&lt;/&gt; Frontend</span>
+              <span class="tag">⚙ Backend</span>
+              <span class="tag">🗄 Database</span>
+              <span class="tag">☁ DevOps</span>
+              <span class="tag">🧠 IA intégrée</span>
+            </div>
+            <div class="cta-row">
+              <a class="btn btn-primary" href="#contact">Lancer mon projet</a>
+              <a class="btn btn-ghost" href="#services">Voir les services</a>
+            </div>
+          </div>
+
+          <!-- Terminal signature -->
+          <div class="terminal reveal" role="img" aria-label="Extrait de code présentant le profil NextLevel Dev : passion Code, état d'esprit Level Up, stack Full Stack, IA activée.">
+            <div class="term-bar" aria-hidden="true">
+              <span class="d r"></span><span class="d y"></span><span class="d g"></span>
+              <span class="file">nextlevel.dev.js</span>
+            </div>
+            <div class="term-body" id="terminal" aria-hidden="true"></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===================== SERVICES ===================== -->
+      <section id="services" class="wrap" aria-labelledby="services-title">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow">// Services</span>
+          <h2 id="services-title">Une stack complète, un seul interlocuteur</h2>
+          <p>Cinq domaines, une exécution cohérente. Vous n'assemblez pas cinq prestataires : vous avancez avec un seul.</p>
+        </div>
+        <div class="services">
+          <article class="card reveal">
+            <div class="ico" aria-hidden="true">&lt;/&gt;</div>
+            <h3>Frontend</h3>
+            <p>Interfaces rapides et accessibles en React, Vue ou vanilla. Design responsive et soigné jusqu'au dernier pixel.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico" aria-hidden="true">⚙</div>
+            <h3>Backend</h3>
+            <p>APIs robustes, authentification, logique métier et architecture pensée pour tenir la charge.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico" aria-hidden="true">🗄</div>
+            <h3>Database</h3>
+            <p>Modélisation, SQL et NoSQL, migrations et optimisation des requêtes pour des données fiables.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico" aria-hidden="true">☁</div>
+            <h3>DevOps</h3>
+            <p>CI/CD, conteneurs et déploiement cloud. Des mises en production sereines et automatisées.</p>
+          </article>
+          <article class="card reveal">
+            <div class="ico" aria-hidden="true">🧠</div>
+            <h3>IA intégrée</h3>
+            <p>Chatbots, automatisations et fonctionnalités augmentées par l'IA, branchées à votre produit.</p>
+          </article>
+        </div>
+      </section>
+
+      <!-- ===================== PROCESS ===================== -->
+      <section id="process" class="wrap" aria-labelledby="process-title">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow">// Méthode</span>
+          <h2 id="process-title">Code. Build. Automate. Innovate.</h2>
+          <p>Quatre étapes, un fil conducteur : livrer un produit utile, propre et maintenable.</p>
+        </div>
+        <ol class="steps">
+          <li class="step reveal"><span class="num">01 / CODE</span><h3>Concevoir</h3><p>On cadre le besoin, on choisit la stack juste et on pose des fondations propres.</p></li>
+          <li class="step reveal"><span class="num">02 / BUILD</span><h3>Construire</h3><p>Développement itératif, testé et versionné. Vous suivez l'avancement en continu.</p></li>
+          <li class="step reveal"><span class="num">03 / AUTOMATE</span><h3>Automatiser</h3><p>CI/CD, tests et déploiement automatisés pour livrer vite et sans casse.</p></li>
+          <li class="step reveal"><span class="num">04 / INNOVATE</span><h3>Innover</h3><p>IA, optimisations et nouvelles fonctionnalités pour garder une longueur d'avance.</p></li>
+        </ol>
+      </section>
+
+      <!-- ===================== STATS ===================== -->
+      <section id="stats" class="wrap" aria-labelledby="stats-title">
+        <h2 id="stats-title" class="sr-only" style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);">Résultats</h2>
+        <div class="stats reveal">
+          <div class="stat"><div class="big gradient-text">100%</div><div class="lbl">Code propre & documenté</div></div>
+          <div class="stat"><div class="big gradient-text">5</div><div class="lbl">Domaines couverts</div></div>
+          <div class="stat"><div class="big gradient-text">A11y</div><div class="lbl">Accessibilité par défaut</div></div>
+          <div class="stat"><div class="big gradient-text">24/7</div><div class="lbl">Suivi & réactivité</div></div>
+        </div>
+      </section>
+
+      <!-- ===================== CONTACT ===================== -->
+      <section id="contact" class="wrap" aria-labelledby="contact-title">
+        <div class="contact-grid">
+          <div class="reveal">
+            <span class="sec-eyebrow">// Contact</span>
+            <h2 id="contact-title" class="display" style="font-weight:700;font-size:clamp(2rem,4vw,3rem);margin:12px 0 14px;">Un projet en tête&nbsp;?</h2>
+            <p style="color:var(--muted);font-size:1.05rem;">Décrivez votre idée en quelques lignes. Je reviens vers vous avec une première approche, un périmètre et un délai.</p>
+            <p class="mono" style="margin-top:22px;color:var(--cyan);">hello@nextleveldev.example</p>
+          </div>
+          <form class="reveal" action="#" method="post" aria-label="Formulaire de contact" novalidate>
+            <div class="field">
+              <label for="name">Nom</label>
+              <input id="name" name="name" type="text" autocomplete="name" required />
+            </div>
+            <div class="field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" autocomplete="email" required />
+            </div>
+            <div class="field">
+              <label for="msg">Votre projet</label>
+              <textarea id="msg" name="msg" required></textarea>
+            </div>
+            <button class="btn btn-primary" type="submit">Envoyer le message</button>
+            <p id="formNote" class="mono" style="font-size:.82rem;color:var(--muted);" role="status" aria-live="polite"></p>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <!-- ===================== FOOTER ===================== -->
+    <footer>
+      <div class="foot wrap">
+        <a class="brand" href="#" aria-label="NextLevel Dev, retour en haut">
+          <img src="assets/logo-mark.png" alt="" width="30" height="30" />
+          <span>NextLevel<span class="gradient-text">Dev</span></span>
+        </a>
+        <span class="motto">{ CODE. BUILD. AUTOMATE. <b>INNOVATE.</b> }</span>
+        <small>© <span id="year"></span> NextLevel Dev · Full Stack Freelance</small>
+      </div>
+    </footer>
+  </div>
+
+  <!-- Three.js chargé après le rendu de la page (perf) -->
+  <script defer src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+  <script defer>
+    document.addEventListener("DOMContentLoaded", () => {
+      "use strict";
+      const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+      /* -------- Année dynamique -------- */
+      document.getElementById("year").textContent = new Date().getFullYear();
+
+      /* -------- Menu mobile -------- */
+      const menuBtn = document.getElementById("menuBtn");
+      const navlinks = document.getElementById("navlinks");
+      menuBtn.addEventListener("click", () => {
+        const open = navlinks.classList.toggle("open");
+        menuBtn.setAttribute("aria-expanded", String(open));
+        menuBtn.textContent = open ? "✕" : "☰";
+      });
+      navlinks.addEventListener("click", (e) => {
+        if (e.target.tagName === "A") {
+          navlinks.classList.remove("open");
+          menuBtn.setAttribute("aria-expanded", "false");
+          menuBtn.textContent = "☰";
+        }
+      });
+
+      /* -------- Terminal : effet machine à écrire -------- */
+      const term = document.getElementById("terminal");
+      const codeHTML = [
+        '<span class="c-key">const</span> <span class="c-var">nextLevel</span> <span class="c-punc">= {</span>',
+        '  <span class="c-key">passion</span><span class="c-punc">:</span> <span class="c-str">\'Code\'</span><span class="c-punc">,</span>',
+        '  <span class="c-key">mindset</span><span class="c-punc">:</span> <span class="c-str">\'Level Up\'</span><span class="c-punc">,</span>',
+        '  <span class="c-key">stack</span><span class="c-punc">:</span> <span class="c-str">\'Full Stack\'</span><span class="c-punc">,</span>',
+        '  <span class="c-key">aiPowered</span><span class="c-punc">:</span> <span class="c-bool">true</span><span class="c-punc">,</span>',
+        '<span class="c-punc">};</span>',
+        '&nbsp;',
+        '<span class="c-key">function</span> <span class="c-fn">build</span><span class="c-punc">() {</span>',
+        '  <span class="c-key">return</span> <span class="c-var">success</span><span class="c-punc">;</span>',
+        '<span class="c-punc">}</span>',
+      ];
+      function renderTerminal(lines, withCursor) {
+        term.innerHTML = lines.map((l) => `<div class="code-line">${l}</div>`).join("") +
+          (withCursor ? '<div class="code-line"><span class="cursor"></span></div>' : "");
+      }
+      if (reduceMotion) {
+        renderTerminal(codeHTML, false);
+      } else {
+        let i = 0;
+        (function typeLine() {
+          renderTerminal(codeHTML.slice(0, i + 1), true);
+          i++;
+          if (i < codeHTML.length) setTimeout(typeLine, 260);
+        })();
+      }
+
+      /* -------- Révélations au scroll -------- */
+      const io = new IntersectionObserver((entries) => {
+        entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
+      }, { threshold: 0.14 });
+      document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+
+      /* -------- Formulaire (démo, sans backend) -------- */
+      const form = document.querySelector("form");
+      const note = document.getElementById("formNote");
+      form.addEventListener("submit", (e) => {
+        e.preventDefault();
+        if (!form.checkValidity()) { note.textContent = "→ Merci de remplir tous les champs."; return; }
+        note.textContent = "→ Message prêt. Branchez le formulaire à un service (voir README).";
+        form.reset();
+      });
+
+      /* ================= TRAÎNÉE DU CURSEUR ================= */
+      // Uniquement sur appareils avec un vrai pointeur (pas le tactile) et si l'animation est autorisée.
+      const canHover = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+      if (!reduceMotion && canHover) {
+        const tc = document.getElementById("trail-canvas");
+        const tctx = tc.getContext("2d");
+        let dpr = Math.min(window.devicePixelRatio, 2);
+        function sizeTrail() {
+          dpr = Math.min(window.devicePixelRatio, 2);
+          tc.width = window.innerWidth * dpr;
+          tc.height = window.innerHeight * dpr;
+          tctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+        }
+        sizeTrail();
+
+        // Poussière d'étoile : chaque mouvement sème de fines particules qui flottent et s'éteignent
+        const particles = [];
+        const PALETTE = ["220,250,255", "34,211,238", "139,92,246", "232,121,249"];
+        let seen = false;
+        window.addEventListener("mousemove", (e) => {
+          seen = true;
+          const n = 2 + (Math.random() * 2 | 0);
+          for (let i = 0; i < n; i++) {
+            particles.push({
+              x: e.clientX + (Math.random() - 0.5) * 6,
+              y: e.clientY + (Math.random() - 0.5) * 6,
+              vx: (Math.random() - 0.5) * 0.7,
+              vy: (Math.random() - 0.5) * 0.7 - 0.1,   // léger flottement vers le haut
+              life: 1,
+              decay: 0.010 + Math.random() * 0.020,
+              r: 0.5 + Math.random() * 1.4,            // grain fin
+              c: PALETTE[Math.random() * PALETTE.length | 0],
+            });
+          }
+          if (particles.length > 280) particles.splice(0, particles.length - 280);
+        }, { passive: true });
+
+        let trailRaf;
+        function drawTrail() {
+          trailRaf = requestAnimationFrame(drawTrail);
+          tctx.clearRect(0, 0, window.innerWidth, window.innerHeight);
+          if (!seen) return;
+          tctx.globalCompositeOperation = "lighter";   // les grains qui se superposent brillent
+          for (let i = particles.length - 1; i >= 0; i--) {
+            const p = particles[i];
+            p.x += p.vx; p.y += p.vy;
+            p.vy += 0.004;                 // gravité très douce
+            p.vx *= 0.99; p.vy *= 0.99;
+            p.life -= p.decay;
+            if (p.life <= 0) { particles.splice(i, 1); continue; }
+            const a = p.life * p.life;                 // fondu en fin de vie
+            const rad = p.r * (0.7 + p.life) * 2.4;
+            const g = tctx.createRadialGradient(p.x, p.y, 0, p.x, p.y, rad);
+            g.addColorStop(0, `rgba(${p.c},${a.toFixed(3)})`);
+            g.addColorStop(0.4, `rgba(${p.c},${(a * 0.35).toFixed(3)})`);
+            g.addColorStop(1, `rgba(${p.c},0)`);
+            tctx.fillStyle = g;
+            tctx.beginPath();
+            tctx.arc(p.x, p.y, rad, 0, Math.PI * 2);
+            tctx.fill();
+          }
+          tctx.globalCompositeOperation = "source-over";
+        }
+        drawTrail();
+
+        window.addEventListener("resize", sizeTrail);
+        document.addEventListener("visibilitychange", () => {
+          if (document.hidden) cancelAnimationFrame(trailRaf);
+          else drawTrail();
+        });
+      }
+
+      /* ================= FOND 3D : ESPACE PROFOND ================= */
+      const canvas = document.getElementById("bg-canvas");
+      if (reduceMotion || typeof THREE === "undefined") return; // fallback : fond statique
+
+      const renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+      renderer.setSize(window.innerWidth, window.innerHeight);
+
+      const scene = new THREE.Scene();
+      // Brouillard : les objets lointains se fondent dans le noir → sensation de profondeur réelle
+      scene.fog = new THREE.FogExp2(0x06060B, 0.021);
+
+      const camera = new THREE.PerspectiveCamera(70, window.innerWidth / window.innerHeight, 0.1, 200);
+      camera.position.set(0, 1.5, 22);
+
+      // Sprite doux (dégradé radial) : des étoiles rondes et fines, jamais des carrés
+      const starTex = (() => {
+        const c = document.createElement("canvas"); c.width = c.height = 64;
+        const g = c.getContext("2d");
+        const grd = g.createRadialGradient(32, 32, 0, 32, 32, 32);
+        grd.addColorStop(0.0, "rgba(255,255,255,1)");
+        grd.addColorStop(0.25, "rgba(255,255,255,0.75)");
+        grd.addColorStop(0.55, "rgba(255,255,255,0.18)");
+        grd.addColorStop(1.0, "rgba(255,255,255,0)");
+        g.fillStyle = grd; g.fillRect(0, 0, 64, 64);
+        return new THREE.CanvasTexture(c);
+      })();
+
+      // --- Génère une couche d'étoiles fines (sprite rond + blending additif) ---
+      function makeParticles(count, spread, size, color, opacity) {
+        const pos = new Float32Array(count * 3);
+        for (let i = 0; i < count * 3; i++) pos[i] = (Math.random() - 0.5) * spread;
+        const g = new THREE.BufferGeometry();
+        g.setAttribute("position", new THREE.BufferAttribute(pos, 3));
+        const m = new THREE.PointsMaterial({
+          size, color, map: starTex, transparent: true, opacity,
+          depthWrite: false, sizeAttenuation: true, blending: THREE.AdditiveBlending, fog: true,
+        });
+        const p = new THREE.Points(g, m);
+        scene.add(p);
+        return p;
+      }
+      const dust  = makeParticles(680, 82, 0.11, 0x22d3ee, 0.95); // fines étoiles cyan
+      const haze  = makeParticles(420, 92, 0.20, 0x8b5cf6, 0.60); // halo violet diffus
+      const spark = makeParticles(180, 62, 0.07, 0xe879f9, 0.95); // micro-étincelles magenta
+
+      // --- Icosaèdre filaire central (matière + légère pulsation) ---
+      const ico = new THREE.Mesh(
+        new THREE.IcosahedronGeometry(7, 1),
+        new THREE.MeshBasicMaterial({ color: 0x8b5cf6, wireframe: true, transparent: true, opacity: 0.32, fog: true })
+      );
+      scene.add(ico);
+
+      // Parallaxe souris (léger, renforce la 3D)
+      let mx = 0, my = 0;
+      window.addEventListener("mousemove", (e) => {
+        mx = (e.clientX / window.innerWidth - 0.5);
+        my = (e.clientY / window.innerHeight - 0.5);
+      }, { passive: true });
+
+      let raf, running = true, t = 0;
+      function animate() {
+        if (!running) return;
+        raf = requestAnimationFrame(animate);
+        t += 0.006;
+        dust.rotation.y  += 0.0008;
+        haze.rotation.y  -= 0.0005;
+        spark.rotation.x += 0.0007;
+        ico.rotation.y   += 0.0016;
+        ico.rotation.x   += 0.0009;
+        ico.material.opacity = 0.26 + Math.sin(t) * 0.08;        // pulsation
+        const s = 1 + Math.sin(t) * 0.03; ico.scale.set(s, s, s); // respiration
+        // Caméra : dérive douce + parallaxe souris = mouvement vivant
+        camera.position.x += ((mx * 5 + Math.sin(t * 0.3) * 1.5) - camera.position.x) * 0.03;
+        camera.position.y += ((1.5 - my * 4) - camera.position.y) * 0.03;
+        camera.lookAt(0, 0, 0);
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Pause quand l'onglet est masqué (perf + batterie)
+      document.addEventListener("visibilitychange", () => {
+        running = !document.hidden;
+        if (running) animate(); else cancelAnimationFrame(raf);
+      });
+
+      // Resize
+      let rt;
+      window.addEventListener("resize", () => {
+        clearTimeout(rt);
+        rt = setTimeout(() => {
+          camera.aspect = window.innerWidth / window.innerHeight;
+          camera.updateProjectionMatrix();
+          renderer.setSize(window.innerWidth, window.innerHeight);
+        }, 150);
+      });
+    });
+  </script>
+</body>
+</html>

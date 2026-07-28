@@ -1,0 +1,12 @@
+{
+  "name": "NextLevel Dev",
+  "short_name": "NextLevelDev",
+  "description": "Développeur full stack freelance — Frontend, Backend, DevOps & IA.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#06060B",
+  "theme_color": "#06060B",
+  "icons": [
+    { "src": "assets/logo-mark.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
