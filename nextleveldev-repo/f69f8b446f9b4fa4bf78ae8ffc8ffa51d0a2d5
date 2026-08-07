@@ -1,0 +1,9 @@
+0000000000000000000000000000000000000000 45429a5eea692bf8e081c632a8265b5aa40d956c NextLevel Dev <hello@nextleveldev.example> 1785256834 +0000	commit (initial): Initial commit — NextLevel Dev landing page (3D, SEO, accessibilité, perf)
+45429a5eea692bf8e081c632a8265b5aa40d956c 98d4641c918824f8bc5caef86d1c0ac5d290f94b NextLevel Dev <hello@nextleveldev.example> 1785447127 +0000	commit: feat(contact): brancher le formulaire sur Netlify Forms
+98d4641c918824f8bc5caef86d1c0ac5d290f94b f9059cfdd67ef5b6df05721dac09d94774693790 NextLevel Dev <hello@nextleveldev.example> 1785447332 +0000	commit: feat(contact): ajouter la page de remerciement après envoi
+f9059cfdd67ef5b6df05721dac09d94774693790 80b071878ce3bca97322f074d4725faa9d30b196 NextLevel Dev <hello@nextleveldev.example> 1785509609 +0000	commit: chore(seo): passer sur le domaine nextleveldev.fr
+80b071878ce3bca97322f074d4725faa9d30b196 148bf07f107d0c8ed490dfc5e3de01794d0525a8 NextLevel Dev <hello@nextleveldev.example> 1785510736 +0000	commit: feat: pages legales, optimisation des images et stats honnetes
+148bf07f107d0c8ed490dfc5e3de01794d0525a8 78af005c472540d0dd69029e90cb39c5ee760bdf NextLevel Dev <hello@nextleveldev.example> 1785511009 +0000	commit: chore: adresse de contact chris@nextleveldev.fr
+78af005c472540d0dd69029e90cb39c5ee760bdf 2ac9a7cf0f81ad69baaa6c26814fecd73074f9df NextLevel Dev <hello@nextleveldev.example> 1786108304 +0000	commit: feat(tarifs): ajouter la grille tarifaire a la landing
+2ac9a7cf0f81ad69baaa6c26814fecd73074f9df 4d98f8e31d2d2b5e118c422a44b30e2737777199 NextLevel Dev <hello@nextleveldev.example> 1786109532 +0000	commit: feat(portfolio): ajouter la section Realisations
+4d98f8e31d2d2b5e118c422a44b30e2737777199 c5f8eb01faeefbd4a933f51d61dac8cff999cb26 NextLevel Dev <hello@nextleveldev.example> 1786115237 +0000	commit: fix(images): corriger le rendu degrade du logo

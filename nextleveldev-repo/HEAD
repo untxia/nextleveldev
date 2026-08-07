@@ -1,0 +1,9 @@
+fix(images): corriger le rendu degrade du logo
+
+La quantification en palette 256 couleurs avec dithering Floyd-Steinberg
+introduisait un tramage visible sur les degrades du metal et des neons.
+
+- Hero regenere en PNG 24 bits et WebP qualite 92 (256 niveaux d'alpha)
+- Icones regenerees en LANCZOS sans quantification
+- icon-512 ramene a 384px (suffisant pour le manifest)
+- Poids reellement charge : 128 Ko (WebP), le PNG ne sert que de repli
