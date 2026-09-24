@@ -5,6 +5,8 @@ Frontend, backend, bases de données, DevOps et intégration IA — une stack co
 
 > `{ CODE. BUILD. AUTOMATE. INNOVATE. }`
 
+**🔗 Site en ligne : [nextleveldev.netlify.app](https://nextleveldev.netlify.app)**
+
 ---
 
 ## ✨ Aperçu
@@ -74,7 +76,9 @@ Puis ouvrir `http://localhost:8000`.
 
 ## 🌐 Déploiement
 
-Le site est 100 % statique : déployable en un clic sur **Netlify**, **Vercel**, **GitHub Pages** ou **Cloudflare Pages**.
+Le site est actuellement déployé sur **Netlify** : **https://nextleveldev.netlify.app**
+
+Il est 100 % statique, donc déployable tout aussi bien sur **Vercel**, **GitHub Pages** ou **Cloudflare Pages**.
 
 1. Poussez le dossier sur un dépôt Git.
 2. Connectez-le à l'hébergeur.
