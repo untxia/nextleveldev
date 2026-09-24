@@ -20,17 +20,37 @@ Frontend, backend, bases de données, DevOps et intégration IA — une stack co
 
 ```
 nextlevel-dev/
-├── index.html          # Le site complet (HTML + CSS + JS inline, autonome)
-├── manifest.json       # Manifeste PWA (icône, thème, nom)
-├── robots.txt          # Directives pour les moteurs de recherche
-├── sitemap.xml         # Plan du site pour le référencement
-├── README.md           # Ce fichier
+├── index.html              # Le site complet (HTML + CSS + JS inline, autonome)
+├── landing-preview.html    # Variante de landing (design chrome/néon, voir ci-dessous)
+├── boutique-preview.html   # Page boutique / devis (voir ci-dessous)
+├── manifest.json           # Manifeste PWA (icône, thème, nom)
+├── robots.txt              # Directives pour les moteurs de recherche
+├── sitemap.xml              # Plan du site pour le référencement
+├── README.md                # Ce fichier
 └── assets/
     ├── logo-lockup.png            # Logo + « NEXTLEVEL DEV » (partage social, JSON-LD)
     ├── logo-mark.png              # Emblème N1 carré (favicon, navigation)
     ├── logo-mark-transparent.png  # Emblème N1 fond transparent (à utiliser sur fond sombre)
     └── logo.png                   # Image de marque d'origine (conservée)
 ```
+
+---
+
+## 🎨 Pages de preview
+
+Deux pages autonomes, générées séparément du site principal (`index.html`), à titre de variante à évaluer avant de les fusionner ou non dans le site officiel. Le logo y est intégré en base64 : aucune dépendance à `assets/`, elles s'ouvrent telles quelles.
+
+### `landing-preview.html`
+
+Variante de la page d'accueil, même identité de marque mais traitement différent : wordmark en dégradé chrome → violet → cyan, cartes de services au format `<Vitrine />` / `<Pro />` / `<IA · Chatbot />`, séquence d'entrée animée au chargement (hero) puis révélations en fondu au scroll sur chaque section — le tout désactivé si `prefers-reduced-motion` est actif.
+
+### `boutique-preview.html`
+
+Page boutique / configurateur de devis : les 3 formules (Vitrine, Pro, IA & Chatbot) et des options (maintenance, hébergement, SEO, identité visuelle) sont sélectionnables, avec un récapitulatif et un total qui se mettent à jour en direct (JS, aucun backend). Le bouton final ouvre un e-mail pré-rempli vers `chris@nextleveldevcom.com` avec le détail de la sélection — **ce n'est pas un paiement en ligne**, juste un générateur de demande de devis.
+
+### Statut
+
+Ces deux pages ne sont pas encore reliées à `index.html` ni entre elles par des liens relatifs (elles ont été publiées indépendamment en tant qu'Artifacts Claude). À intégrer manuellement si retenues : remplacer les liens absolus vers les Artifacts par des chemins relatifs (`landing-preview.html`, `boutique-preview.html`), et brancher le bouton de devis sur un vrai formulaire si besoin.
 
 ---
 
