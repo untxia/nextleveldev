@@ -256,6 +256,22 @@
     .card h3 { font-family: "Rajdhani"; font-weight: 600; font-size: 1.3rem; margin-bottom: 8px; letter-spacing: .02em; }
     .card p { color: var(--muted); font-size: .95rem; }
 
+    /* ---- Tarifs ---- */
+    .price-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: 20px; }
+    .price-card .price-tag { font-family: "JetBrains Mono"; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); }
+    .price-card .price-value { font-family: "Rajdhani"; font-weight: 700; font-size: 2rem; margin: 10px 0 4px; }
+    .price-card .price-value span { font-family: "Inter"; font-weight: 500; font-size: .82rem; color: var(--muted); }
+    .price-card ul { margin-top: 14px; display: grid; gap: 8px; }
+    .price-card ul li { font-size: .9rem; color: var(--muted); display: flex; gap: 8px; }
+    .price-card ul li::before { content: "→"; color: var(--cyan); flex-shrink: 0; }
+    .price-card .btn { margin-top: 18px; }
+    .rate-row { margin-top: 22px; display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 16px; }
+    .rate-item { background: var(--bg-elev); border: 1px solid var(--border); border-radius: 12px; padding: 18px 20px; }
+    .rate-item .rate-lbl { font-family: "JetBrains Mono"; font-size: .72rem; letter-spacing: .08em; text-transform: uppercase; color: var(--cyan); }
+    .rate-item .rate-val { font-family: "Rajdhani"; font-weight: 700; font-size: 1.3rem; margin-top: 6px; }
+    .rate-item .rate-val span { font-family: "Inter"; font-weight: 500; font-size: .78rem; color: var(--muted); }
+    .rate-item p { color: var(--muted); font-size: .85rem; margin-top: 6px; }
+
     /* ---- Process ---- */
     .steps { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 22px; }
     .step { border-left: 2px solid var(--border); padding: 4px 0 4px 22px; position: relative; }
@@ -326,6 +342,7 @@
         </a>
         <ul class="nav-links" id="navlinks">
           <li><a href="#services">Services</a></li>
+          <li><a href="#tarifs">Tarifs</a></li>
           <li><a href="#process">Méthode</a></li>
           <li><a href="#stats">Résultats</a></li>
           <li><a class="nav-cta" href="#contact">Démarrer un projet</a></li>
@@ -408,6 +425,67 @@
             <h3>IA intégrée</h3>
             <p>Chatbots, automatisations et fonctionnalités augmentées par l'IA, branchées à votre produit.</p>
           </article>
+        </div>
+      </section>
+
+      <!-- ===================== TARIFS ===================== -->
+      <section id="tarifs" class="wrap" aria-labelledby="tarifs-title">
+        <div class="sec-head reveal">
+          <span class="sec-eyebrow">// Tarifs</span>
+          <h2 id="tarifs-title">Des prix clairs, sans surprise</h2>
+          <p>Un devis précis après notre échange, mais voici les bases pour cadrer votre budget.</p>
+        </div>
+        <div class="price-grid">
+          <article class="card price-card reveal">
+            <span class="price-tag">Vitrine</span>
+            <div class="price-value">800&nbsp;€ <span>à partir de</span></div>
+            <p>Une présence en ligne claire et professionnelle pour votre activité.</p>
+            <ul>
+              <li>Design sur mesure, responsive</li>
+              <li>Jusqu'à 5 pages</li>
+              <li>Formulaire de contact</li>
+            </ul>
+            <a class="btn btn-ghost" href="#contact">Demander un devis</a>
+          </article>
+          <article class="card price-card reveal">
+            <span class="price-tag">Pro</span>
+            <div class="price-value">1&nbsp;600&nbsp;€ <span>à partir de</span></div>
+            <p>Un site complet avec back-office, pour gérer votre activité au quotidien.</p>
+            <ul>
+              <li>Pages illimitées + CMS</li>
+              <li>Réservation ou catalogue</li>
+              <li>Référencement local (SEO)</li>
+            </ul>
+            <a class="btn btn-ghost" href="#contact">Demander un devis</a>
+          </article>
+          <article class="card price-card reveal">
+            <span class="price-tag">Full-stack</span>
+            <div class="price-value">4&nbsp;000&nbsp;€ <span>à partir de</span></div>
+            <p>Une application sur mesure pour votre métier : espace client, gestion, outils internes.</p>
+            <ul>
+              <li>Front + back + base de données</li>
+              <li>Comptes utilisateurs & back-office</li>
+              <li>IA intégrable si utile</li>
+            </ul>
+            <a class="btn btn-ghost" href="#contact">Demander un devis</a>
+          </article>
+        </div>
+        <div class="rate-row reveal">
+          <div class="rate-item">
+            <div class="rate-lbl">Intégration IA</div>
+            <div class="rate-val">800&nbsp;€ <span>à partir de</span></div>
+            <p>Chatbot, automatisation ou recherche intelligente ajoutés à un site existant.</p>
+          </div>
+          <div class="rate-item">
+            <div class="rate-lbl">Tarif journalier</div>
+            <div class="rate-val">280&nbsp;€ <span>/ jour</span></div>
+            <p>Pour les évolutions, renforts ponctuels ou missions en régie.</p>
+          </div>
+          <div class="rate-item">
+            <div class="rate-lbl">Maintenance</div>
+            <div class="rate-val">50&nbsp;€ <span>/ mois</span></div>
+            <p>Mises à jour, sauvegardes, sécurité et petites modifications.</p>
+          </div>
         </div>
       </section>
 
@@ -539,6 +617,8 @@
         entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add("in"); io.unobserve(en.target); } });
       }, { threshold: 0.14 });
       document.querySelectorAll(".reveal").forEach((el) => io.observe(el));
+      // Filet de sécurité : si l'observer ne se déclenche pas, on affiche tout au bout d'1,2 s.
+      setTimeout(() => document.querySelectorAll(".reveal").forEach((el) => el.classList.add("in")), 1200);
 
       /* -------- Formulaire (démo, sans backend) -------- */
       const form = document.querySelector("form");
