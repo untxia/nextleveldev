@@ -21,7 +21,7 @@ Frontend, backend, bases de données, DevOps et intégration IA — une stack co
 ## 🗂 Structure
 
 ```
-nextlevel-dev/
+nextleveldev/
 ├── index.html              # Le site complet (HTML + CSS + JS inline, autonome)
 ├── landing-preview.html    # Variante de landing (design chrome/néon, voir ci-dessous)
 ├── boutique-preview.html   # Page boutique / devis (voir ci-dessous)
