@@ -346,6 +346,36 @@
   .svc-card li::before { content: "→"; color: var(--cyan); flex-shrink: 0; }
   .svc-card .btn { margin-top: auto; align-self: flex-start; }
 
+  /* rate grid */
+  .rate-grid {
+    margin-top: 1.1rem;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1px;
+    background: var(--line);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    overflow: hidden;
+  }
+  .rate-item { background: var(--bg-raised); padding: 1.3rem 1.5rem; }
+  .rate-label {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: var(--cyan);
+  }
+  .rate-price {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 1.15rem;
+    color: var(--chrome);
+    font-variant-numeric: tabular-nums;
+    margin-top: 0.35rem;
+  }
+  .rate-price span { font-size: 0.72rem; color: var(--text-dim); font-family: 'Manrope', sans-serif; }
+  .rate-item p { color: var(--text-dim); font-size: 0.86rem; margin: 0.4rem 0 0; }
+  @media (max-width: 860px) { .rate-grid { grid-template-columns: 1fr; } }
+
   /* process */
   .process {
     display: grid;
@@ -570,7 +600,7 @@
           <a class="btn btn-ghost btn-lg" href="#contact">Demander un devis</a>
         </div>
         <div class="hero-meta">
-          <span><b>3</b> formules, du site vitrine à l'agent IA</span>
+          <span><b>dès 800&nbsp;€</b> le site vitrine</span>
           <span><b>64</b> Pyrénées-Atlantiques</span>
           <span><b>éco-conception</b> par défaut</span>
         </div>
@@ -633,7 +663,7 @@
         <div class="svc-card reveal">
           <div class="svc-tag">&lt;Vitrine /&gt;</div>
           <h3>Site Vitrine</h3>
-          <div class="svc-price">690&nbsp;€ <span>à partir de</span></div>
+          <div class="svc-price">800&nbsp;€ <span>à partir de</span></div>
           <p>Une présence en ligne claire et professionnelle pour votre activité.</p>
           <ul>
             <li>Design sur mesure, responsive</li>
@@ -645,7 +675,7 @@
         <div class="svc-card reveal">
           <div class="svc-tag">&lt;Pro /&gt;</div>
           <h3>Site Pro</h3>
-          <div class="svc-price">1&nbsp;500&nbsp;€ <span>à partir de</span></div>
+          <div class="svc-price">1&nbsp;600&nbsp;€ <span>à partir de</span></div>
           <p>Un site complet avec back-office, pour gérer votre activité au quotidien.</p>
           <ul>
             <li>Pages illimitées + CMS</li>
@@ -655,16 +685,33 @@
           <a class="btn btn-ghost" href="https://claude.ai/code/artifact/f29f4490-ae75-4e22-b881-cb2623a662d1">Voir le détail</a>
         </div>
         <div class="svc-card reveal">
-          <div class="svc-tag">&lt;IA · Chatbot /&gt;</div>
-          <h3>IA &amp; Chatbot</h3>
-          <div class="svc-price">2&nbsp;500&nbsp;€ <span>à partir de</span></div>
-          <p>Un assistant IA connecté à votre activité : questions clients, prise de RDV, recherche.</p>
+          <div class="svc-tag">&lt;Full-stack /&gt;</div>
+          <h3>Application web</h3>
+          <div class="svc-price">4&nbsp;000&nbsp;€ <span>à partir de</span></div>
+          <p>Une application sur mesure pour votre métier : espace client, gestion, outils internes.</p>
           <ul>
-            <li>Chatbot sur mesure</li>
-            <li>Connecté à vos données</li>
-            <li>Automatisations incluses</li>
+            <li>Front + back + base de données</li>
+            <li>Comptes utilisateurs &amp; back-office</li>
+            <li>IA intégrable si utile</li>
           </ul>
           <a class="btn btn-ghost" href="https://claude.ai/code/artifact/f29f4490-ae75-4e22-b881-cb2623a662d1">Voir le détail</a>
+        </div>
+      </div>
+      <div class="rate-grid reveal">
+        <div class="rate-item">
+          <div class="rate-label">Intégration IA</div>
+          <div class="rate-price">800&nbsp;€ <span>à partir de</span></div>
+          <p>Chatbot, automatisation ou recherche intelligente ajoutés à un site existant.</p>
+        </div>
+        <div class="rate-item">
+          <div class="rate-label">Tarif journalier</div>
+          <div class="rate-price">280&nbsp;€ <span>/ jour</span></div>
+          <p>Pour les évolutions, renforts ponctuels ou missions en régie.</p>
+        </div>
+        <div class="rate-item">
+          <div class="rate-label">Maintenance</div>
+          <div class="rate-price">50&nbsp;€ <span>/ mois</span></div>
+          <p>Mises à jour, sauvegardes, sécurité et petites modifications.</p>
         </div>
       </div>
     </div>
@@ -801,5 +848,11 @@
   }, { threshold: 0.15, rootMargin: '0px 0px -60px 0px' });
 
   reveals.forEach(function (el) { io.observe(el); });
+
+  // Filet de sécurité : si l'observer ne se déclenche pas (aperçu intégré, iframe, capture),
+  // on affiche tout le contenu au bout d'1,2 s pour que rien (ex. les prix) ne reste invisible.
+  setTimeout(function () {
+    reveals.forEach(function (el) { el.classList.add('is-visible'); });
+  }, 1200);
 })();
 </script>
