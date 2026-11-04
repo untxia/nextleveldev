@@ -562,6 +562,13 @@
     }
     body.motion-on .hero::before { animation: none !important; }
   }
+
+  .nav-right { display: flex; align-items: center; gap: 0.7rem; }
+  .lang-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.78rem; }
+  .lang-switch button { background: transparent; color: var(--text-dim); border: 0; padding: 0.5em 0.8em; cursor: pointer; font: inherit; transition: color .15s ease; }
+  .lang-switch button:hover { color: var(--chrome); }
+  .lang-switch button[aria-pressed="true"] { background: linear-gradient(135deg, var(--violet), var(--cyan-dim)); color: #08080c; font-weight: 600; }
+  @media (max-width: 480px) { .brand-name { display: none; } }
 </style>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -581,7 +588,7 @@
       <a href="#projets">Projets</a>
       <a href="#contact">Contact</a>
     </div>
-    <a class="btn btn-primary" href="https://claude.ai/code/artifact/f29f4490-ae75-4e22-b881-cb2623a662d1">Voir la boutique</a>
+    <div class="nav-right"><div class="lang-switch" role="group" aria-label="Langue / Language"><button type="button" data-lang="fr" aria-pressed="true">FR</button><button type="button" data-lang="en" aria-pressed="false">EN</button></div><a class="btn btn-primary" href="https://claude.ai/code/artifact/f29f4490-ae75-4e22-b881-cb2623a662d1">Voir la boutique</a></div>
   </div>
 </nav>
 
@@ -589,11 +596,12 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">Pays Basque &amp; Béarn · Développeur freelance</div>
+        <div class="eyebrow">France &amp; international · Développeur freelance</div>
         <h1 style="margin-top:0.9rem;">Des sites <span class="grad">rapides</span>, sur mesure, et <span class="grad">boostés à l'IA</span></h1>
         <p class="hero-lede">
           NextLevel Dev conçoit et développe des sites vitrines, des applications web et des outils
-          IA pour les artisans et commerces du 64. Un seul interlocuteur, du cadrage à la mise en ligne.
+          IA pour les artisans, commerces et entreprises, partout en France et à l'international. Un seul interlocuteur, du cadrage à la mise en ligne.
+          <br><span class="mono" style="color:var(--cyan);">Au-delà des limites.</span>
         </p>
         <div class="hero-cta">
           <a class="btn btn-primary btn-lg" href="https://claude.ai/code/artifact/f29f4490-ae75-4e22-b881-cb2623a662d1">Découvrir les offres</a>
@@ -601,7 +609,7 @@
         </div>
         <div class="hero-meta">
           <span><b>dès 800&nbsp;€</b> le site vitrine</span>
-          <span><b>64</b> Pyrénées-Atlantiques</span>
+          <span><b>France &amp; monde</b> 100&nbsp;% à distance</span>
           <span><b>éco-conception</b> par défaut</span>
         </div>
       </div>
@@ -702,6 +710,7 @@
           <div class="rate-label">Intégration IA</div>
           <div class="rate-price">800&nbsp;€ <span>à partir de</span></div>
           <p>Chatbot, automatisation ou recherche intelligente ajoutés à un site existant.</p>
+          <a class="btn btn-ghost" style="margin-top:0.9rem;" href="https://claude.ai/code/artifact/f29f4490-ae75-4e22-b881-cb2623a662d1">Voir le détail</a>
         </div>
         <div class="rate-item">
           <div class="rate-label">Tarif journalier</div>
@@ -786,7 +795,7 @@
           <p>Réponse rapide, premier échange sans engagement.</p>
         </div>
         <div style="display:flex; gap:0.9rem; flex-wrap:wrap;">
-          <a class="btn btn-primary btn-lg" href="mailto:chris@nextleveldevcom.com?subject=Projet%20web%20-%20NextLevel%20Dev">Écrire un email</a>
+          <a class="btn btn-primary btn-lg" href="mailto:chris@nextleveldev.fr?subject=Projet%20web%20-%20NextLevel%20Dev" data-mailto-fr="mailto:chris@nextleveldev.fr?subject=Projet%20web%20-%20NextLevel%20Dev" data-mailto-en="mailto:chris@nextleveldev.fr?subject=Web%20project%20-%20NextLevel%20Dev">Écrire un email</a>
           <a class="btn btn-ghost btn-lg" href="https://claude.ai/code/artifact/f29f4490-ae75-4e22-b881-cb2623a662d1">Voir la boutique</a>
         </div>
       </div>
@@ -802,18 +811,80 @@
         <span>NextLevel Dev</span>
       </div>
       <div class="foot-links">
-        <a href="mailto:chris@nextleveldevcom.com">Email</a>
+        <a href="mailto:chris@nextleveldev.fr">Email</a>
         <a href="https://linkedin.com/in/christophe-datcharry" target="_blank" rel="noopener">LinkedIn</a>
         <a href="https://github.com/untxia" target="_blank" rel="noopener">GitHub</a>
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 NextLevel Dev — Christophe Datcharry · Béhasque-Lapiste (64)</span>
+      <span>© 2026 NextLevel Dev — Christophe Datcharry · France &amp; international</span>
       <span>{ code. build. automate. innovate. }</span>
     </div>
   </div>
 </footer>
 
+<script>
+(function () {
+  var DICT = {"Méthode": "Process", "Projets": "Projects", "Voir la boutique": "View the shop", "France & international · Développeur freelance": "France & worldwide · Freelance developer", "Des sites": "Websites that are", "rapides": "fast", ", sur mesure, et": ", custom-built, and", "boostés à l'IA": "AI-boosted", "NextLevel Dev conçoit et développe des sites vitrines, des applications web et des outils IA pour les artisans, commerces et entreprises, partout en France et à l'international. Un seul interlocuteur, du cadrage à la mise en ligne.": "NextLevel Dev designs and builds showcase websites, web applications and AI tools for craftspeople, shops and businesses, anywhere in France and around the world. One point of contact, from scoping to launch.", "Au-delà des limites.": "Beyond limits.", "Découvrir les offres": "Explore the offers", "Demander un devis": "Request a quote", "dès 800 €": "from €800", "le site vitrine": "for a showcase site", "France & monde": "France & worldwide", "100 % à distance": "100% remote", "éco-conception": "eco-design", "par défaut": "by default", "Pourquoi NextLevel Dev": "Why NextLevel Dev", "Un développeur, pas une agence — et c'est un avantage": "A developer, not an agency — and that's an advantage", "Pas d'intermédiaire, pas de sur-devis : vous parlez directement à la personne qui code votre projet, du premier échange à la mise en ligne.": "No middleman, no inflated quotes: you talk directly to the person writing the code for your project, from the first conversation to launch.", "Sur mesure, pas de template": "Custom-built, no templates", "Chaque site est construit pour votre activité, pas retapé depuis un thème générique.": "Every site is built for your business, not reworked from a generic theme.", "IA quand elle sert vraiment": "AI when it genuinely helps", "Chatbot, automatisations, recherche intelligente — intégrés seulement quand ils apportent une vraie valeur.": "Chatbots, automations, smart search — added only when they bring real value.", "Éco-conception par défaut": "Eco-design by default", "Code allégé, images optimisées, hébergement sobre : des sites rapides et plus légers pour la planète.": "Lean code, optimized images, low-impact hosting: faster sites that are lighter on the planet.", "Trois façons de passer au niveau supérieur": "Three ways to take it to the next level", "Un aperçu rapide — le détail complet, avec les fonctionnalités incluses, est dans la boutique.": "A quick overview — the full details, with everything included, are in the shop.", "Site Vitrine": "Showcase Website", "800 €": "€800", "à partir de": "from", "Une présence en ligne claire et professionnelle pour votre activité.": "A clear, professional online presence for your business.", "Design sur mesure, responsive": "Custom, responsive design", "Jusqu'à 5 pages": "Up to 5 pages", "Formulaire de contact": "Contact form", "Voir le détail": "See details", "Site Pro": "Pro Website", "1 600 €": "€1,600", "Un site complet avec back-office, pour gérer votre activité au quotidien.": "A full website with a back office, to run your business day to day.", "Pages illimitées + CMS": "Unlimited pages + CMS", "Réservation ou catalogue": "Booking or product catalog", "Référencement local (SEO)": "Local SEO", "Application web": "Web application", "4 000 €": "€4,000", "Une application sur mesure pour votre métier : espace client, gestion, outils internes.": "A custom application for your trade: client area, management, internal tools.", "Front + back + base de données": "Front end + back end + database", "Comptes utilisateurs & back-office": "User accounts & back office", "IA intégrable si utile": "AI integration where useful", "Intégration IA": "AI integration", "Chatbot, automatisation ou recherche intelligente ajoutés à un site existant.": "A chatbot, automation or smart search added to an existing website.", "Tarif journalier": "Day rate", "280 €": "€280", "/ jour": "/ day", "Pour les évolutions, renforts ponctuels ou missions en régie.": "For updates, short-term support or time-and-materials work.", "Maintenance": "Maintenance", "50 €": "€50", "/ mois": "/ month", "Mises à jour, sauvegardes, sécurité et petites modifications.": "Updates, backups, security and small changes.", "Comment se déroule un projet": "How a project works", "Échange & cadrage": "Discussion & scoping", "On discute de votre activité, vos besoins réels et votre budget. Devis clair, sans surprise.": "We talk about your business, your real needs and your budget. A clear quote, no surprises.", "Design & maquette": "Design & mockup", "Une proposition visuelle adaptée à votre image, validée avant tout développement.": "A visual proposal that fits your brand, approved before any development starts.", "Développement": "Development", "Code sur mesure, testé, avec des points d'étape réguliers pour suivre l'avancement.": "Custom, tested code, with regular check-ins so you can follow progress.", "Livraison & suivi": "Delivery & follow-up", "Mise en ligne, prise en main, et disponibilité pour les ajustements après lancement.": "Launch, handover, and availability for adjustments after go-live.", "Projets & expérimentations": "Projects & experiments", "Ce que j'ai construit récemment": "What I've built recently", "Quelques projets techniques qui montrent l'étendue du stack — du web classique à l'IA appliquée.": "A few technical projects that show the breadth of the stack — from classic web to applied AI.", "Veille d'offres": "Job monitoring", "Agent IA qui surveille les offres d'emploi (France Travail, Adzuna), les note avec Claude et notifie sur Telegram.": "An AI agent that monitors job postings (France Travail, Adzuna), scores them with Claude and sends alerts on Telegram.", "Application progressive construite avec l'API Anthropic, pensée pour un usage quotidien léger.": "A progressive web app built with the Anthropic API, designed for light daily use.", "Assistant conversationnel": "Conversational assistant", "App conversationnelle SvelteKit + Mistral AI, développée en équipe avec PocketBase.": "A conversational app built with SvelteKit + Mistral AI, developed as a team with PocketBase.", "Un projet en tête ? Parlons-en.": "Got a project in mind? Let's talk.", "Réponse rapide, premier échange sans engagement.": "Quick reply, no-commitment first conversation.", "Écrire un email": "Send an email", "© 2026 NextLevel Dev — Christophe Datcharry · France & international": "© 2026 NextLevel Dev — Christophe Datcharry · France & worldwide"};
+  var lang = 'fr', originals = new Map(), listeners = [], origTitle = document.title;
+  function norm(s) { return s.replace(/[\s ]+/g, ' ').trim(); }
+  function has(k) { return Object.prototype.hasOwnProperty.call(DICT, k); }
+  function stored() { try { return localStorage.getItem('nld-lang'); } catch (e) { return null; } }
+  function save(l) { try { localStorage.setItem('nld-lang', l); } catch (e) {} }
+  function initial() {
+    var s = stored();
+    if (s === 'fr' || s === 'en') return s;
+    var nl = (navigator.language || 'fr').toLowerCase();
+    return nl.indexOf('fr') === 0 ? 'fr' : 'en';
+  }
+  function translate(l) {
+    var w = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT, null), nodes = [], t;
+    while ((t = w.nextNode())) {
+      var p = t.parentNode;
+      if (!p || /^(SCRIPT|STYLE|TITLE)$/.test(p.nodeName)) continue;
+      if (p.closest && p.closest('[data-i18n-skip]')) continue;
+      nodes.push(t);
+    }
+    nodes.forEach(function (node) {
+      if (l === 'en') {
+        if (originals.has(node)) return;
+        var cur = node.nodeValue, key = norm(cur);
+        if (key && has(key)) {
+          var lead = cur.match(/^[\s ]*/)[0], trail = cur.match(/[\s ]*$/)[0];
+          originals.set(node, cur);
+          node.nodeValue = lead + DICT[key] + trail;
+        }
+      } else if (originals.has(node)) {
+        node.nodeValue = originals.get(node);
+        originals.delete(node);
+      }
+    });
+  }
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-switch button'));
+  function setLang(l, persist) {
+    lang = l;
+    translate(l);
+    document.documentElement.lang = l;
+    var tk = norm(origTitle);
+    document.title = (l === 'en' && has(tk)) ? DICT[tk] : origTitle;
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false'); });
+    Array.prototype.forEach.call(document.querySelectorAll('[data-mailto-fr]'), function (a) {
+      a.setAttribute('href', a.getAttribute(l === 'en' ? 'data-mailto-en' : 'data-mailto-fr'));
+    });
+    if (persist) save(l);
+    listeners.forEach(function (f) { try { f(l); } catch (e) {} });
+  }
+  window.NLD_I18N = {
+    lang: function () { return lang; },
+    t: function (k) { var nk = norm(k); return (lang === 'en' && has(nk)) ? DICT[nk] : k; },
+    onChange: function (f) { listeners.push(f); }
+  };
+  buttons.forEach(function (b) {
+    b.addEventListener('click', function () { setLang(b.getAttribute('data-lang'), true); });
+  });
+  setLang(initial(), false);
+})();
+</script>
 <script>
 (function () {
   var reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
