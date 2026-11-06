@@ -5,7 +5,7 @@ Frontend, backend, bases de données, DevOps et intégration IA — une stack co
 
 > `{ CODE. BUILD. AUTOMATE. INNOVATE. }`
 
-**🔗 Site en ligne : [nextleveldev.netlify.app](https://nextleveldev.netlify.app)**
+**🔗 Site en ligne : [nextleveldev.fr](https://nextleveldev.fr)**
 
 ---
 
@@ -22,10 +22,9 @@ Frontend, backend, bases de données, DevOps et intégration IA — une stack co
 
 ```
 nextleveldev/
-├── index.html              # Le site complet (HTML + CSS + JS inline, autonome)
-├── landing-preview.html    # Variante de landing (design chrome/néon, voir ci-dessous)
-├── boutique-preview.html   # Page boutique / devis (voir ci-dessous)
-├── mentions-legales.html   # Mentions légales & politique de confidentialité (FR/EN)
+├── index.html              # Page d'accueil (landing FR/EN, HTML + CSS + JS inline)
+├── boutique.html           # Boutique : formules, options, demande de devis par email (FR/EN)
+├── mentions-legales.html   # Mentions légales & confidentialité (FR/EN)
 ├── manifest.json           # Manifeste PWA (icône, thème, nom)
 ├── robots.txt              # Directives pour les moteurs de recherche
 ├── sitemap.xml              # Plan du site pour le référencement
