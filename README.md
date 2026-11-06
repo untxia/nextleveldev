@@ -25,6 +25,7 @@ nextleveldev/
 ├── index.html              # Le site complet (HTML + CSS + JS inline, autonome)
 ├── landing-preview.html    # Variante de landing (design chrome/néon, voir ci-dessous)
 ├── boutique-preview.html   # Page boutique / devis (voir ci-dessous)
+├── mentions-legales.html   # Mentions légales & politique de confidentialité (FR/EN)
 ├── manifest.json           # Manifeste PWA (icône, thème, nom)
 ├── robots.txt              # Directives pour les moteurs de recherche
 ├── sitemap.xml              # Plan du site pour le référencement

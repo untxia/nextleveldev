@@ -1,0 +1,333 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mentions légales &amp; confidentialité — NextLevel Dev</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@700;800&family=JetBrains+Mono:wght@400;500;600&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #08080c;
+    --bg-card: #17171f;
+    --line: rgba(255,255,255,0.09);
+    --line-soft: rgba(255,255,255,0.05);
+    --chrome: #e4e6ed;
+    --chrome-dim: #9a9ea8;
+    --text: #c7c9d4;
+    --text-dim: #8a8e9c;
+    --violet: #8b5cf6;
+    --cyan: #29d3ee;
+    --cyan-dim: #1aa8bd;
+    --focus: #a78bfa;
+  }
+  * { box-sizing: border-box; }
+  html { background: var(--bg); }
+  body {
+    margin: 0; background: var(--bg); color: var(--text);
+    font-family: 'Manrope', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    font-size: 16px; line-height: 1.7; -webkit-font-smoothing: antialiased;
+  }
+  a { color: var(--cyan); }
+  a:hover { color: var(--chrome); }
+  :focus-visible { outline: 2px solid var(--focus); outline-offset: 3px; }
+  h1, h2, h3 { font-family: 'Syne', 'Manrope', sans-serif; color: var(--chrome); font-weight: 800; margin: 0; text-wrap: balance; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; }
+  .wrap { max-width: 860px; margin: 0 auto; padding: 0 clamp(1.25rem, 4vw, 2.5rem); }
+
+  .nav { position: sticky; top: 0; z-index: 40; background: rgba(8,8,12,0.86); backdrop-filter: blur(10px); border-bottom: 1px solid var(--line); }
+  .nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding: 0.85rem clamp(1.25rem, 4vw, 2.5rem); max-width: 1140px; margin: 0 auto; }
+  .brand { display: flex; align-items: center; gap: 0.65rem; text-decoration: none; }
+  .brand img { width: 34px; height: 34px; border-radius: 7px; }
+  .brand-name { font-family: 'Syne', sans-serif; font-weight: 800; font-size: 1.02rem; color: var(--chrome); }
+  .brand-name span { color: var(--cyan); }
+  .nav-right { display: flex; align-items: center; gap: 0.7rem; }
+  .lang-switch { display: inline-flex; border: 1px solid var(--line); border-radius: 8px; overflow: hidden; font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.78rem; }
+  .lang-switch button { background: transparent; color: var(--text-dim); border: 0; padding: 0.5em 0.8em; cursor: pointer; font: inherit; transition: color .15s ease; }
+  .lang-switch button:hover { color: var(--chrome); }
+  .lang-switch button[aria-pressed="true"] { background: linear-gradient(135deg, var(--violet), var(--cyan-dim)); color: #08080c; font-weight: 600; }
+  .btn-ghost { font-family: 'JetBrains Mono', monospace; font-size: 0.82rem; padding: 0.62em 1.15em; border-radius: 8px; border: 1px solid var(--line); color: var(--chrome-dim); text-decoration: none; white-space: nowrap; }
+  .btn-ghost:hover { border-color: var(--cyan); color: var(--chrome); }
+
+  header.page-head { padding: clamp(2.4rem, 6vw, 3.6rem) 0 1.2rem; }
+  .eyebrow { font-family: 'JetBrains Mono', ui-monospace, monospace; font-size: 0.78rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--cyan); }
+  header.page-head h1 { font-size: clamp(1.9rem, 4.2vw, 2.7rem); margin-top: 0.7rem; }
+  header.page-head p { color: var(--text-dim); margin: 0.8rem 0 0; }
+  .toc { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 1.4rem; }
+  .toc a { font-family: 'JetBrains Mono', monospace; font-size: 0.8rem; text-decoration: none; border: 1px solid var(--line); border-radius: 999px; padding: 0.4em 1em; color: var(--chrome-dim); }
+  .toc a:hover { border-color: var(--cyan); color: var(--chrome); }
+
+  section.doc { padding: 2.2rem 0 0.5rem; scroll-margin-top: 5rem; }
+  section.doc > h2 { font-size: clamp(1.4rem, 3vw, 1.8rem); padding-bottom: 0.7rem; border-bottom: 1px solid var(--line); }
+  .card { background: var(--bg-card); border: 1px solid var(--line); border-radius: 14px; padding: 1.2rem 1.4rem; margin-top: 1.1rem; }
+  .card h3 { font-size: 1.05rem; margin-bottom: 0.6rem; }
+  .card p { margin: 0.5rem 0 0; font-size: 0.96rem; }
+  .card p:first-of-type { margin-top: 0; }
+  dl { margin: 0; display: grid; grid-template-columns: minmax(130px, 200px) 1fr; gap: 0.5rem 1.2rem; font-size: 0.96rem; }
+  dt { color: var(--chrome-dim); }
+  dd { margin: 0; color: var(--chrome); overflow-wrap: anywhere; }
+  ul.plain { margin: 0.5rem 0 0; padding-left: 1.2rem; font-size: 0.96rem; }
+  ul.plain li { margin: 0.35rem 0; }
+  .updated { color: var(--text-dim); font-size: 0.84rem; margin-top: 1.8rem; font-family: 'JetBrains Mono', monospace; }
+
+  footer { border-top: 1px solid var(--line); margin-top: 3.2rem; padding: 2rem 0 2.2rem; }
+  .foot-bottom { display: flex; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; font-size: 0.76rem; color: var(--text-dim); font-family: 'JetBrains Mono', monospace; }
+
+  html[lang="fr"] .en { display: none !important; }
+  html[lang="en"] .fr { display: none !important; }
+
+  @media (max-width: 640px) {
+    dl { grid-template-columns: 1fr; gap: 0.1rem; }
+    dd { margin-bottom: 0.7rem; }
+    .brand-name { display: none; }
+  }
+</style>
+</head>
+<body>
+
+<nav class="nav">
+  <div class="nav-inner">
+    <a class="brand" href="https://claude.ai/code/artifact/db87bdda-570a-4013-9dce-82eb6b49d844">
+      <img src="data:image/webp;base64,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" alt="NextLevel Dev" width="34" height="34">
+      <span class="brand-name">NextLevel<span>Dev</span></span>
+    </a>
+    <div class="nav-right">
+      <div class="lang-switch" role="group" aria-label="Langue / Language">
+        <button type="button" data-lang="fr" aria-pressed="true">FR</button>
+        <button type="button" data-lang="en" aria-pressed="false">EN</button>
+      </div>
+      <a class="btn-ghost" href="https://claude.ai/code/artifact/db87bdda-570a-4013-9dce-82eb6b49d844"><span class="fr">← Retour au site</span><span class="en">← Back to the site</span></a>
+    </div>
+  </div>
+</nav>
+
+<main class="wrap">
+  <header class="page-head">
+    <div class="eyebrow"><span class="fr">Informations légales</span><span class="en">Legal information</span></div>
+    <h1><span class="fr">Mentions légales &amp; confidentialité</span><span class="en">Legal notice &amp; privacy</span></h1>
+    <p class="fr">Qui édite ce site, qui l'héberge, et ce qu'il advient de vos données.</p>
+    <p class="en">Who publishes this site, who hosts it, and what happens to your data.</p>
+    <nav class="toc" aria-label="Sommaire">
+      <a href="#mentions"><span class="fr">Mentions légales</span><span class="en">Legal notice</span></a>
+      <a href="#confidentialite"><span class="fr">Politique de confidentialité</span><span class="en">Privacy policy</span></a>
+    </nav>
+  </header>
+
+  <!-- ===================== FRANÇAIS ===================== -->
+  <div class="fr">
+    <section class="doc" id="mentions">
+      <h2>Mentions légales</h2>
+
+      <div class="card">
+        <h3>Éditeur du site</h3>
+        <dl>
+          <dt>Nom commercial</dt><dd>NextLevel Dev</dd>
+          <dt>Statut</dt><dd>Entreprise individuelle (micro-entrepreneur) de Christophe Datcharry</dd>
+          <dt>SIREN</dt><dd>521 039 859</dd>
+          <dt>Adresse</dt><dd>12 rue du Trinquet, 64120 Béhasque-Lapiste, France</dd>
+          <dt>Email</dt><dd><a href="mailto:chris@nextleveldev.fr">chris@nextleveldev.fr</a></dd>
+          <dt>TVA</dt><dd>TVA non applicable, article 293 B du CGI</dd>
+          <dt>Directeur de la publication</dt><dd>Christophe Datcharry</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3>Hébergement et nom de domaine</h3>
+        <dl>
+          <dt>Hébergeur</dt><dd>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, États-Unis</dd>
+          <dt>Nom de domaine</dt><dd>nextleveldev.fr, enregistré chez LWS (Ligne Web Services), 10 rue Penthièvre, 75008 Paris</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3>Propriété intellectuelle</h3>
+        <p>Les textes, le logo, les visuels et le code de ce site sont la propriété de NextLevel Dev, sauf mention contraire. Toute reproduction ou réutilisation sans autorisation écrite préalable est interdite.</p>
+      </div>
+
+      <div class="card">
+        <h3>Responsabilité</h3>
+        <p>Les informations de ce site sont données à titre indicatif. Les tarifs et estimations affichés, y compris dans la boutique, ne constituent pas une offre contractuelle : le devis final est établi avec vous selon votre projet. Ce site peut contenir des liens vers des sites tiers dont NextLevel Dev ne maîtrise pas le contenu.</p>
+      </div>
+
+      <div class="card">
+        <h3>Droit applicable</h3>
+        <p>Le présent site est soumis au droit français.</p>
+      </div>
+    </section>
+
+    <section class="doc" id="confidentialite">
+      <h2>Politique de confidentialité</h2>
+
+      <div class="card">
+        <h3>Responsable du traitement</h3>
+        <p>Christophe Datcharry, exerçant sous le nom NextLevel Dev (coordonnées ci-dessus). Pour toute question sur vos données : <a href="mailto:chris@nextleveldev.fr">chris@nextleveldev.fr</a>.</p>
+      </div>
+
+      <div class="card">
+        <h3>Ce que ce site collecte (et ce qu'il ne collecte pas)</h3>
+        <ul class="plain">
+          <li><b>Pas de compte, pas de cookies publicitaires, pas d'outil de mesure d'audience.</b></li>
+          <li><b>Vos messages et demandes de devis.</b> Les boutons « Écrire un email » et « Demander ce devis » ouvrent votre messagerie avec un message pré-rempli : rien n'est transmis par le site lui-même. Je reçois uniquement l'email que vous m'envoyez (votre adresse, votre nom éventuel et le contenu du message).</li>
+          <li><b>Votre choix de langue (FR / EN).</b> Il est enregistré dans votre navigateur (stockage local) pour la prochaine visite. Il n'est jamais transmis et ne sert qu'au confort d'affichage.</li>
+          <li><b>Données techniques.</b> Pour afficher le site, votre navigateur contacte l'hébergeur (Netlify), qui peut traiter votre adresse IP et des journaux techniques à des fins de sécurité et de diffusion. Les polices d'écriture sont chargées depuis Google Fonts, et certaines bibliothèques techniques depuis un réseau de diffusion (cdnjs / Cloudflare) : votre adresse IP est alors visible de ces prestataires.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Pourquoi, et sur quelle base</h3>
+        <p>Vos emails sont utilisés pour répondre à votre demande et établir un devis (mesures précontractuelles, puis exécution du contrat si vous donnez suite). Les données techniques servent au bon fonctionnement et à la sécurité du site (intérêt légitime). Vos données ne sont ni vendues ni utilisées pour de la publicité.</p>
+      </div>
+
+      <div class="card">
+        <h3>Durée de conservation</h3>
+        <p>Les échanges sont conservés le temps nécessaire au traitement de votre demande, puis au maximum 3 ans après le dernier contact si aucune suite n'est donnée. Les documents comptables (devis acceptés, factures) sont conservés 10 ans, conformément à la loi.</p>
+      </div>
+
+      <div class="card">
+        <h3>Destinataires et transferts hors Union européenne</h3>
+        <p>Vos données ne sont communiquées qu'aux prestataires techniques nécessaires au fonctionnement du site et de la messagerie (Netlify, LWS pour la boîte email, Google Fonts). Netlify et Google sont établis aux États-Unis : ces transferts reposent sur les garanties prévues par le RGPD.</p>
+      </div>
+
+      <div class="card">
+        <h3>Vos droits</h3>
+        <p>Vous pouvez demander l'accès à vos données, leur rectification, leur effacement, la limitation ou l'opposition à leur traitement, ainsi que leur portabilité, en écrivant à <a href="mailto:chris@nextleveldev.fr">chris@nextleveldev.fr</a>. Vous pouvez également introduire une réclamation auprès de la CNIL (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
+      </div>
+
+      <div class="card">
+        <h3>Cookies</h3>
+        <p>Ce site n'utilise aucun cookie de mesure d'audience ni de publicité. Le seul élément enregistré dans votre navigateur est votre préférence de langue, strictement fonctionnelle.</p>
+      </div>
+    </section>
+
+    <p class="updated">Dernière mise à jour : 6 novembre 2026</p>
+  </div>
+
+  <!-- ===================== ENGLISH ===================== -->
+  <div class="en">
+    <section class="doc" id="mentions-en">
+      <h2>Legal notice</h2>
+
+      <div class="card">
+        <h3>Publisher</h3>
+        <dl>
+          <dt>Trade name</dt><dd>NextLevel Dev</dd>
+          <dt>Status</dt><dd>Sole proprietorship (micro-entrepreneur) of Christophe Datcharry</dd>
+          <dt>SIREN (French company ID)</dt><dd>521 039 859</dd>
+          <dt>Address</dt><dd>12 rue du Trinquet, 64120 Béhasque-Lapiste, France</dd>
+          <dt>Email</dt><dd><a href="mailto:chris@nextleveldev.fr">chris@nextleveldev.fr</a></dd>
+          <dt>VAT</dt><dd>VAT not applicable, article 293 B of the French Tax Code</dd>
+          <dt>Publication director</dt><dd>Christophe Datcharry</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3>Hosting and domain name</h3>
+        <dl>
+          <dt>Host</dt><dd>Netlify, Inc., 101 2nd Street, San Francisco, CA 94105, USA</dd>
+          <dt>Domain name</dt><dd>nextleveldev.fr, registered with LWS (Ligne Web Services), 10 rue Penthièvre, 75008 Paris, France</dd>
+        </dl>
+      </div>
+
+      <div class="card">
+        <h3>Intellectual property</h3>
+        <p>The texts, logo, visuals and code of this site belong to NextLevel Dev unless stated otherwise. Any reproduction or reuse without prior written permission is prohibited.</p>
+      </div>
+
+      <div class="card">
+        <h3>Liability</h3>
+        <p>The information on this site is provided for guidance only. Prices and estimates shown, including in the shop, are not a contractual offer: the final quote is drawn up with you according to your project. This site may link to third-party sites whose content NextLevel Dev does not control.</p>
+      </div>
+
+      <div class="card">
+        <h3>Governing law</h3>
+        <p>This site is governed by French law.</p>
+      </div>
+    </section>
+
+    <section class="doc" id="privacy-en">
+      <h2>Privacy policy</h2>
+
+      <div class="card">
+        <h3>Data controller</h3>
+        <p>Christophe Datcharry, trading as NextLevel Dev (contact details above). For any question about your data: <a href="mailto:chris@nextleveldev.fr">chris@nextleveldev.fr</a>.</p>
+      </div>
+
+      <div class="card">
+        <h3>What this site collects (and what it does not)</h3>
+        <ul class="plain">
+          <li><b>No accounts, no advertising cookies, no analytics.</b></li>
+          <li><b>Your messages and quote requests.</b> The “Send an email” and “Request this quote” buttons open your email app with a pre-filled message: nothing is sent by the site itself. I only receive the email you send me (your address, your name if you give it, and the message content).</li>
+          <li><b>Your language choice (FR / EN).</b> It is saved in your browser (local storage) for your next visit. It is never transmitted and is only used for display convenience.</li>
+          <li><b>Technical data.</b> To display the site, your browser contacts the host (Netlify), which may process your IP address and technical logs for security and delivery purposes. Fonts are loaded from Google Fonts, and some technical libraries from a content delivery network (cdnjs / Cloudflare): your IP address is then visible to these providers.</li>
+        </ul>
+      </div>
+
+      <div class="card">
+        <h3>Why, and on what basis</h3>
+        <p>Your emails are used to answer your request and prepare a quote (pre-contractual steps, then performance of the contract if you go ahead). Technical data is used to run and secure the site (legitimate interest). Your data is neither sold nor used for advertising.</p>
+      </div>
+
+      <div class="card">
+        <h3>Retention</h3>
+        <p>Exchanges are kept for as long as needed to handle your request, then for at most 3 years after the last contact if there is no follow-up. Accounting documents (accepted quotes, invoices) are kept for 10 years, as required by law.</p>
+      </div>
+
+      <div class="card">
+        <h3>Recipients and transfers outside the EU</h3>
+        <p>Your data is only shared with the technical providers needed to run the site and the mailbox (Netlify, LWS for the email account, Google Fonts). Netlify and Google are based in the United States: these transfers rely on the safeguards provided for by the GDPR.</p>
+      </div>
+
+      <div class="card">
+        <h3>Your rights</h3>
+        <p>You may request access to your data, its rectification or erasure, restriction of or objection to its processing, and its portability, by writing to <a href="mailto:chris@nextleveldev.fr">chris@nextleveldev.fr</a>. You may also lodge a complaint with the CNIL, the French data protection authority (<a href="https://www.cnil.fr" target="_blank" rel="noopener">www.cnil.fr</a>).</p>
+      </div>
+
+      <div class="card">
+        <h3>Cookies</h3>
+        <p>This site uses no analytics or advertising cookies. The only item stored in your browser is your language preference, which is strictly functional.</p>
+      </div>
+    </section>
+
+    <p class="updated">Last updated: 6 November 2026</p>
+  </div>
+</main>
+
+<footer>
+  <div class="wrap">
+    <div class="foot-bottom">
+      <span>© 2026 NextLevel Dev — Christophe Datcharry · SIREN 521 039 859</span>
+      <span><span class="fr">Au-delà des limites</span><span class="en">Beyond limits</span></span>
+    </div>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var root = document.documentElement;
+  var titles = { fr: 'Mentions légales & confidentialité — NextLevel Dev', en: 'Legal notice & privacy — NextLevel Dev' };
+  var buttons = Array.prototype.slice.call(document.querySelectorAll('.lang-switch button'));
+  function stored() { try { return localStorage.getItem('nld-lang'); } catch (e) { return null; } }
+  function save(l) { try { localStorage.setItem('nld-lang', l); } catch (e) {} }
+  function initial() {
+    var s = stored();
+    if (s === 'fr' || s === 'en') return s;
+    return (navigator.language || 'fr').toLowerCase().indexOf('fr') === 0 ? 'fr' : 'en';
+  }
+  function setLang(l, persist) {
+    root.lang = l;
+    document.title = titles[l];
+    buttons.forEach(function (b) { b.setAttribute('aria-pressed', b.getAttribute('data-lang') === l ? 'true' : 'false'); });
+    var toc = document.querySelectorAll('.toc a');
+    if (toc.length === 2) {
+      toc[0].setAttribute('href', l === 'en' ? '#mentions-en' : '#mentions');
+      toc[1].setAttribute('href', l === 'en' ? '#privacy-en' : '#confidentialite');
+    }
+    if (persist) save(l);
+  }
+  buttons.forEach(function (b) { b.addEventListener('click', function () { setLang(b.getAttribute('data-lang'), true); }); });
+  setLang(initial(), false);
+})();
+</script>
+</body>
+</html>
