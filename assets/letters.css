@@ -1,4 +1,5 @@
-/* NextLevel Dev — lettres 3D qui arrivent de partout au scroll (côtés, haut, bas, et de face avec gros plans).
+/* NextLevel Dev — lettres en « hyper-vitesse » : elles jaillissent d'un point de fuite comme une nuée d'étoiles,
+   étirées en traînées, puis se posent à leur place. La vitesse de défilement accentue l'effet.
    Actif uniquement si html.lt-on (pas de reduced-motion). */
 html.lt-on, html.lt-on body { overflow-x: clip; }
 .lt-on .lt-w { display: inline-block; white-space: nowrap; }
@@ -7,19 +8,19 @@ html.lt-on, html.lt-on body { overflow-x: clip; }
   pointer-events: none;
   opacity: 0;
   color: var(--lc, inherit);
-  filter: blur(var(--lb, 0px));
-  transform: perspective(700px) translate3d(var(--lx, 0), var(--ly, 0), var(--lz, 0px)) rotate3d(var(--lax, 0 1 0), var(--lr, 0deg)) scale(var(--ls, .6));
+  text-shadow: 0 0 .55em var(--lc, transparent);
+  transform: translate3d(var(--tx, 0px), var(--ty, 0px), 0) rotate(var(--sa, 0deg)) scale(var(--sx, .1), var(--sy, .1)) rotate(calc(var(--sa, 0deg) * -1));
 }
-.lt-on .lt-warm .lt { will-change: transform, opacity, filter; }
+.lt-on .lt-warm .lt { will-change: transform, opacity; }
 .lt-on .lt-in .lt {
   opacity: 1;
   color: inherit;
-  filter: blur(0px);
-  transform: perspective(700px) translate3d(0, 0, 0) rotate3d(var(--lax, 0 1 0), 0deg) scale(1);
-  transition: transform 1.9s cubic-bezier(.19,.9,.28,1) var(--ld, 0s),
-              opacity .6s ease-out var(--ld, 0s),
-              filter 1.3s ease-out var(--ld, 0s),
-              color 1.8s ease-out var(--ld, 0s);
+  text-shadow: 0 0 0 transparent;
+  transform: translate3d(0, 0, 0) rotate(var(--sa, 0deg)) scale(1, 1) rotate(calc(var(--sa, 0deg) * -1));
+  transition: transform var(--dur, 1.3s) cubic-bezier(.07,.78,.1,1) var(--ld, 0s),
+              opacity .3s ease-out var(--ld, 0s),
+              text-shadow 1.2s ease-out var(--ld, 0s),
+              color 1.5s ease-out var(--ld, 0s);
 }
 /* dégradé aux couleurs du site : titre d'accueil (.grad) + dernier mot des titres (.lt-acc) */
 .lt-on .grad .lt, .lt-on .lt-acc {

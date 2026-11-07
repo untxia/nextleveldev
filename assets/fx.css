@@ -1,75 +1,52 @@
-/* NextLevel Dev — couche d'animation « site vivant » (landing). Active uniquement si html.fx-on (pas de reduced-motion). */
-@property --fy { syntax: '<length>'; inherits: false; initial-value: 0px; }
-@keyframes fxFloat { 0%,100% { --fy: 0px; } 50% { --fy: -7px; } }
+/* NextLevel Dev — mouvement de la landing : entrées en cascade, flottement, parallaxe croisée, inclinaison 3D.
+   Actif uniquement si html.fx-on (pas de reduced-motion). Les valeurs --py / --rx / --ry sont lissées par fx.js. */
+@keyframes fxFloat { 0%,100% { translate: 0 0; } 50% { translate: 0 -9px; } }
 @keyframes shotPulse { 0%,100% { opacity: .55; transform: scale(1); } 50% { opacity: 1; transform: scale(1.06); } }
 @keyframes shotRise { 0%,100% { transform: scaleY(.82); } 50% { transform: scaleY(1); } }
 @keyframes shotSlide { 0%,100% { transform: translateX(0); } 50% { transform: translateX(6px); } }
 
-:root { --fx-shadow: 0 1px 0 rgba(255,255,255,.05) inset, 0 22px 44px -20px rgba(0,0,0,.75), 0 8px 16px -8px rgba(0,0,0,.55); }
-
 .fx-progress { position: fixed; top: 0; left: 0; height: 2px; width: 100%; z-index: 100; transform-origin: 0 50%; transform: scaleX(var(--fx-p, 0)); background: linear-gradient(90deg, var(--violet), var(--cyan)); pointer-events: none; }
 
-/* cartes séparées et flottantes (le bandeau « value » n'est plus soudé) */
-.fx-on .value-grid { gap: 1.1rem; background: none; border: 0; border-radius: 0; overflow: visible; }
-.fx-on .value-card { border: 1px solid var(--line); border-radius: 14px; }
-
-.fx-on .fx-card {
-  position: relative;
-  box-shadow: var(--fx-shadow);
-  transform-style: preserve-3d;
-  will-change: transform;
-}
+.fx-on .fx-card { position: relative; }
 .fx-on .fx-card::after {
   content: ""; position: absolute; inset: 0; border-radius: inherit; pointer-events: none;
-  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(139,92,246,.16), transparent 55%);
+  background: radial-gradient(420px circle at var(--mx, 50%) var(--my, 0%), rgba(139,92,246,.2), transparent 55%);
   opacity: 0; transition: opacity .3s ease;
 }
 .fx-on .fx-card:hover::after { opacity: 1; }
 
 /* entrée : depuis la gauche / le bas / la droite, avec un léger basculement 3D */
-.fx-on .fx-card:not(.fx-in) {
-  opacity: 0;
-  translate: var(--ex, 0px) 50px;
-  rotate: 1 0 0 14deg;
-  scale: .94;
-}
+.fx-on .fx-card:not(.fx-in) { opacity: 0; translate: var(--ex, 0px) 56px; rotate: 1 0 0 14deg; scale: .94; }
 .fx-on .fx-card.fx-in {
-  opacity: 1;
-  translate: 0 calc(var(--py, 0px) + var(--fy));
-  rotate: 1 0 0 0deg;
-  scale: 1;
-  transition: opacity .8s ease, translate .95s cubic-bezier(.2,.7,.2,1), rotate .95s cubic-bezier(.2,.7,.2,1), scale .95s cubic-bezier(.2,.7,.2,1), box-shadow .3s ease, border-color .2s ease;
-  transition-delay: var(--fx-delay, 0s);
+  opacity: 1; translate: 0 0; rotate: 1 0 0 0deg; scale: 1;
+  transform: translate3d(0, var(--py, 0px), 0);
+  transition: opacity .8s ease, translate 1s cubic-bezier(.2,.7,.2,1), rotate 1s cubic-bezier(.2,.7,.2,1), scale 1s cubic-bezier(.2,.7,.2,1), --ea .35s ease, --eb .35s ease, box-shadow .35s ease;
+  transition-delay: var(--fx-delay, 0s), var(--fx-delay, 0s), var(--fx-delay, 0s), var(--fx-delay, 0s), 0s, 0s, 0s;
 }
-/* en régime établi : parallaxe instantanée + inclinaison 3D */
+/* régime établi : flottement CSS (sur le GPU) + parallaxe et inclinaison lissées par JS */
 .fx-on .fx-card.fx-live {
-  transition: transform .28s ease-out, box-shadow .3s ease, border-color .2s ease;
+  transition: --ea .35s ease, --eb .35s ease, box-shadow .35s ease;
   transition-delay: 0s;
-  transform: perspective(900px) rotateX(calc(var(--ry, 0) * 1deg)) rotateY(calc(var(--rx, 0) * 1deg));
+  transform: translate3d(0, var(--py, 0px), 0) perspective(900px) rotateX(calc(var(--ry, 0) * 1deg)) rotateY(calc(var(--rx, 0) * 1deg));
   animation: fxFloat var(--fx-dur, 7s) ease-in-out var(--fx-off, 0s) infinite;
 }
-.fx-on .fx-card.fx-live:hover {
-  border-color: rgba(139,92,246,.5);
-  box-shadow: 0 1px 0 rgba(255,255,255,.07) inset,
-    calc(var(--tx, 0) * -14px) calc(34px + var(--ty, 0) * -10px) 60px -22px rgba(139,92,246,.4),
-    0 14px 24px -12px rgba(0,0,0,.7);
-}
+.fx-on .fx-card.fx-live:hover { box-shadow: 0 1px 0 rgba(255,255,255,.1) inset, calc(var(--tx, 0) * -16px) calc(40px + var(--ty, 0) * -12px) 70px -26px rgba(139,92,246,.55), 0 16px 26px -12px rgba(0,0,0,.7); }
 .fx-on .fx-card.fx-paused { animation-play-state: paused; }
 
 /* titres qui grossissent / rétrécissent au scroll */
-.fx-on .section-head h2 { transform-origin: 0 60%; scale: var(--hs, 1); will-change: scale; }
+.fx-on .section-head h2 { transform-origin: 0 60%; scale: var(--hs, 1); }
 .fx-on .section-head p { opacity: var(--ho, 1); }
 .fx-on .hero h1 { transform-origin: 0 50%; }
 .fx-on .hero-copy-fx { translate: 0 var(--hy, 0px); }
-.fx-on .hero-art-frame { box-shadow: 0 40px 80px -30px rgba(139,92,246,.45), 0 18px 30px -16px rgba(0,0,0,.8); }
+.fx-on .hero-art-frame { box-shadow: 0 40px 80px -30px rgba(139,92,246,.5), 0 18px 30px -16px rgba(0,0,0,.8); }
 
 /* aperçus de projets */
 .work-shot {
-  margin: -0.4rem -0.4rem 1.1rem; border-radius: 10px; overflow: hidden;
+  margin: -0.4rem -0.4rem 1.1rem; border-radius: 12px; overflow: hidden;
   border: 1px solid var(--line); background: #0b0b12;
-  box-shadow: 0 14px 28px -14px rgba(0,0,0,.8);
+  box-shadow: 0 16px 30px -14px rgba(0,0,0,.85);
 }
-.fx-on .work-shot { transform: translateZ(34px); transition: transform .3s ease; }
+.fx-on .work-shot { transform: translateZ(34px); }
 .shot-bar { display: flex; align-items: center; gap: 5px; padding: 6px 9px; background: #12121c; border-bottom: 1px solid var(--line); }
 .shot-bar i { width: 7px; height: 7px; border-radius: 50%; background: #3a3a4a; }
 .shot-bar i:nth-child(1) { background: #ff5f57; } .shot-bar i:nth-child(2) { background: #febc2e; } .shot-bar i:nth-child(3) { background: #28c840; }
@@ -80,6 +57,4 @@
 .fx-on .shot-bars rect:nth-child(2n) { animation-delay: -1s; } .fx-on .shot-bars rect:nth-child(3n) { animation-delay: -2s; }
 .fx-on .shot-slide { animation: shotSlide 4s ease-in-out infinite; }
 
-@media (max-width: 860px) {
-  .fx-on .fx-card:not(.fx-in) { translate: 0 36px; }
-}
+@media (max-width: 860px) { .fx-on .fx-card:not(.fx-in) { translate: 0 40px; } }

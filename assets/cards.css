@@ -1,0 +1,59 @@
+/* NextLevel Dev — habillage des cartes : verre sombre teinté, bord dégradé qui s'illumine, ombres en relief. Toutes les pages. */
+@property --ea { syntax: '<color>'; inherits: true; initial-value: rgba(167,139,250,.38); }
+@property --eb { syntax: '<color>'; inherits: true; initial-value: rgba(41,211,238,.14); }
+:root {
+  --card-fill: linear-gradient(158deg, #1f1b38 0%, #181822 42%, #13131b 100%);
+  --card-shadow: 0 1px 0 rgba(255,255,255,.07) inset, 0 28px 50px -26px rgba(0,0,0,.85), 0 12px 22px -12px rgba(0,0,0,.6);
+  --card-glow: 0 1px 0 rgba(255,255,255,.1) inset, 0 40px 70px -28px rgba(139,92,246,.5), 0 16px 26px -12px rgba(0,0,0,.7);
+}
+.svc-card, .value-card, .work-card, .process-step, .rate-item, .form-card,
+.tier-card, .addon-card, .summary, .faq-item, .card {
+  border: 1px solid transparent;
+  border-radius: 18px;
+  background: var(--card-fill) padding-box, linear-gradient(150deg, var(--ea), var(--eb) 45%, rgba(255,255,255,.05) 75%) border-box;
+  box-shadow: var(--card-shadow);
+  transition: --ea .35s ease, --eb .35s ease, box-shadow .35s ease, transform .3s ease;
+}
+.svc-card:hover, .value-card:hover, .work-card:hover, .process-step:hover, .rate-item:hover, .form-card:hover,
+.tier-card:hover, .addon-card:hover, .summary:hover, .faq-item:hover, .card:hover {
+  --ea: rgba(167,139,250,.95); --eb: rgba(41,211,238,.55);
+  box-shadow: var(--card-glow);
+}
+/* léger soulèvement au survol (la landing gère déjà l'inclinaison 3D elle-même) */
+.tier-card:not(.fx-card):hover, .addon-card:not(.fx-card):hover, .faq-item:not(.fx-card):hover, .card:not(.fx-card):hover { transform: translateY(-5px); }
+.svc-card:hover { transform: none; }
+
+.faq-item, .process-step { padding: 1.5rem 1.4rem; }
+.addon-card { border-radius: 14px; }
+
+/* bandeaux soudés → vraies cartes séparées et flottantes */
+.value-grid, .rate-grid { gap: 1.1rem; background: none; border: 0; border-radius: 0; overflow: visible; }
+.value-grid .value-card, .rate-item { border-radius: 18px; }
+.rate-grid { margin-top: 1.4rem; }
+
+.process-num { background: linear-gradient(135deg, var(--violet), var(--cyan-dim)); color: #08080c; border-color: transparent; font-weight: 700; box-shadow: 0 8px 18px -6px rgba(139,92,246,.7); }
+.rate-price { background: linear-gradient(100deg, var(--chrome), var(--violet-2) 60%, var(--cyan)); -webkit-background-clip: text; background-clip: text; color: transparent; }
+.rate-price span { -webkit-text-fill-color: var(--text-dim); }
+
+/* états de la boutique */
+.tier-card.featured { --ea: rgba(167,139,250,.9); --eb: rgba(139,92,246,.35); box-shadow: var(--card-glow); }
+.tier-card.selected, .addon-card.selected { --ea: rgba(41,211,238,.95); --eb: rgba(41,211,238,.4); border-color: transparent;
+  box-shadow: 0 1px 0 rgba(255,255,255,.1) inset, 0 34px 60px -28px rgba(41,211,238,.5), 0 14px 24px -12px rgba(0,0,0,.7); }
+.addon-card.selected { background: linear-gradient(158deg, #12262d, #13131b 70%) padding-box, linear-gradient(150deg, var(--ea), var(--eb) 55%, rgba(255,255,255,.05)) border-box; }
+.summary { box-shadow: var(--card-glow); }
+
+/* bandeau d'appel à l'action */
+.cta-banner {
+  border: 1px solid transparent; border-radius: 22px;
+  background:
+    radial-gradient(circle at 12% 18%, rgba(139,92,246,.28), transparent 52%),
+    radial-gradient(circle at 88% 82%, rgba(41,211,238,.22), transparent 52%),
+    linear-gradient(#15151e, #15151e) padding-box,
+    linear-gradient(130deg, rgba(167,139,250,.85), rgba(41,211,238,.45) 50%, rgba(255,255,255,.06)) border-box;
+  box-shadow: 0 1px 0 rgba(255,255,255,.08) inset, 0 40px 80px -34px rgba(139,92,246,.55), 0 16px 28px -14px rgba(0,0,0,.7);
+}
+.strip { background: rgba(18,18,24,.55); }
+.bg-on body { background: transparent; }
+
+/* boutons : lueur */
+.btn-primary, a.btn:not(.btn-ghost) { box-shadow: 0 14px 28px -12px rgba(139,92,246,.7); }

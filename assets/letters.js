@@ -44,14 +44,6 @@
       var w = document.createElement('span'); w.className = 'lt-w';
       Array.prototype.forEach.call(p, function (ch) {
         var s = document.createElement('span'); s.className = 'lt'; s.textContent = ch;
-        var close = Math.random() < 0.18;          // quelques lettres arrivent de face, en gros plan
-        s.style.setProperty('--lx', (close ? rnd(-30, 30) : rnd(-80, 80)).toFixed(0) + 'vw');
-        s.style.setProperty('--ly', (close ? rnd(-20, 20) : (entry.down ? rnd(-60, 55) : rnd(-65, -8))).toFixed(0) + 'vh');
-        s.style.setProperty('--lz', (close ? rnd(330, 560) : rnd(-520, 120)).toFixed(0) + 'px');
-        s.style.setProperty('--lr', rnd(-220, 220).toFixed(0) + 'deg');
-        s.style.setProperty('--lax', rnd(-0.6, 0.6).toFixed(2) + ' ' + rnd(0.4, 1).toFixed(2) + ' ' + rnd(-0.5, 0.5).toFixed(2));
-        s.style.setProperty('--ls', (close ? 1 : rnd(0.45, 0.9)).toFixed(2));
-        s.style.setProperty('--lb', (close ? rnd(7, 15) : 0).toFixed(0) + 'px');
         s.style.setProperty('--lc', COLORS[Math.floor(Math.random() * COLORS.length)]);
         w.appendChild(s); letters.push(s);
       });
@@ -93,8 +85,8 @@
 
   function layoutDelays() {
     targets.forEach(function (e) {
-      var ls = e.el.querySelectorAll('.lt'), step = Math.min(0.03, 0.7 / Math.max(ls.length, 1));
-      Array.prototype.forEach.call(ls, function (s, i) { s.style.setProperty('--ld', (i * step + Math.random() * 0.18).toFixed(3) + 's'); });
+      var ls = e.el.querySelectorAll('.lt'), step = Math.min(0.022, 0.4 / Math.max(ls.length, 1));
+      Array.prototype.forEach.call(ls, function (s, i) { s.style.setProperty('--ld', (i * step + Math.random() * 0.22).toFixed(3) + 's'); });
       var vis = e.runs.filter(function (r) { return r.offsetParent !== null; });
       e.el.setAttribute('aria-label', norm((vis.length ? vis : e.runs).map(function (r) { return r.textContent; }).join('')));
     });
@@ -116,6 +108,32 @@
   }
 
   var ticking = false;
+
+  // trajectoire : chaque lettre part d'un point de fuite (centre de l'écran) et file vers sa place,
+  // étirée dans le sens du mouvement ; plus on scrolle vite, plus c'est long et rapide.
+  function launch(e) {
+    var vh = window.innerHeight, vw = window.innerWidth, VX = vw / 2, VY = vh * 0.42;
+    var L = window.NLD_LENIS, vel = L && typeof L.velocity === 'number' ? Math.abs(L.velocity) : 0;
+    var sp = Math.min(vel / 35, 1);
+    var er = e.el.getBoundingClientRect(), shift = er.top < vh * 0.9 ? 0 : vh * 0.9 - er.top;
+    var ls = e.el.querySelectorAll('.lt'), reads = [];
+    Array.prototype.forEach.call(ls, function (l) { reads.push(l.getBoundingClientRect()); });
+    Array.prototype.forEach.call(ls, function (l, i) {
+      var r = reads[i], ax = r.left + r.width / 2, ay = r.top + r.height / 2 + shift;
+      var dx = VX - ax, dy = VY - ay, ang = Math.atan2(dy, dx);
+      var k = 0.6 + Math.random() * 0.4 + sp * 0.15;
+      var ts = 0.05 + Math.random() * 0.12;
+      var stretch = 4 + Math.random() * 4 + sp * 8;
+      l.style.setProperty('--tx', (dx * k + (Math.random() - 0.5) * 60).toFixed(0) + 'px');
+      l.style.setProperty('--ty', (dy * k + (Math.random() - 0.5) * 60).toFixed(0) + 'px');
+      l.style.setProperty('--sa', (ang * 180 / Math.PI).toFixed(1) + 'deg');
+      l.style.setProperty('--sx', (ts * stretch).toFixed(3));
+      l.style.setProperty('--sy', (ts * 0.7).toFixed(3));
+      l.style.setProperty('--dur', ((1.15 + Math.random() * 0.5) * (1 - sp * 0.3)).toFixed(2) + 's');
+    });
+    e.el.getBoundingClientRect(); // fixe l'état de départ avant de lancer la transition
+  }
+
   function check() {
     ticking = false;
     var vh = window.innerHeight;
@@ -124,8 +142,10 @@
       var rc = e.el.getBoundingClientRect();
       if (!e.warm && rc.top < vh * 1.5) { e.warm = true; e.el.classList.add('lt-warm'); }
       if (rc.top < vh * 0.9) {
+        if (!e.warm) { e.warm = true; e.el.classList.add('lt-warm'); }
+        launch(e);
         e.done = true; e.el.classList.add('lt-in');
-        setTimeout(function () { e.el.classList.remove('lt-warm'); }, 3400);
+        setTimeout(function () { e.el.classList.remove('lt-warm'); }, 3200);
       }
     });
   }
