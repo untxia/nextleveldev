@@ -132,7 +132,7 @@
     padding-bottom: clamp(3rem, 7vw, 5rem);
   }
 
-  .tier-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.1rem; }
+  .tier-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 1.1rem; }
   .tier-card {
     position: relative;
     background: var(--bg-card);
@@ -161,7 +161,7 @@
   .tier-card li { display: flex; gap: 0.55rem; }
   .tier-card li::before { content: "→"; color: var(--cyan); flex-shrink: 0; }
   .tier-add { margin-top: auto; padding-top: 0.6rem; }
-  .tier-add .btn { width: 100%; justify-content: center; }
+  .tier-add .btn { width: 100%; max-width: 100%; box-sizing: border-box; justify-content: center; text-align: center; white-space: normal; line-height: 1.3; padding-left: 0.9em; padding-right: 0.9em; }
 
   .addons { margin-top: 2.4rem; }
   .addons h2 { font-size: 1.3rem; }
