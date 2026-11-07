@@ -1,0 +1,14 @@
+BEGIN:VCARD
+VERSION:3.0
+N:Datcharry;Christophe;;;
+FN:Christophe Datcharry
+ORG:NextLevel Dev
+TITLE:Développeur web & IA freelance
+EMAIL;TYPE=INTERNET,WORK:chris@nextleveldev.fr
+URL;TYPE=WORK:https://nextleveldev.fr
+item1.URL:https://linkedin.com/in/christophe-datcharry
+item1.X-ABLabel:LinkedIn
+item2.URL:https://github.com/untxia
+item2.X-ABLabel:GitHub
+NOTE:Sites web\, applications et IA sur mesure. Pays Basque\, Béarn et à distance.
+END:VCARD

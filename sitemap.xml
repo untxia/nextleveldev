@@ -3,5 +3,6 @@
   <url><loc>https://nextleveldev.fr/</loc><changefreq>monthly</changefreq><priority>1.0</priority></url>
   <url><loc>https://nextleveldev.fr/boutique.html</loc><changefreq>monthly</changefreq><priority>0.8</priority></url>
   <url><loc>https://nextleveldev.fr/contact.html</loc><changefreq>yearly</changefreq><priority>0.7</priority></url>
+  <url><loc>https://nextleveldev.fr/carte.html</loc><changefreq>yearly</changefreq><priority>0.5</priority></url>
   <url><loc>https://nextleveldev.fr/mentions-legales.html</loc><changefreq>yearly</changefreq><priority>0.3</priority></url>
 </urlset>
