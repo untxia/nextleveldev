@@ -11,8 +11,8 @@
     { fr: 'Juillet : bonnes vacances !', en: 'July: happy holidays!', icon: '🏖️', tint: '#22d3ee', kind: 'bubble', n: 30, cols: ['#67e8f9', '#a5f3fc', '#ffffff'] },
     { fr: 'Août : plage ou montagne ?', en: 'August: beach or mountains?', icon: '🌊', tint: '#38bdf8', kind: 'waves', n: 14, cols: ['#38bdf8', '#22d3ee', '#818cf8'] },
     { fr: 'Septembre : c’est la rentrée !', en: 'September: back to school!', icon: '🎒', tint: '#f87171', kind: 'pencil', n: 24, cols: ['#f87171', '#fbbf24', '#60a5fa', '#34d399', '#a78bfa'] },
-    { fr: 'Octobre : l’automne et ses couleurs', en: 'October: autumn colours', icon: '🎃', tint: '#fb923c', kind: 'leaf', n: 34, cols: ['#ea580c', '#f59e0b', '#b91c1c', '#a16207', '#7c3aed'] },
-    { fr: 'Novembre : l’automne s’installe', en: 'November: autumn settles in', icon: '🍂', tint: '#d97706', kind: 'leaf', n: 34, cols: ['#d97706', '#b45309', '#92400e', '#ca8a04', '#9a3412'] },
+    { fr: 'Octobre rose : mobilisés contre le cancer du sein', en: 'Pink October: standing together against breast cancer', icon: '🎀', tint: '#ec4899', kind: 'ribbon', n: 30, cols: ['#ec4899', '#f472b6', '#f9a8d4', '#fbcfe8', '#db2777'] },
+    { fr: 'Movember : des moustaches contre les cancers masculins', en: 'Movember: moustaches against men’s cancers', icon: '', tint: '#3b82f6', kind: 'stache', n: 26, cols: ['#e8e8f0', '#93c5fd', '#60a5fa', '#bfdbfe'] },
     { fr: 'Joyeux Noël et bonnes fêtes !', en: 'Merry Christmas & happy holidays!', icon: '🎄', tint: '#f87171', kind: 'xmas', n: 50, cols: ['#ffffff', '#e0f2fe', '#fecaca'] }
   ];
   var now = new Date(), month = now.getMonth(), year = now.getFullYear();
@@ -36,20 +36,25 @@
     [['🏖️','bob',2],['🌊','drift',2],['🩴','bob',2],['⛱️','bob',2],['🫧','rise',5]],
     [['🌊','drift',2],['🐚','bob',2],['⛰️','bob',2],['🦀','driftl',1],['🫧','rise',5],['🏔️','bob',1]],
     [['✏️','drift',2],['🎒','bob',2],['📚','bob',2],['📐','driftl',1],['🍎','fall',3],['🖍️','bob',2]],
-    [['🍁','fall',7],['🍂','fall',6],['🎃','bob',2],['🦇','drift',2],['👻','driftl',1]],
-    [['🍂','fall',7],['🍁','fall',5],['🍄','bob',3],['🌰','fall',3],['🦔','drift',1],['🍃','driftl',2]],
+    [['RIB','bob',4],['🎀','bob',3],['💗','rise',5],['RIB','drift',2],['🌸','fall',4]],
+    [['STACHE','bob',5],['STACHE','drift',2],['STACHE','driftl',2],['RIBB','bob',3],['💙','rise',4],['🧔','bob',1]],
     [['🎄','bob',3],['🎅','drift',1],['🦌','driftl',1],['⛄','bob',2],['❄️','fall',7],['🎁','bob',2],['⭐','twinkle',4]]
   ];
-  var TINT2 = ['#22d3ee','#c4b5fd','#f9a8d4','#fbbf24','#86efac','#fdba74','#67e8f9','#818cf8','#60a5fa','#a855f7','#b45309','#22c55e'];
+  var TINT2 = ['#22d3ee','#c4b5fd','#f9a8d4','#fbbf24','#86efac','#fdba74','#67e8f9','#818cf8','#60a5fa','#f472b6','#1d4ed8','#22c55e'];
   root.style.setProperty('--season2', TINT2[month]);
+  var SVG = {
+    STACHE: '<svg viewBox="-1.3 -0.5 2.6 0.85"><g fill="currentColor"><path d="M0,0 C.25,-.35 .7,-.35 .9,-.05 C1,.1 1.15,.05 1.2,-.15 C1.2,.25 .8,.35 .55,.2 C.35,.1 .15,.15 0,.25Z"/><path transform="scale(-1,1)" d="M0,0 C.25,-.35 .7,-.35 .9,-.05 C1,.1 1.15,.05 1.2,-.15 C1.2,.25 .8,.35 .55,.2 C.35,.1 .15,.15 0,.25Z"/></g></svg>',
+    RIB: '<svg viewBox="-1 -1.1 2 2.3"><path d="M-.45,1 C-.1,.2 .55,-.5 0,-.85 C-.55,-.5 .1,.2 .45,1" fill="none" stroke="#ec4899" stroke-width=".3" stroke-linecap="round"/></svg>',
+    RIBB: '<svg viewBox="-1 -1.1 2 2.3"><path d="M-.45,1 C-.1,.2 .55,-.5 0,-.85 C-.55,-.5 .1,.2 .45,1" fill="none" stroke="#3b82f6" stroke-width=".3" stroke-linecap="round"/></svg>'
+  };
   function r(a, b) { return a + Math.random() * (b - a); }
   var bar = document.createElement('div');
   bar.className = 'season-bar'; bar.setAttribute('role', 'status');
   bar.innerHTML = '<span class="si" aria-hidden="true"></span><span class="st"></span>';
-  bar.firstChild.textContent = C.icon;
+  if (C.kind === 'stache') { bar.firstChild.innerHTML = SVG.STACHE; bar.firstChild.classList.add('svg'); } else { bar.firstChild.textContent = C.icon; }
   SPR[month].forEach(function (g) {
     for (var i = 0; i < g[2]; i++) {
-      var s = document.createElement('span'); s.className = 'sp ' + g[1]; s.setAttribute('aria-hidden', 'true'); s.textContent = g[0];
+      var s = document.createElement('span'); s.className = 'sp ' + g[1]; s.setAttribute('aria-hidden', 'true'); if (SVG[g[0]]) { s.innerHTML = SVG[g[0]]; s.classList.add('svg'); } else { s.textContent = g[0]; }
       s.style.fontSize = r(.9, 1.5).toFixed(2) + 'rem';
       s.style.setProperty('--y', r(8, 62).toFixed(0) + '%'); s.style.setProperty('--x', r(2, 96).toFixed(0) + '%');
       s.style.setProperty('--d', (g[1] === 'drift' || g[1] === 'driftl' ? r(16, 30) : g[1] === 'fall' ? r(3.5, 7) : g[1] === 'rise' ? r(4, 8) : r(2, 4)).toFixed(1) + 's');
@@ -75,6 +80,8 @@
     if (k === 'pollen') { p.s = rnd(2, 6); p.vy = -rnd(.1, .4); p.y = init ? rnd(0, H) : H + 10; p.al = rnd(.25, .6); }
     if (k === 'bubble') { p.s = rnd(4, 14); p.vy = -rnd(.25, .8); p.y = init ? rnd(0, H) : H + 20; p.al = rnd(.25, .6); }
     if (k === 'egg') { p.s = rnd(9, 15); p.vy = rnd(.3, .6); p.al = rnd(.45, .8); }
+    if (k === 'ribbon') { p.s = rnd(8, 14); p.vy = rnd(.3, .7); p.al = rnd(.45, .8); p.va = rnd(-.01, .01); p.heart = Math.random() < .3; }
+    if (k === 'stache') { p.s = rnd(16, 26); p.vy = rnd(.3, .6); p.al = rnd(.45, .8); p.a = rnd(-.35, .35); p.va = rnd(-.002, .002); p.alt = Math.random() < .25; }
     if (k === 'pencil') { p.s = rnd(9, 15); p.vy = rnd(.4, .9); p.al = rnd(.5, .85); }
     if (k === 'sun') { p.s = rnd(3, 7); p.vy = -rnd(.05, .25); p.y = init ? rnd(0, H) : H + 10; p.al = rnd(.3, .7); }
     if (k === 'waves') { p.s = rnd(3, 8); p.vy = -rnd(.1, .35); p.y = init ? rnd(H * .5, H) : H + 10; p.al = rnd(.25, .5); }
@@ -86,12 +93,17 @@
   }
   function leaf(p) { var s = p.s; ctx.beginPath(); ctx.moveTo(0, -s); ctx.quadraticCurveTo(s * .95, 0, 0, s); ctx.quadraticCurveTo(-s * .95, 0, 0, -s); ctx.fill(); ctx.strokeStyle = 'rgba(0,0,0,.25)'; ctx.lineWidth = 1; ctx.beginPath(); ctx.moveTo(0, -s); ctx.lineTo(0, s); ctx.stroke(); }
   function flake(p) { var s = p.s; ctx.strokeStyle = p.c; ctx.lineWidth = 1.2; ctx.beginPath(); for (var i = 0; i < 3; i++) { var a = i * Math.PI / 3; ctx.moveTo(Math.cos(a) * s, Math.sin(a) * s); ctx.lineTo(-Math.cos(a) * s, -Math.sin(a) * s); } ctx.stroke(); }
+  function ribbon(s, col) { ctx.strokeStyle = col; ctx.lineWidth = s * .28; ctx.lineCap = 'round'; ctx.beginPath(); ctx.moveTo(-s * .45, s); ctx.bezierCurveTo(-s * .1, s * .2, s * .55, -s * .5, 0, -s * .85); ctx.bezierCurveTo(-s * .55, -s * .5, s * .1, s * .2, s * .45, s); ctx.stroke(); }
+  function heart(s) { ctx.beginPath(); ctx.moveTo(0, s * .35); ctx.bezierCurveTo(-s * 1.1, -s * .35, -s * .45, -s * 1.05, 0, -s * .45); ctx.bezierCurveTo(s * .45, -s * 1.05, s * 1.1, -s * .35, 0, s * .35); ctx.fill(); }
+  function stache(s) { for (var k = -1; k <= 1; k += 2) { ctx.save(); ctx.scale(k * s, s); ctx.beginPath(); ctx.moveTo(0, 0); ctx.bezierCurveTo(.25, -.35, .7, -.35, .9, -.05); ctx.bezierCurveTo(1, .1, 1.15, .05, 1.2, -.15); ctx.bezierCurveTo(1.2, .25, .8, .35, .55, .2); ctx.bezierCurveTo(.35, .1, .15, .15, 0, .25); ctx.closePath(); ctx.fill(); ctx.restore(); } }
   function ell(rx, ry) { ctx.beginPath(); ctx.ellipse(0, 0, rx, ry, 0, 0, 6.283); ctx.fill(); }
   function star(s) { ctx.beginPath(); for (var i = 0; i < 8; i++) { var r = i % 2 ? s * .25 : s, a = i * Math.PI / 4; ctx.lineTo(Math.cos(a) * r, Math.sin(a) * r); } ctx.closePath(); ctx.fill(); }
   function draw(p, t) {
     ctx.save(); ctx.translate(p.x, p.y); ctx.rotate(p.a); ctx.globalAlpha = p.al; ctx.fillStyle = p.c;
     switch (C.kind) {
       case 'leaf': leaf(p); break;
+      case 'ribbon': if (p.heart) { heart(p.s * .8); } else { ribbon(p.s, p.c); } break;
+      case 'stache': if (p.alt) { ribbon(p.s * .8, '#3b82f6'); } else { stache(p.s); } break;
       case 'snow': case 'xmas': if (p.s > 4.5) { flake(p); } else { ctx.beginPath(); ctx.arc(0, 0, p.s * .6, 0, 6.283); ctx.fill(); } break;
       case 'petal': ell(p.s * .55, p.s * .95); break;
       case 'egg': ell(p.s * .62, p.s); ctx.strokeStyle = 'rgba(255,255,255,.7)'; ctx.lineWidth = 2; ctx.beginPath(); ctx.moveTo(-p.s * .55, p.s * .1); ctx.lineTo(p.s * .55, p.s * .1); ctx.stroke(); break;

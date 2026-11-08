@@ -28,3 +28,6 @@
 @keyframes spTwinkle { 0%, 100% { transform: scale(.5) rotate(0); opacity: .2; } 50% { transform: scale(1.3) rotate(45deg); opacity: 1; } }
 @media (max-width: 520px) { .season-bar { height: 50px; font-size: .7rem; padding: 0 .5rem; gap: .4rem; } .season-bar .si { font-size: 1.25rem; } }
 @media (prefers-reduced-motion: reduce) { .season-bar, .season-bar::before, .season-bar::after, .season-bar .st, .season-bar .si, .season-bar .sp { animation: none !important; } .sp.drift, .sp.driftl, .sp.fall, .sp.rise { display: none; } }
+.season-bar .svg svg { width: 2em; height: auto; display: block; }
+.season-bar .si.svg svg { width: 1.6em; color: #fff; }
+.season-bar .sp.svg { color: #e8e8f0; }
