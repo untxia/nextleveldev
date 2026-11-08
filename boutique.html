@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Boutique — Formules et tarifs · NextLevel Dev</title>
-<meta name="description" content="Choisissez votre formule : site vitrine dès 800 €, site pro dès 1 600 €, application web dès 4 000 €. Récapitulatif et demande de devis par email.">
+<title>Tarifs création de site — Pays Basque & Béarn · NextLevel Dev</title>
+<meta name="description" content="Création de site pour artisans et commerces du Pays Basque et du Béarn : Essentiel 590 €, Visible 790 €, Sérénité 790 € + 35 €/mois. Offre de lancement limitée à 5 clients.">
 <meta name="author" content="NextLevel Dev">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#08080c">
 <link rel="canonical" href="https://nextleveldev.fr/boutique.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel Dev">
-<meta property="og:title" content="Boutique — Formules et tarifs · NextLevel Dev">
-<meta property="og:description" content="Choisissez votre formule : site vitrine dès 800 €, site pro dès 1 600 €, application web dès 4 000 €. Récapitulatif et demande de devis par email.">
+<meta property="og:title" content="Tarifs création de site — Pays Basque & Béarn · NextLevel Dev">
+<meta property="og:description" content="Création de site pour artisans et commerces du Pays Basque et du Béarn : Essentiel 590 €, Visible 790 €, Sérénité 790 € + 35 €/mois. Offre de lancement limitée à 5 clients.">
 <meta property="og:url" content="https://nextleveldev.fr/boutique.html">
 <meta property="og:image" content="https://nextleveldev.fr/assets/logo-lockup.png">
 <meta property="og:locale" content="fr_FR">
@@ -282,8 +282,11 @@
 <link rel="stylesheet" href="assets/cards.css">
 <link rel="stylesheet" href="assets/bg.css">
 <link rel="stylesheet" href="assets/smooth.css">
+<link rel="stylesheet" href="assets/offer.css">
+<link rel="stylesheet" href="assets/season.css">
 </head>
 <body>
+<div class="launch-bar" data-launch-only><div class="wrap"><span>🚀 Offre de lancement : 5 sites à tarif réduit pour les artisans et commerces du Pays Basque et du Béarn. Places limitées.<span data-places-extra data-i18n-skip></span></span><a href="#lancement">Voir l'offre</a></div></div>
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">
@@ -311,25 +314,74 @@
 
   <div class="wrap shop-layout">
     <div>
+      <section class="launch-box" id="lancement" data-launch-only>
+        <span class="places-pill" data-places-label data-i18n-skip></span>
+        <h2>Offre de lancement</h2>
+        <p>Je lance NextLevel Dev et je réalise mes 5 premiers sites à tarif réduit. En échange, je vous demande un court témoignage et l'autorisation de présenter votre site dans mon portfolio.</p>
+        <div class="launch-rows">
+          <div class="launch-row"><b>Essentiel</b><span class="lp"><s class="price-old">590&nbsp;€</s><span class="price-new">390&nbsp;€</span></span><button class="btn btn-primary" type="button" data-reserve="essentiel">Réserver ma place</button></div>
+          <div class="launch-row"><b>Visible</b><span class="lp"><s class="price-old">790&nbsp;€</s><span class="price-new">550&nbsp;€</span></span><button class="btn btn-primary" type="button" data-reserve="visible">Réserver ma place</button></div>
+          <div class="launch-row"><b>Sérénité</b><span class="lp"><s class="price-old">790&nbsp;€</s><span class="price-new">550&nbsp;€</span><small><s>35&nbsp;€/mois</s> 25&nbsp;€/mois</small></span><button class="btn btn-primary" type="button" data-reserve="serenite">Réserver ma place</button></div>
+        </div>
+        <p class="launch-note">Les 25 €/mois de la formule Sérénité sont garantis aux 5 premiers clients tant qu'ils restent abonnés.</p>
+        <ul class="launch-terms">
+          <li>Acompte de 30 % à la commande, solde à la livraison</li>
+          <li>Délai de 2 à 3 semaines après réception des textes et photos</li>
+          <li>Deux allers-retours de corrections inclus</li>
+          <li>Le site appartient au client</li>
+        </ul>
+      </section>
+
       <div class="tier-grid" id="tier-grid">
-        <div class="tier-card" data-id="vitrine" data-label="Site Vitrine" data-price="800">
-          <div class="tier-tag mono">&lt;Vitrine /&gt;</div>
-          <h3>Site Vitrine</h3>
-          <div class="tier-price">800&nbsp;€<span>à partir de</span></div>
-          <p class="tier-desc">L'essentiel pour exister en ligne et donner confiance dès la première visite.</p>
+        <div class="tier-card" data-id="essentiel" data-label="Essentiel" data-price="590" data-launch="390" data-from="0">
+          <div class="tier-tag mono">1 à 3 pages</div>
+          <h3>Essentiel</h3>
+          <div class="tier-price"><strong data-normal-only>590&nbsp;€</strong><s class="price-old" data-launch-only>590&nbsp;€</s><strong class="price-new" data-launch-only>390&nbsp;€</strong><span>prix fixe</span></div>
+          <p class="tier-desc">Une présence claire pour exister en ligne et rassurer vos clients.</p>
           <ul>
-            <li>Design sur mesure, responsive</li>
-            <li>Jusqu'à 5 pages (accueil, prestations, contact…)</li>
-            <li>Formulaire de contact</li>
-            <li>Optimisation vitesse &amp; mobile</li>
-            <li>Mise en ligne incluse</li>
+            <li>1 à 3 pages (Accueil, Prestations, Contact)</li>
+            <li>Design adapté à votre métier, lisible sur mobile</li>
+            <li>Formulaire de contact et bouton d'appel</li>
+            <li>Mentions légales</li>
+            <li>Mise en ligne avec nom de domaine et hébergement (frais de l'hébergeur facturés à prix coûtant)</li>
           </ul>
           <div class="tier-add" data-i18n-skip><button class="btn btn-ghost" type="button">Ajouter à ma demande</button></div>
         </div>
 
-        <div class="tier-card featured" data-id="pro" data-label="Site Pro" data-price="1600">
-          <div class="tier-badge">Le plus choisi</div>
-          <div class="tier-tag mono">&lt;Pro /&gt;</div>
+        <div class="tier-card featured" data-id="visible" data-label="Visible" data-price="790" data-launch="550" data-from="0">
+          <div class="tier-badge">Recommandé</div>
+          <div class="tier-tag mono">jusqu'à 5 pages</div>
+          <h3>Visible</h3>
+          <div class="tier-price"><strong data-normal-only>790&nbsp;€</strong><s class="price-old" data-launch-only>790&nbsp;€</s><strong class="price-new" data-launch-only>550&nbsp;€</strong><span>prix fixe</span></div>
+          <p class="tier-desc">Pour être trouvé près de chez vous et montrer votre travail.</p>
+          <ul>
+            <li>Jusqu'à 5 pages</li>
+            <li>Tout l'Essentiel</li>
+            <li>Galerie de réalisations avec photos</li>
+            <li>Fiche Google Business créée ou optimisée</li>
+            <li>SEO local de base (ville, métier, titres, descriptions)</li>
+            <li>Suivi des visites avec Google Search Console</li>
+          </ul>
+          <div class="tier-add" data-i18n-skip><button class="btn btn-ghost" type="button">Ajouter à ma demande</button></div>
+        </div>
+
+        <div class="tier-card" data-id="serenite" data-label="Sérénité" data-price="790" data-launch="550" data-monthly="35" data-monthly-launch="25" data-from="0">
+          <div class="tier-tag mono">avec maintenance</div>
+          <h3>Sérénité</h3>
+          <div class="tier-price"><strong data-normal-only>790&nbsp;€</strong><s class="price-old" data-launch-only>790&nbsp;€</s><strong class="price-new" data-launch-only>550&nbsp;€</strong><span>prix fixe</span><span class="price-month"><b data-normal-only>+ 35&nbsp;€/mois</b><span data-launch-only><s class="price-old">+ 35&nbsp;€/mois</s><b class="price-new">+ 25&nbsp;€/mois</b></span></span></div>
+          <p class="tier-desc">L'offre Visible, plus la tranquillité : on s'occupe de la maintenance.</p>
+          <ul>
+            <li>Tout ce que contient l'offre Visible</li>
+            <li>Hébergement et sécurité gérés</li>
+            <li>Une petite modification de contenu par mois (texte, photo, horaires)</li>
+            <li>Réponse rapide en cas de problème</li>
+            <li>Toute demande supplémentaire est facturée à part</li>
+          </ul>
+          <div class="tier-add" data-i18n-skip><button class="btn btn-ghost" type="button">Ajouter à ma demande</button></div>
+        </div>
+
+        <div class="tier-card" data-id="pro" data-label="Site Pro" data-price="1600" data-from="1">
+          <div class="tier-tag mono">sur mesure</div>
           <h3>Site Pro</h3>
           <div class="tier-price">1&nbsp;600&nbsp;€<span>à partir de</span></div>
           <p class="tier-desc">Un site complet pour gérer votre activité : contenu, réservations, ventes.</p>
@@ -343,8 +395,8 @@
           <div class="tier-add" data-i18n-skip><button class="btn btn-ghost" type="button">Ajouter à ma demande</button></div>
         </div>
 
-        <div class="tier-card" data-id="app" data-label="Application web" data-price="4000">
-          <div class="tier-tag mono">&lt;App /&gt;</div>
+        <div class="tier-card" data-id="app" data-label="Application web" data-price="4000" data-from="1">
+          <div class="tier-tag mono">full-stack</div>
           <h3>Application web</h3>
           <div class="tier-price">4&nbsp;000&nbsp;€<span>à partir de</span></div>
           <p class="tier-desc">Une application sur mesure pour votre métier : espace client, gestion, outils internes.</p>
@@ -358,6 +410,7 @@
           <div class="tier-add" data-i18n-skip><button class="btn btn-ghost" type="button">Ajouter à ma demande</button></div>
         </div>
       </div>
+      <p class="vat-line" data-vat data-i18n-skip></p>
 
       <div class="addons">
         <h2>Options complémentaires</h2>
@@ -370,16 +423,6 @@
           <div class="addon-card" data-id="jour" data-label="Tarif journalier" data-price="280" data-kind="daily" data-unit="/jour">
             <div class="addon-info"><h4>Tarif journalier</h4><p>Évolutions, renforts ponctuels ou missions en régie</p></div>
             <div class="addon-price mono">280&nbsp;€/jour</div>
-            <div class="addon-check">✓</div>
-          </div>
-          <div class="addon-card" data-id="maintenance" data-label="Maintenance mensuelle" data-price="49" data-kind="monthly" data-unit="/mois">
-            <div class="addon-info"><h4>Maintenance mensuelle</h4><p>Mises à jour, sauvegardes, sécurité et petites modifications</p></div>
-            <div class="addon-price mono">49&nbsp;€/mois</div>
-            <div class="addon-check">✓</div>
-          </div>
-          <div class="addon-card" data-id="hebergement" data-label="Hébergement & nom de domaine" data-price="120" data-kind="yearly" data-unit="/an">
-            <div class="addon-info"><h4>Hébergement &amp; domaine</h4><p>Nom de domaine + hébergement géré, pour un an</p></div>
-            <div class="addon-price mono">120&nbsp;€/an</div>
             <div class="addon-check">✓</div>
           </div>
           <div class="addon-card" data-id="seo" data-label="SEO local avancé" data-price="350" data-kind="once" data-unit="">
@@ -405,15 +448,16 @@
         <span class="val mono" id="summary-total-val" data-i18n-skip>0&nbsp;€</span>
       </div>
       <p class="summary-note" id="summary-recur" style="display:none;" data-i18n-skip></p>
+      <p class="summary-note" data-vat data-i18n-skip></p>
       <p class="summary-note">Estimation indicative — le devis final est confirmé ensemble selon vos besoins précis.</p>
       <form class="nld-form" id="quote-form" name="devis" method="POST" data-netlify="true" netlify-honeypot="bot-field" style="display:none;margin-top:1rem;">
         <input type="hidden" name="form-name" value="devis">
         <input type="hidden" name="subject" value="Nouvelle demande de devis - nextleveldev.fr">
         <input type="hidden" name="quote" id="quote-field" value="">
         <p class="hp"><label>Ne pas remplir <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-        <label><span>Votre nom</span><input name="name" type="text" required autocomplete="name"></label>
-        <label><span>Votre email</span><input name="email" type="email" required autocomplete="email"></label>
-        <label><span>Un mot sur votre projet (facultatif)</span><textarea name="message" style="min-height:4.5rem"></textarea></label>
+        <label><span>Votre nom</span><input name="name" type="text" required autocomplete="name" placeholder="Ex. Marie Etcheverry"></label>
+        <label><span>Votre email (pour que je vous réponde)</span><input name="email" type="email" required autocomplete="email" placeholder="vous@exemple.fr"></label>
+        <label><span>Votre métier et votre projet, en quelques mots (facultatif)</span><textarea name="message" style="min-height:4.5rem"></textarea></label>
         <button class="btn btn-primary" type="submit" id="quote-send" data-i18n-skip></button>
         <p class="nld-status" id="quote-status" role="status" data-i18n-skip></p>
       </form>
@@ -428,7 +472,7 @@
       <div class="faq-grid">
         <div class="faq-item">
           <h3>Combien de temps pour livrer un projet ?</h3>
-          <p>Selon la formule : quelques jours pour un site vitrine, plusieurs semaines pour un projet Pro ou une application web. Le délai précis est fixé ensemble au cadrage.</p>
+          <p>Comptez 2 à 3 semaines après réception de vos textes et photos pour les offres Essentiel, Visible et Sérénité, plus pour un site Pro ou une application web. Le délai précis est fixé ensemble au cadrage.</p>
         </div>
         <div class="faq-item">
           <h3>Le contenu (textes, photos) est-il inclus ?</h3>
@@ -436,7 +480,7 @@
         </div>
         <div class="faq-item">
           <h3>Que se passe-t-il après la mise en ligne ?</h3>
-          <p>Le site reste à vous. La maintenance mensuelle est optionnelle, pour déléguer les mises à jour et petites évolutions.</p>
+          <p>Le site reste à vous. La formule Sérénité inclut la maintenance mensuelle (hébergement, sécurité, une petite modification par mois) ; avec les autres formules, elle reste optionnelle.</p>
         </div>
       </div>
     </div>
@@ -458,7 +502,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 NextLevel Dev — Christophe Datcharry · France &amp; international</span>
+      <span>© 2026 NextLevel Dev — Christophe Datcharry · Pays Basque &amp; Béarn · 100&nbsp;% à distance possible</span>
       <span>Au-delà des limites · { code. build. automate. innovate. }</span>
     </div>
   </div>
@@ -470,7 +514,7 @@
 <script src="assets/letters.js"></script>
 <script>
 (function () {
-  var DICT = {"Boutique NextLevel Dev": "NextLevel Dev Shop", "Méthode": "Process", "Projets": "Projects", "← Retour au site": "← Back to the site", "Boutique": "Shop", "Choisissez votre formule": "Choose your plan", "Sélectionnez une offre et les options qui vous intéressent : le récapitulatif se construit à droite. Il ne s'agit pas d'un paiement en ligne — c'est une base pour établir votre devis exact ensemble.": "Select an offer and the options you're interested in: the summary builds on the right. This is not an online payment — it's a starting point to work out your exact quote together.", "Site Vitrine": "Showcase Website", "690 €": "€690", "à partir de": "from", "L'essentiel pour exister en ligne et donner confiance dès la première visite.": "The essentials to get online and build trust from the very first visit.", "Design sur mesure, responsive": "Custom, responsive design", "Jusqu'à 5 pages (accueil, prestations, contact…)": "Up to 5 pages (home, services, contact…)", "Formulaire de contact": "Contact form", "Optimisation vitesse & mobile": "Speed & mobile optimization", "Mise en ligne incluse": "Launch included", "Ajouter à ma demande": "Add to my request", "Le plus choisi": "Most popular", "Site Pro": "Pro Website", "1 500 €": "€1,500", "Un site complet pour gérer votre activité : contenu, réservations, ventes.": "A complete website to run your business: content, bookings, sales.", "Pages illimitées + back-office (CMS)": "Unlimited pages + back office (CMS)", "Réservation en ligne ou catalogue produits": "Online booking or product catalog", "Référencement local (SEO)": "Local SEO", "Design + intégration sur mesure": "Custom design + integration", "Formation à la prise en main": "Hands-on training", "<IA · Chatbot />": "<AI · Chatbot />", "IA & Chatbot": "AI & Chatbot", "2 500 €": "€2,500", "Un assistant IA connecté à votre activité, pour répondre et automatiser 24/7.": "An AI assistant connected to your business, to answer and automate 24/7.", "Chatbot sur mesure, entraîné sur vos données": "Custom chatbot, trained on your data", "Prise de RDV / réponses clients automatisées": "Appointment booking / automated customer replies", "Connecté à votre site existant": "Connected to your existing website", "Automatisations métier incluses": "Business automations included", "Options complémentaires": "Add-ons", "Maintenance mensuelle": "Monthly maintenance", "Mises à jour, sauvegardes et petites modifications": "Updates, backups and small changes", "49 €/mois": "€49/month", "Hébergement & domaine": "Hosting & domain", "Nom de domaine + hébergement géré, pour un an": "Domain name + managed hosting, for one year", "120 €/an": "€120/year", "SEO local avancé": "Advanced local SEO", "Fiche Google Business, mots-clés locaux, structure optimisée": "Google Business profile, local keywords, optimized structure", "350 €": "€350", "Identité visuelle": "Visual identity", "Logo, palette et charte graphique adaptés à votre site": "Logo, color palette and brand guidelines tailored to your site", "450 €": "€450", "Votre demande": "Your request", "Aucune sélection pour l'instant — choisissez une formule pour commencer.": "Nothing selected yet — pick a plan to get started.", "Estimation": "Estimate", "Estimation indicative — le devis final est confirmé ensemble selon vos besoins précis.": "Indicative estimate — the final quote is confirmed together based on your exact needs.", "Demander ce devis": "Request this quote", "Questions fréquentes": "Frequently asked questions", "Combien de temps pour livrer un projet ?": "How long does a project take?", "Selon la formule : quelques jours pour un site vitrine, plusieurs semaines pour un projet Pro ou une application web. Le délai précis est fixé ensemble au cadrage.": "Depending on the plan: a few days for a showcase site, several weeks for a Pro or web application project. The exact timeline is set together during scoping.", "Le contenu (textes, photos) est-il inclus ?": "Is content (text, photos) included?", "Vous pouvez fournir vos contenus, ou être accompagné pour les structurer. La rédaction complète peut être ajoutée sur devis.": "You can provide your own content, or get help structuring it. Full copywriting can be added on quote.", "Que se passe-t-il après la mise en ligne ?": "What happens after launch?", "Le site reste à vous. La maintenance mensuelle est optionnelle, pour déléguer les mises à jour et petites évolutions.": "The site stays yours. Monthly maintenance is optional, to hand off updates and small changes.", "© 2026 NextLevel Dev — Christophe Datcharry · France & international": "© 2026 NextLevel Dev — Christophe Datcharry · France & worldwide", "Au-delà des limites · { code. build. automate. innovate. }": "Beyond limits · { code. build. automate. innovate. }", "Hébergement & nom de domaine": "Hosting & domain name", "/mois": "/month", "/an": "/year", "Sélectionné ✓": "Selected ✓", "Mentions légales": "Legal notice", "Application web": "Web application", "4 000 €": "€4,000", "800 €": "€800", "1 600 €": "€1,600", "Une application sur mesure pour votre métier : espace client, gestion, outils internes.": "A custom application for your trade: client area, management, internal tools.", "Front + back + base de données": "Front end + back end + database", "Comptes utilisateurs & back-office": "User accounts & back office", "Espace client, gestion, outils internes": "Client area, management, internal tools", "IA intégrable si utile": "AI integration where useful", "Mise en ligne & prise en main": "Launch & handover", "Intégration IA": "AI integration", "Chatbot, automatisation ou recherche intelligente ajoutés à un site existant": "A chatbot, automation or smart search added to an existing website", "dès 800 €": "from €800", "Tarif journalier": "Day rate", "Évolutions, renforts ponctuels ou missions en régie": "Updates, short-term support or time-and-materials work", "280 €/jour": "€280/day", "Mises à jour, sauvegardes, sécurité et petites modifications": "Updates, backups, security and small changes", "/jour": "/day", "dès": "from", "Estimation hors options facturées à la durée ou à la période (maintenance, hébergement, tarif journalier) : elles s’ajoutent au total.": "Estimate excludes options billed by time or period (maintenance, hosting, day rate): these come on top of the total.", "Votre nom": "Your name", "Votre email": "Your email", "Un mot sur votre projet (facultatif)": "A few words about your project (optional)", "Ne pas remplir": "Do not fill in", "Ou demander par email": "Or request by email"};
+  var DICT = {"Boutique NextLevel Dev": "NextLevel Dev Shop", "Méthode": "Process", "Projets": "Projects", "← Retour au site": "← Back to the site", "Boutique": "Shop", "Choisissez votre formule": "Choose your plan", "Sélectionnez une offre et les options qui vous intéressent : le récapitulatif se construit à droite. Il ne s'agit pas d'un paiement en ligne — c'est une base pour établir votre devis exact ensemble.": "Select an offer and the options you're interested in: the summary builds on the right. This is not an online payment — it's a starting point to work out your exact quote together.", "Site Vitrine": "Showcase Website", "690 €": "€690", "à partir de": "from", "L'essentiel pour exister en ligne et donner confiance dès la première visite.": "The essentials to get online and build trust from the very first visit.", "Design sur mesure, responsive": "Custom, responsive design", "Jusqu'à 5 pages (accueil, prestations, contact…)": "Up to 5 pages (home, services, contact…)", "Formulaire de contact": "Contact form", "Optimisation vitesse & mobile": "Speed & mobile optimization", "Mise en ligne incluse": "Launch included", "Ajouter à ma demande": "Add to my request", "Le plus choisi": "Most popular", "Site Pro": "Pro Website", "1 500 €": "€1,500", "Un site complet pour gérer votre activité : contenu, réservations, ventes.": "A complete website to run your business: content, bookings, sales.", "Pages illimitées + back-office (CMS)": "Unlimited pages + back office (CMS)", "Réservation en ligne ou catalogue produits": "Online booking or product catalog", "Référencement local (SEO)": "Local SEO", "Design + intégration sur mesure": "Custom design + integration", "Formation à la prise en main": "Hands-on training", "<IA · Chatbot />": "<AI · Chatbot />", "IA & Chatbot": "AI & Chatbot", "2 500 €": "€2,500", "Un assistant IA connecté à votre activité, pour répondre et automatiser 24/7.": "An AI assistant connected to your business, to answer and automate 24/7.", "Chatbot sur mesure, entraîné sur vos données": "Custom chatbot, trained on your data", "Prise de RDV / réponses clients automatisées": "Appointment booking / automated customer replies", "Connecté à votre site existant": "Connected to your existing website", "Automatisations métier incluses": "Business automations included", "Options complémentaires": "Add-ons", "Maintenance mensuelle": "Monthly maintenance", "Mises à jour, sauvegardes et petites modifications": "Updates, backups and small changes", "49 €/mois": "€49/month", "Hébergement & domaine": "Hosting & domain", "Nom de domaine + hébergement géré, pour un an": "Domain name + managed hosting, for one year", "120 €/an": "€120/year", "SEO local avancé": "Advanced local SEO", "Fiche Google Business, mots-clés locaux, structure optimisée": "Google Business profile, local keywords, optimized structure", "350 €": "€350", "Identité visuelle": "Visual identity", "Logo, palette et charte graphique adaptés à votre site": "Logo, color palette and brand guidelines tailored to your site", "450 €": "€450", "Votre demande": "Your request", "Aucune sélection pour l'instant — choisissez une formule pour commencer.": "Nothing selected yet — pick a plan to get started.", "Estimation": "Estimate", "Estimation indicative — le devis final est confirmé ensemble selon vos besoins précis.": "Indicative estimate — the final quote is confirmed together based on your exact needs.", "Demander ce devis": "Request this quote", "Questions fréquentes": "Frequently asked questions", "Combien de temps pour livrer un projet ?": "How long does a project take?", "Selon la formule : quelques jours pour un site vitrine, plusieurs semaines pour un projet Pro ou une application web. Le délai précis est fixé ensemble au cadrage.": "Depending on the plan: a few days for a showcase site, several weeks for a Pro or web application project. The exact timeline is set together during scoping.", "Le contenu (textes, photos) est-il inclus ?": "Is content (text, photos) included?", "Vous pouvez fournir vos contenus, ou être accompagné pour les structurer. La rédaction complète peut être ajoutée sur devis.": "You can provide your own content, or get help structuring it. Full copywriting can be added on quote.", "Que se passe-t-il après la mise en ligne ?": "What happens after launch?", "Le site reste à vous. La maintenance mensuelle est optionnelle, pour déléguer les mises à jour et petites évolutions.": "The site stays yours. Monthly maintenance is optional, to hand off updates and small changes.", "© 2026 NextLevel Dev — Christophe Datcharry · France & international": "© 2026 NextLevel Dev — Christophe Datcharry · France & worldwide", "Au-delà des limites · { code. build. automate. innovate. }": "Beyond limits · { code. build. automate. innovate. }", "Hébergement & nom de domaine": "Hosting & domain name", "/mois": "/month", "/an": "/year", "Sélectionné ✓": "Selected ✓", "Mentions légales": "Legal notice", "Application web": "Web application", "4 000 €": "€4,000", "800 €": "€800", "1 600 €": "€1,600", "Une application sur mesure pour votre métier : espace client, gestion, outils internes.": "A custom application for your trade: client area, management, internal tools.", "Front + back + base de données": "Front end + back end + database", "Comptes utilisateurs & back-office": "User accounts & back office", "Espace client, gestion, outils internes": "Client area, management, internal tools", "IA intégrable si utile": "AI integration where useful", "Mise en ligne & prise en main": "Launch & handover", "Intégration IA": "AI integration", "Chatbot, automatisation ou recherche intelligente ajoutés à un site existant": "A chatbot, automation or smart search added to an existing website", "dès 800 €": "from €800", "Tarif journalier": "Day rate", "Évolutions, renforts ponctuels ou missions en régie": "Updates, short-term support or time-and-materials work", "280 €/jour": "€280/day", "Mises à jour, sauvegardes, sécurité et petites modifications": "Updates, backups, security and small changes", "/jour": "/day", "dès": "from", "Estimation hors options facturées à la durée ou à la période (maintenance, hébergement, tarif journalier) : elles s’ajoutent au total.": "Estimate excludes options billed by time or period (maintenance, hosting, day rate): these come on top of the total.", "Votre nom": "Your name", "Votre email": "Your email", "Un mot sur votre projet (facultatif)": "A few words about your project (optional)", "Ne pas remplir": "Do not fill in", "Ou demander par email": "Or request by email", "Tarifs création de site — Pays Basque & Béarn · NextLevel Dev": "Website pricing — Basque Country & Béarn · NextLevel Dev", "Création de site pour artisans et commerces du Pays Basque et du Béarn : Essentiel 590 €, Visible 790 €, Sérénité 790 € + 35 €/mois. Offre de lancement limitée à 5 clients.": "Websites for craftspeople and shops in the Basque Country and Béarn: Essential €590, Visible €790, Serenity €790 + €35/month. Launch offer limited to 5 clients.", "1 à 3 pages": "1 to 3 pages", "jusqu'à 5 pages": "up to 5 pages", "avec maintenance": "with maintenance", "sur mesure": "custom", "full-stack": "full-stack", "Une présence claire pour exister en ligne et rassurer vos clients.": "A clear online presence to exist online and reassure your customers.", "1 à 3 pages (Accueil, Prestations, Contact)": "1 to 3 pages (Home, Services, Contact)", "Design adapté à votre métier, lisible sur mobile": "Design tailored to your trade, readable on mobile", "Formulaire de contact et bouton d'appel": "Contact form and call button", "Mise en ligne avec nom de domaine et hébergement (frais de l'hébergeur facturés à prix coûtant)": "Launch with domain name and hosting (host fees billed at cost)", "prix fixe": "fixed price", "Pour être trouvé près de chez vous et montrer votre travail.": "To be found near you and show your work.", "Jusqu'à 5 pages": "Up to 5 pages", "Tout l'Essentiel": "Everything in Essentiel", "Galerie de réalisations avec photos": "Gallery of your work with photos", "Fiche Google Business créée ou optimisée": "Google Business profile created or optimised", "SEO local de base (ville, métier, titres, descriptions)": "Basic local SEO (town, trade, titles, descriptions)", "Suivi des visites avec Google Search Console": "Visit tracking with Google Search Console", "Recommandé": "Recommended", "L'offre Visible, plus la tranquillité : on s'occupe de la maintenance.": "The Visible offer, plus peace of mind: maintenance is taken care of.", "Tout ce que contient l'offre Visible": "Everything included in the Visible offer", "Hébergement et sécurité gérés": "Managed hosting and security", "Une petite modification de contenu par mois (texte, photo, horaires)": "One small content change per month (text, photo, opening hours)", "Réponse rapide en cas de problème": "Quick response if anything goes wrong", "Toute demande supplémentaire est facturée à part": "Any extra request is billed separately", "+ 35 €/mois": "+ €35/month", "+ 25 €/mois": "+ €25/month", "Offre de lancement": "Launch offer", "Je lance NextLevel Dev et je réalise mes 5 premiers sites à tarif réduit. En échange, je vous demande un court témoignage et l'autorisation de présenter votre site dans mon portfolio.": "I am launching NextLevel Dev and building my first 5 websites at a reduced price. In return, I ask for a short testimonial and your permission to showcase your site in my portfolio.", "Réserver ma place": "Reserve my spot", "Les 25 €/mois de la formule Sérénité sont garantis aux 5 premiers clients tant qu'ils restent abonnés.": "The €25/month for the Sérénité plan is guaranteed to the first 5 clients for as long as they stay subscribed.", "Acompte de 30 % à la commande, solde à la livraison": "30% deposit when you order, balance on delivery", "Délai de 2 à 3 semaines après réception des textes et photos": "2 to 3 weeks after receiving your texts and photos", "Deux allers-retours de corrections inclus": "Two rounds of corrections included", "Le site appartient au client": "The website belongs to the client", "offre de lancement": "launch offer", "Maintenance incluse": "Maintenance included", "35 €/mois": "€35/month", "25 €/mois": "€25/month", "Comptez 2 à 3 semaines après réception de vos textes et photos pour les offres Essentiel, Visible et Sérénité, plus pour un site Pro ou une application web. Le délai précis est fixé ensemble au cadrage.": "Allow 2 to 3 weeks after receiving your texts and photos for the Essentiel, Visible and Sérénité offers, longer for a Pro site or a web application. The exact timeline is set together at scoping.", "Le site reste à vous. La formule Sérénité inclut la maintenance mensuelle (hébergement, sécurité, une petite modification par mois) ; avec les autres formules, elle reste optionnelle.": "The site stays yours. The Sérénité plan includes monthly maintenance (hosting, security, one small change per month); with the other plans it remains optional.", "Votre métier et votre projet, en quelques mots (facultatif)": "Your trade and your project, in a few words (optional)", "Votre email (pour que je vous réponde)": "Your email (so I can reply)", "© 2026 NextLevel Dev — Christophe Datcharry · Pays Basque & Béarn · 100 % à distance possible": "© 2026 NextLevel Dev — Christophe Datcharry · Basque Country & Béarn · remote work possible", "🚀 Offre de lancement : 5 sites à tarif réduit pour les artisans et commerces du Pays Basque et du Béarn. Places limitées.": "🚀 Launch offer: 5 websites at a reduced price for craftspeople and shops in the Basque Country and Béarn. Limited spots.", "Voir l'offre": "See the offer"};
   var lang = 'fr', originals = new Map(), listeners = [], origTitle = document.title;
   function norm(s) { return s.replace(/[\s ]+/g, ' ').trim(); }
   function has(k) { return Object.prototype.hasOwnProperty.call(DICT, k); }
@@ -530,9 +574,10 @@
   setLang(initial(), false);
 })();
 </script>
+<script src="assets/offer.js"></script>
 <script>
 (function () {
-  var I = window.NLD_I18N;
+  var I = window.NLD_I18N, O = window.NLD_OFFER;
   function T(k) { return I.t(k); }
   var tiers = Array.prototype.slice.call(document.querySelectorAll('.tier-card'));
   var addons = Array.prototype.slice.call(document.querySelectorAll('.addon-card'));
@@ -588,7 +633,11 @@ function nldCopy(text, done) {
   function render() {
     var items = [];
     if (selectedTier) {
-      items.push({ label: T(selectedTier.dataset.label), price: parseInt(selectedTier.dataset.price, 10), unit: '', once: true, from: true });
+      var tc = selectedTier, useL = O.active() && tc.dataset.launch;
+      items.push({ label: T(tc.dataset.label) + (useL ? ' (' + T('offre de lancement') + ')' : ''), price: parseInt(useL ? tc.dataset.launch : tc.dataset.price, 10), unit: '', once: true, from: tc.dataset.from === '1' });
+      if (tc.dataset.monthly) {
+        items.push({ label: T('Maintenance incluse'), price: parseInt(useL ? tc.dataset.monthlyLaunch : tc.dataset.monthly, 10), unit: T('/mois'), once: false, from: false });
+      }
     }
     addons.forEach(function (card) {
       if (selectedAddons.has(card.dataset.id)) {
@@ -652,25 +701,43 @@ function nldCopy(text, done) {
     copyBtn.textContent = en ? 'Copy my request' : 'Copier ma demande';
   }
 
-  tiers.forEach(function (card) {
+  function pickTier(card, force) {
     var btn = card.querySelector('.tier-add .btn');
-    btn.addEventListener('click', function () {
-      if (selectedTier === card) {
-        selectedTier = null;
-        card.classList.remove('selected');
-        btn.textContent = T('Ajouter à ma demande');
-      } else {
-        if (selectedTier) {
-          selectedTier.classList.remove('selected');
-          selectedTier.querySelector('.tier-add .btn').textContent = T('Ajouter à ma demande');
-        }
-        selectedTier = card;
-        card.classList.add('selected');
-        btn.textContent = T('Sélectionné ✓');
+    if (selectedTier === card && !force) {
+      selectedTier = null;
+      card.classList.remove('selected');
+      btn.textContent = T('Ajouter à ma demande');
+    } else if (selectedTier !== card) {
+      if (selectedTier) {
+        selectedTier.classList.remove('selected');
+        selectedTier.querySelector('.tier-add .btn').textContent = T('Ajouter à ma demande');
       }
-      render();
+      selectedTier = card;
+      card.classList.add('selected');
+      btn.textContent = T('Sélectionné ✓');
+    }
+    render();
+  }
+  tiers.forEach(function (card) {
+    card.querySelector('.tier-add .btn').addEventListener('click', function () { pickTier(card, false); });
+  });
+  function goToRequest() {
+    var box = document.getElementById('summary');
+    var y = box.getBoundingClientRect().top + window.pageYOffset - 90;
+    if (window.NLD_LENIS) { window.NLD_LENIS.scrollTo(y); } else { window.scrollTo({ top: y, behavior: 'smooth' }); }
+    setTimeout(function () { var n = document.querySelector('#quote-form input[name="name"]'); if (n && n.offsetParent) { try { n.focus({ preventScroll: true }); } catch (e) { n.focus(); } } }, 700);
+  }
+  Array.prototype.forEach.call(document.querySelectorAll('[data-reserve]'), function (b) {
+    b.addEventListener('click', function () {
+      var card = document.querySelector('.tier-card[data-id="' + b.getAttribute('data-reserve') + '"]');
+      if (card) { pickTier(card, true); goToRequest(); }
     });
   });
+  (function () {
+    var q = null; try { q = new URLSearchParams(location.search).get('offre'); } catch (e) {}
+    var card = q && document.querySelector('.tier-card[data-id="' + q + '"]');
+    if (card) { pickTier(card, true); }
+  })();
 
   addons.forEach(function (card) {
     card.addEventListener('click', function () {
@@ -696,5 +763,6 @@ function nldCopy(text, done) {
   refreshLang();
 })();
 </script>
+<script src="assets/season.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,26 @@
+/* Offre de lancement + prix : styles partagés (accueil + boutique) */
+.launch-bar { background: linear-gradient(90deg, rgba(139,92,246,.28), rgba(34,211,238,.18)); border-bottom: 1px solid rgba(139,92,246,.45); color: var(--chrome, #e8e8f0); font-size: .85rem; line-height: 1.45; }
+.launch-bar .wrap { display: flex; align-items: center; justify-content: center; gap: .5rem 1rem; flex-wrap: wrap; padding-top: .6rem; padding-bottom: .6rem; text-align: center; }
+.launch-bar a { color: var(--cyan, #22d3ee); text-decoration: underline; text-underline-offset: 3px; white-space: nowrap; }
+.launch-off [data-launch-only] { display: none !important; }
+html:not(.launch-off) [data-normal-only] { display: none !important; }
+.price-old { text-decoration: line-through; text-decoration-thickness: 1.5px; color: var(--text-dim, #a3a3b8); font-size: .72em; margin-right: .45em; white-space: nowrap; }
+.price-new { color: var(--cyan, #22d3ee); }
+.price-month { display: block; font-family: 'Manrope', sans-serif; font-size: .74rem; color: var(--text-dim, #a3a3b8); margin-top: .2rem; }
+.price-month .price-old { font-size: 1em; }
+.vat-line { font-family: 'JetBrains Mono', monospace; font-size: .72rem; color: var(--text-dim, #a3a3b8); margin: .9rem 0 0; }
+.places-pill { display: inline-block; font-family: 'JetBrains Mono', monospace; font-size: .74rem; color: #08080c; background: linear-gradient(90deg, #8b5cf6, #22d3ee); border-radius: 999px; padding: .25em .85em; font-weight: 600; }
+.launch-box { border: 1px solid rgba(139,92,246,.5); border-radius: 16px; background: var(--bg-raised, #101018); padding: clamp(1.3rem, 3vw, 2rem); margin: 0 0 1.6rem; box-shadow: 0 0 0 1px rgba(139,92,246,.12) inset, 0 24px 60px -30px rgba(139,92,246,.5); }
+.launch-box h2 { font-size: 1.35rem; margin: .7rem 0 .6rem; }
+.launch-box > p { color: var(--text-dim, #a3a3b8); margin: 0 0 1.1rem; max-width: 62ch; }
+.launch-rows { display: grid; gap: .6rem; margin: 0 0 1.1rem; }
+.launch-row { display: flex; align-items: center; justify-content: space-between; gap: .8rem 1rem; flex-wrap: wrap; border: 1px solid var(--line, #22222e); border-radius: 12px; padding: .75rem 1rem; background: var(--bg-card, #0c0c14); }
+.launch-row b { font-family: 'Syne', sans-serif; font-size: 1rem; }
+.launch-row .lp { font-family: 'JetBrains Mono', monospace; font-size: 1.05rem; margin-left: auto; text-align: right; }
+.launch-row .lp small { display: block; font-family: 'Manrope', sans-serif; font-size: .72rem; color: var(--text-dim, #a3a3b8); }
+.launch-row .btn { white-space: normal; text-align: center; line-height: 1.3; }
+.launch-terms { list-style: none; margin: 0; padding: 1rem 0 0; border-top: 1px solid var(--line, #22222e); display: grid; gap: .45rem; font-size: .84rem; color: var(--text-dim, #a3a3b8); }
+.launch-terms li { display: flex; gap: .55rem; }
+.launch-terms li::before { content: "→"; color: var(--cyan, #22d3ee); flex-shrink: 0; }
+.launch-note { font-size: .82rem; color: var(--text-dim, #a3a3b8); margin: 0 0 1.1rem; }
+.svc-price span .price-old, .tier-price span .price-old { font-size: 1em; }

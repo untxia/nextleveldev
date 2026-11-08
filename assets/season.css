@@ -1,0 +1,30 @@
+/* Thème du mois : bandeau + décor d'arrière-plan (voir season.js) */
+.bg-season { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
+@media (max-width: 520px) { .season-bar { font-size: .68rem; padding: .38rem .6rem; } }
+
+/* Bandeau animé */
+.season-bar { position: relative; z-index: 45; height: 58px; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: .7rem; padding: 0 1rem; font-family: 'JetBrains Mono', monospace; font-size: .82rem; letter-spacing: .03em; color: #fff; text-align: center; border-bottom: 1px solid color-mix(in srgb, var(--season, #8b5cf6) 55%, transparent); background: linear-gradient(100deg, #08080c 0%, color-mix(in srgb, var(--season, #8b5cf6) 34%, #08080c) 30%, color-mix(in srgb, var(--season2, #22d3ee) 30%, #08080c) 70%, #08080c 100%); background-size: 200% 100%; animation: sbShift 14s ease-in-out infinite alternate; }
+.season-bar::before { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.16) 50%, transparent 60%); transform: translateX(-100%); animation: sbShine 6s ease-in-out infinite; pointer-events: none; }
+.season-bar::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: radial-gradient(circle at 10px 3px, var(--season, #fff) 0 2px, transparent 3px) 0 0 / 26px 6px repeat-x; opacity: .9; animation: sbBlink 1.6s steps(2) infinite; pointer-events: none; }
+.season-bar .st { position: relative; z-index: 2; font-weight: 600; text-shadow: 0 0 14px color-mix(in srgb, var(--season, #fff) 80%, transparent); animation: sbPop 4s ease-in-out infinite; }
+.season-bar .si { position: relative; z-index: 2; font-size: 1.5rem; line-height: 1; display: inline-block; animation: sbWiggle 2.4s ease-in-out infinite; transform-origin: 50% 80%; filter: drop-shadow(0 0 8px var(--season, #fff)); }
+.season-bar .sp { position: absolute; z-index: 1; line-height: 1; pointer-events: none; user-select: none; will-change: transform; opacity: .9; }
+.sp.drift { top: var(--y, 20%); left: -8%; animation: spDrift var(--d, 18s) linear var(--dl, 0s) infinite; }
+.sp.driftl { top: var(--y, 20%); right: -8%; animation: spDriftL var(--d, 18s) linear var(--dl, 0s) infinite; }
+.sp.fall { top: -20px; left: var(--x, 50%); animation: spFall var(--d, 6s) linear var(--dl, 0s) infinite; }
+.sp.rise { bottom: -20px; left: var(--x, 50%); animation: spRise var(--d, 7s) ease-in var(--dl, 0s) infinite; }
+.sp.bob { top: var(--y, 30%); left: var(--x, 50%); animation: spBob var(--d, 3s) ease-in-out var(--dl, 0s) infinite; }
+.sp.twinkle { top: var(--y, 30%); left: var(--x, 50%); animation: spTwinkle var(--d, 2s) ease-in-out var(--dl, 0s) infinite; }
+@keyframes sbShift { to { background-position: 100% 0; } }
+@keyframes sbShine { 0%, 55% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
+@keyframes sbBlink { 50% { opacity: .25; } }
+@keyframes sbPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
+@keyframes sbWiggle { 0%, 100% { transform: rotate(-10deg) scale(1); } 50% { transform: rotate(10deg) scale(1.15); } }
+@keyframes spDrift { from { transform: translateX(0) translateY(0) rotate(0); } 50% { transform: translateX(60vw) translateY(8px) rotate(8deg); } to { transform: translateX(118vw) translateY(-4px) rotate(0); } }
+@keyframes spDriftL { from { transform: translateX(0) translateY(0); } 50% { transform: translateX(-60vw) translateY(-8px); } to { transform: translateX(-118vw) translateY(4px); } }
+@keyframes spFall { from { transform: translateY(0) rotate(0) translateX(0); opacity: 0; } 10% { opacity: .95; } 50% { transform: translateY(32px) rotate(180deg) translateX(10px); } to { transform: translateY(80px) rotate(360deg) translateX(-8px); opacity: 0; } }
+@keyframes spRise { from { transform: translateY(0) scale(.7); opacity: 0; } 15% { opacity: .9; } to { transform: translateY(-80px) scale(1.2); opacity: 0; } }
+@keyframes spBob { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-9px) rotate(6deg); } }
+@keyframes spTwinkle { 0%, 100% { transform: scale(.5) rotate(0); opacity: .2; } 50% { transform: scale(1.3) rotate(45deg); opacity: 1; } }
+@media (max-width: 520px) { .season-bar { height: 50px; font-size: .7rem; padding: 0 .5rem; gap: .4rem; } .season-bar .si { font-size: 1.25rem; } }
+@media (prefers-reduced-motion: reduce) { .season-bar, .season-bar::before, .season-bar::after, .season-bar .st, .season-bar .si, .season-bar .sp { animation: none !important; } .sp.drift, .sp.driftl, .sp.fall, .sp.rise { display: none; } }

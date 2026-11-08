@@ -315,6 +315,7 @@
 <link rel="stylesheet" href="assets/cards.css">
 <link rel="stylesheet" href="assets/bg.css">
 <link rel="stylesheet" href="assets/smooth.css">
+<link rel="stylesheet" href="assets/season.css">
 </head>
 <body>
 <nav class="nav">
@@ -391,7 +392,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 NextLevel Dev — Christophe Datcharry · France &amp; international</span>
+      <span>© 2026 NextLevel Dev — Christophe Datcharry · Pays Basque &amp; Béarn · 100&nbsp;% à distance possible</span>
       <span>Au-delà des limites · { code. build. automate. innovate. }</span>
     </div>
   </div>
@@ -402,7 +403,7 @@
 <script src="assets/letters.js"></script>
 <script>
 (function () {
-  var DICT = {"Méthode": "Process", "Projets": "Projects", "← Retour au site": "← Back to the site", "Contact": "Contact", "Mentions légales": "Legal notice", "Carte de visite": "Business card", "© 2026 NextLevel Dev — Christophe Datcharry · France & international": "© 2026 NextLevel Dev — Christophe Datcharry · France & worldwide", "Au-delà des limites · { code. build. automate. innovate. }": "Beyond limits · { code. build. automate. innovate. }", "Carte de visite numérique · Christophe Datcharry · NextLevel Dev": "Digital business card · Christophe Datcharry · NextLevel Dev", "Carte de visite numérique": "Digital business card", "Ajouter à mes contacts": "Add to my contacts", "Écrire un message": "Send a message", "Email": "Email", "Site": "Website", "Offres": "Plans", "Formules et tarifs": "Plans and pricing", "Zone": "Area", "Pays Basque · Béarn · à distance": "Basque Country · Béarn · remote", "Scannez pour garder mon contact": "Scan to save my contact", "Ouvrez l’appareil photo de votre téléphone et pointez-le sur le code.": "Open your phone’s camera and point it at the code.", "Développeur web, applications, logiciels et IA. Sites, applications, logiciels et assistants IA sur mesure, au Pays Basque, en Béarn et à distance.": "Web, application, software & AI developer. Custom websites, applications, software and AI assistants, in the Basque Country, Béarn and remotely.", "NextLevel Dev · Développeur web, applications, logiciels et IA": "NextLevel Dev · Web, application, software & AI developer", "Tél.": "Phone"};
+  var DICT = {"Méthode": "Process", "Projets": "Projects", "← Retour au site": "← Back to the site", "Contact": "Contact", "Mentions légales": "Legal notice", "Carte de visite": "Business card", "© 2026 NextLevel Dev — Christophe Datcharry · France & international": "© 2026 NextLevel Dev — Christophe Datcharry · France & worldwide", "Au-delà des limites · { code. build. automate. innovate. }": "Beyond limits · { code. build. automate. innovate. }", "Carte de visite numérique · Christophe Datcharry · NextLevel Dev": "Digital business card · Christophe Datcharry · NextLevel Dev", "Carte de visite numérique": "Digital business card", "Ajouter à mes contacts": "Add to my contacts", "Écrire un message": "Send a message", "Email": "Email", "Site": "Website", "Offres": "Plans", "Formules et tarifs": "Plans and pricing", "Zone": "Area", "Pays Basque · Béarn · à distance": "Basque Country · Béarn · remote", "Scannez pour garder mon contact": "Scan to save my contact", "Ouvrez l’appareil photo de votre téléphone et pointez-le sur le code.": "Open your phone’s camera and point it at the code.", "Développeur web, applications, logiciels et IA. Sites, applications, logiciels et assistants IA sur mesure, au Pays Basque, en Béarn et à distance.": "Web, application, software & AI developer. Custom websites, applications, software and AI assistants, in the Basque Country, Béarn and remotely.", "NextLevel Dev · Développeur web, applications, logiciels et IA": "NextLevel Dev · Web, application, software & AI developer", "Tél.": "Phone", "© 2026 NextLevel Dev — Christophe Datcharry · Pays Basque & Béarn · 100 % à distance possible": "© 2026 NextLevel Dev — Christophe Datcharry · Basque Country & Béarn · remote work possible"};
   var lang = 'fr', originals = new Map(), listeners = [], origTitle = document.title;
   function norm(s) { return s.replace(/[\s ]+/g, ' ').trim(); }
   function has(k) { return Object.prototype.hasOwnProperty.call(DICT, k); }
@@ -478,5 +479,6 @@
   cp.addEventListener('click', function () { nldCopy(URL_, function (ok) { cp.textContent = ok ? t('copied') : URL_; setTimeout(labels, 2000); }); });
 })();
 </script>
+<script src="assets/season.js" defer></script>
 </body>
 </html>

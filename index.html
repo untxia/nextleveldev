@@ -3,16 +3,16 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>NextLevel Dev — Développeur full stack freelance & IA · France et international</title>
-<meta name="description" content="Sites vitrines, applications web et intégration d’IA sur mesure, par un développeur full stack freelance. Au-delà des limites. France et international, 100 % à distance.">
+<title>Développeur web freelance Pays Basque & Béarn · Sites pour artisans · NextLevel Dev</title>
+<meta name="description" content="Développeur web freelance près de Saint-Palais : création de site pour artisans et commerces du Pays Basque et du Béarn, applications et IA. Offre de lancement.">
 <meta name="author" content="NextLevel Dev">
 <meta name="robots" content="index, follow">
 <meta name="theme-color" content="#08080c">
 <link rel="canonical" href="https://nextleveldev.fr/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="NextLevel Dev">
-<meta property="og:title" content="NextLevel Dev — Développeur full stack freelance & IA · France et international">
-<meta property="og:description" content="Sites vitrines, applications web et intégration d’IA sur mesure, par un développeur full stack freelance. Au-delà des limites. France et international, 100 % à distance.">
+<meta property="og:title" content="Développeur web freelance Pays Basque & Béarn · Sites pour artisans · NextLevel Dev">
+<meta property="og:description" content="Développeur web freelance près de Saint-Palais : création de site pour artisans et commerces du Pays Basque et du Béarn, applications et IA. Offre de lancement.">
 <meta property="og:url" content="https://nextleveldev.fr/">
 <meta property="og:image" content="https://nextleveldev.fr/assets/logo-lockup.png">
 <meta property="og:locale" content="fr_FR">
@@ -21,8 +21,7 @@
 <link rel="apple-touch-icon" href="assets/logo-mark.png">
 <link rel="manifest" href="manifest.json">
 <script type="application/ld+json">
-{"@context":"https://schema.org","@type":"ProfessionalService","name":"NextLevel Dev","url":"https://nextleveldev.fr/","logo":"https://nextleveldev.fr/assets/logo-mark.png","email":"chris@nextleveldev.fr","description":"Développeur full stack freelance : sites vitrines, applications web et intégration d'IA, en France et à l'international.","founder":{"@type":"Person","name":"Christophe Datcharry"},"areaServed":["FR","Worldwide"],"availableLanguage":["fr","en"],"sameAs":["https://github.com/untxia","https://linkedin.com/in/christophe-datcharry"]}
-</script>
+{"@context":"https://schema.org","@type":["ProfessionalService","LocalBusiness"],"name":"NextLevel Dev","url":"https://nextleveldev.fr/","logo":"https://nextleveldev.fr/assets/logo-mark.png","email":"chris@nextleveldev.fr","description":"Développeur web freelance près de Saint-Palais : création de sites pour artisans et commerces, applications web et intégration d'IA, au Pays Basque et en Béarn, ou 100 % à distance.","founder":{"@type":"Person","name":"Christophe Datcharry"},"address":{"@type":"PostalAddress","addressLocality":"Béhasque-Lapiste","postalCode":"64120","addressRegion":"Pyrénées-Atlantiques","addressCountry":"FR"},"areaServed":[{"@type":"AdministrativeArea","name":"Pays Basque"},{"@type":"AdministrativeArea","name":"Béarn"},{"@type":"AdministrativeArea","name":"Pyrénées-Atlantiques"},{"@type":"City","name":"Saint-Palais"}],"availableLanguage":["fr","en"],"sameAs":["https://github.com/untxia","https://linkedin.com/in/christophe-datcharry"]}</script>
 <style>
   :root {
     --bg: #08080c;
@@ -354,7 +353,7 @@
     font-variant-numeric: tabular-nums;
     margin-top: 0.2rem;
   }
-  .svc-price span { font-size: 0.72rem; color: var(--text-dim); font-family: 'Manrope', sans-serif; }
+  .svc-price span { display: block; font-size: 0.72rem; color: var(--text-dim); font-family: 'Manrope', sans-serif; }
   .svc-card p { color: var(--text-dim); font-size: 0.9rem; margin: 0; }
   .svc-card ul {
     list-style: none;
@@ -374,7 +373,7 @@
   .rate-grid {
     margin-top: 1.1rem;
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
     gap: 1px;
     background: var(--line);
     border: 1px solid var(--line);
@@ -398,7 +397,8 @@
   }
   .rate-price span { font-size: 0.72rem; color: var(--text-dim); font-family: 'Manrope', sans-serif; }
   .rate-item p { color: var(--text-dim); font-size: 0.86rem; margin: 0.4rem 0 0; }
-  @media (max-width: 860px) { .rate-grid { grid-template-columns: 1fr; } }
+  @media (max-width: 1000px) { .rate-grid { grid-template-columns: 1fr 1fr; } }
+  @media (max-width: 520px) { .rate-grid { grid-template-columns: 1fr; } }
 
   /* process */
   .process {
@@ -644,8 +644,11 @@
 <link rel="stylesheet" href="assets/cards.css">
 <link rel="stylesheet" href="assets/bg.css">
 <link rel="stylesheet" href="assets/smooth.css">
+<link rel="stylesheet" href="assets/offer.css">
+<link rel="stylesheet" href="assets/season.css">
 </head>
 <body>
+<div class="launch-bar" data-launch-only><div class="wrap"><span>🚀 Offre de lancement : 5 sites à tarif réduit pour les artisans et commerces du Pays Basque et du Béarn. Places limitées.<span data-places-extra data-i18n-skip></span></span><a href="boutique.html#lancement">Voir l'offre</a></div></div>
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="#top">
@@ -667,11 +670,11 @@
   <section class="hero">
     <div class="wrap hero-grid">
       <div>
-        <div class="eyebrow">France &amp; international · Développeur freelance</div>
+        <div class="eyebrow">Pays Basque &amp; Béarn · Développeur freelance</div>
         <h1 style="margin-top:0.9rem;">Des sites <span class="grad">rapides</span>, sur mesure, et <span class="grad">boostés à l'IA</span></h1>
         <p class="hero-lede">
           NextLevel Dev conçoit et développe des sites vitrines, des applications web et des outils
-          IA pour les artisans, commerces et entreprises, partout en France et à l'international. Un seul interlocuteur, du cadrage à la mise en ligne.
+          IA pour les artisans, commerces et entreprises du Pays Basque et du Béarn, et 100&nbsp;% à distance si vous préférez. Un seul interlocuteur, du cadrage à la mise en ligne.
           <br><span class="mono" style="color:var(--cyan);">Au-delà des limites.</span>
         </p>
         <div class="hero-cta">
@@ -679,8 +682,9 @@
           <a class="btn btn-ghost btn-lg" href="#contact">Demander un devis</a>
         </div>
         <div class="hero-meta">
-          <span><b>dès 800&nbsp;€</b> le site vitrine</span>
-          <span><b>France &amp; monde</b> 100&nbsp;% à distance</span>
+          <span data-launch-only><b>dès <s class="price-old">590&nbsp;€</s>390&nbsp;€</b> en offre de lancement</span>
+          <span data-normal-only><b>dès 590&nbsp;€</b> un site clé en main</span>
+          <span><b>Pays Basque &amp; Béarn</b> 100&nbsp;% à distance possible</span>
           <span><b>éco-conception</b> par défaut</span>
         </div>
       </div>
@@ -736,64 +740,78 @@
       <div class="section-head">
         <div class="eyebrow">Services</div>
         <h2>Trois façons de passer au niveau supérieur</h2>
-        <p>Un aperçu rapide — le détail complet, avec les fonctionnalités incluses, est dans la boutique.</p>
+        <p>Trois offres à prix fixe pensées pour les artisans et commerces. Le détail complet est dans la boutique.</p>
       </div>
       <div class="svc-grid">
         <div class="svc-card reveal">
-          <div class="svc-tag">&lt;Vitrine /&gt;</div>
-          <h3>Site Vitrine</h3>
-          <div class="svc-price">800&nbsp;€ <span>à partir de</span></div>
-          <p>Une présence en ligne claire et professionnelle pour votre activité.</p>
+          <div class="svc-tag">1 à 3 pages</div>
+          <h3>Essentiel</h3>
+          <div class="svc-price"><strong data-normal-only>590&nbsp;€</strong><s class="price-old" data-launch-only>590&nbsp;€</s><strong class="price-new" data-launch-only>390&nbsp;€</strong></div>
+          <p>Une présence claire pour exister en ligne et rassurer vos clients.</p>
           <ul>
-            <li>Design sur mesure, responsive</li>
-            <li>Jusqu'à 5 pages</li>
-            <li>Formulaire de contact</li>
+            <li>Design adapté à votre métier, lisible sur mobile</li>
+            <li>Formulaire de contact et bouton d'appel</li>
+            <li>Mise en ligne avec nom de domaine et hébergement</li>
           </ul>
-          <a class="btn btn-ghost" href="boutique.html">Voir le détail</a>
         </div>
         <div class="svc-card reveal">
-          <div class="svc-tag">&lt;Pro /&gt;</div>
-          <h3>Site Pro</h3>
-          <div class="svc-price">1&nbsp;600&nbsp;€ <span>à partir de</span></div>
-          <p>Un site complet avec back-office, pour gérer votre activité au quotidien.</p>
+          <div class="svc-tag">jusqu'à 5 pages</div>
+          <h3>Visible</h3>
+          <div class="svc-price"><strong data-normal-only>790&nbsp;€</strong><s class="price-old" data-launch-only>790&nbsp;€</s><strong class="price-new" data-launch-only>550&nbsp;€</strong></div>
+          <p>Pour être trouvé près de chez vous et montrer votre travail.</p>
           <ul>
-            <li>Pages illimitées + CMS</li>
-            <li>Réservation ou catalogue</li>
-            <li>Référencement local (SEO)</li>
+            <li>Galerie de réalisations avec photos</li>
+            <li>Fiche Google Business et SEO local de base</li>
+            <li>Suivi des visites (Google Search Console)</li>
           </ul>
-          <a class="btn btn-ghost" href="boutique.html">Voir le détail</a>
         </div>
         <div class="svc-card reveal">
-          <div class="svc-tag">&lt;Full-stack /&gt;</div>
-          <h3>Application web</h3>
-          <div class="svc-price">4&nbsp;000&nbsp;€ <span>à partir de</span></div>
-          <p>Une application sur mesure pour votre métier : espace client, gestion, outils internes.</p>
+          <div class="svc-tag">avec maintenance</div>
+          <h3>Sérénité</h3>
+          <div class="svc-price"><strong data-normal-only>790&nbsp;€</strong><s class="price-old" data-launch-only>790&nbsp;€</s><strong class="price-new" data-launch-only>550&nbsp;€</strong><span><b data-normal-only>+ 35&nbsp;€/mois</b><span data-launch-only><s class="price-old">+ 35&nbsp;€/mois</s><b class="price-new">+ 25&nbsp;€/mois</b></span></span></div>
+          <p>L'offre Visible, plus la maintenance : hébergement, sécurité et une modification par mois.</p>
           <ul>
-            <li>Front + back + base de données</li>
-            <li>Comptes utilisateurs &amp; back-office</li>
-            <li>IA intégrable si utile</li>
+            <li>Tout ce que contient l'offre Visible</li>
+            <li>Hébergement et sécurité gérés</li>
+            <li>Réponse rapide en cas de problème</li>
           </ul>
-          <a class="btn btn-ghost" href="boutique.html">Voir le détail</a>
         </div>
       </div>
       <div class="rate-grid reveal">
         <div class="rate-item">
+          <div class="rate-label">Site Pro</div>
+          <div class="rate-price">1&nbsp;600&nbsp;€ <span>à partir de</span></div>
+          <p>Pages illimitées, back-office, réservation ou catalogue, SEO local.</p>
+        </div>
+        <div class="rate-item">
+          <div class="rate-label">Application web</div>
+          <div class="rate-price">4&nbsp;000&nbsp;€ <span>à partir de</span></div>
+          <p>Une application sur mesure pour votre métier : espace client, gestion, outils internes.</p>
+        </div>
+        <div class="rate-item">
           <div class="rate-label">Intégration IA</div>
           <div class="rate-price">800&nbsp;€ <span>à partir de</span></div>
           <p>Chatbot, automatisation ou recherche intelligente ajoutés à un site existant.</p>
-          <a class="btn btn-ghost" style="margin-top:0.9rem;" href="boutique.html">Voir le détail</a>
         </div>
         <div class="rate-item">
           <div class="rate-label">Tarif journalier</div>
           <div class="rate-price">280&nbsp;€ <span>/ jour</span></div>
           <p>Pour les évolutions, renforts ponctuels ou missions en régie.</p>
         </div>
-        <div class="rate-item">
-          <div class="rate-label">Maintenance</div>
-          <div class="rate-price">49&nbsp;€ <span>/ mois</span></div>
-          <p>Mises à jour, sauvegardes, sécurité et petites modifications.</p>
-        </div>
       </div>
+      <p class="vat-line" data-vat data-i18n-skip></p>
+      <div style="margin-top:1.4rem;">
+        <a class="btn btn-primary btn-lg" data-launch-only href="boutique.html#lancement">Réserver ma place</a>
+        <a class="btn btn-primary btn-lg" data-normal-only href="boutique.html">Voir le détail des offres</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Témoignages : section masquée en attendant les premiers clients. Retirer l'attribut hidden et ajouter les vrais avis (jamais de faux témoignage). -->
+  <section id="temoignages" hidden>
+    <div class="wrap">
+      <div class="section-head"><h2>Témoignages</h2></div>
+      <div class="testi-grid"></div>
     </div>
   </section>
 
@@ -870,11 +888,11 @@
         <div>
           <h2>Un projet en tête ? Parlons-en.</h2>
           <p>Réponse rapide, premier échange sans engagement.</p>
+          <p>Je travaille au Pays Basque et en Béarn, et 100&nbsp;% à distance si vous préférez.</p>
           <p class="mail-line"><span>Ou écrivez directement à</span> <span class="mail-addr" data-i18n-skip>chris@nextleveldev.fr</span> <button class="copy-btn" type="button" id="copy-mail" data-i18n-skip>Copier</button></p>
         </div>
         <div style="display:flex; gap:0.9rem; flex-wrap:wrap;">
           <a class="btn btn-primary btn-lg" href="contact.html">Écrire un email</a>
-          <a class="btn btn-ghost btn-lg" href="boutique.html">Voir la boutique</a>
         </div>
       </div>
       <div class="form-card reveal" id="formulaire">
@@ -883,9 +901,20 @@
           <input type="hidden" name="form-name" value="contact">
           <input type="hidden" name="subject" value="Nouveau message depuis nextleveldev.fr">
           <p class="hp"><label>Ne pas remplir <input name="bot-field" tabindex="-1" autocomplete="off"></label></p>
-          <label><span>Votre nom</span><input name="name" type="text" required autocomplete="name"></label>
-          <label><span>Votre email</span><input name="email" type="email" required autocomplete="email"></label>
-          <label><span>Votre message</span><textarea name="message" required></textarea></label>
+          <label><span>Votre nom</span><input name="name" type="text" required autocomplete="name" placeholder="Ex. Marie Etcheverry"></label>
+          <label><span>Votre email (pour que je vous réponde)</span><input name="email" type="email" required autocomplete="email" placeholder="vous@exemple.fr"></label>
+          <label><span>L'offre qui vous intéresse</span>
+            <select name="offre">
+              <option value="Je ne sais pas encore">Je ne sais pas encore</option>
+              <option value="Essentiel">Essentiel</option>
+              <option value="Visible">Visible</option>
+              <option value="Sérénité">Sérénité</option>
+              <option value="Site Pro">Site Pro</option>
+              <option value="Application web">Application web</option>
+              <option value="Intégration IA">Intégration IA</option>
+            </select>
+          </label>
+          <label><span>Votre message (votre métier, votre besoin, vos délais)</span><textarea name="message" required placeholder="Ex. Je suis artisan à Saint-Palais et je voudrais un site pour être trouvé sur Google."></textarea></label>
           <button class="btn btn-primary" type="submit" id="contact-send" data-i18n-skip>Envoyer le message</button>
           <p class="nld-status" id="contact-status" role="status" data-i18n-skip></p>
         </form>
@@ -909,7 +938,7 @@
       </div>
     </div>
     <div class="foot-bottom">
-      <span>© 2026 NextLevel Dev — Christophe Datcharry · France &amp; international</span>
+      <span>© 2026 NextLevel Dev — Christophe Datcharry · Pays Basque &amp; Béarn · 100&nbsp;% à distance possible</span>
       <span>{ code. build. automate. innovate. }</span>
     </div>
   </div>
@@ -921,7 +950,7 @@
 <script src="assets/letters.js"></script>
 <script>
 (function () {
-  var DICT = {"Méthode": "Process", "Projets": "Projects", "Voir la boutique": "View the shop", "France & international · Développeur freelance": "France & worldwide · Freelance developer", "Des sites": "Websites that are", "rapides": "fast", ", sur mesure, et": ", custom-built, and", "boostés à l'IA": "AI-boosted", "NextLevel Dev conçoit et développe des sites vitrines, des applications web et des outils IA pour les artisans, commerces et entreprises, partout en France et à l'international. Un seul interlocuteur, du cadrage à la mise en ligne.": "NextLevel Dev designs and builds showcase websites, web applications and AI tools for craftspeople, shops and businesses, anywhere in France and around the world. One point of contact, from scoping to launch.", "Au-delà des limites.": "Beyond limits.", "Découvrir les offres": "Explore the offers", "Demander un devis": "Request a quote", "dès 800 €": "from €800", "le site vitrine": "for a showcase site", "France & monde": "France & worldwide", "100 % à distance": "100% remote", "éco-conception": "eco-design", "par défaut": "by default", "Pourquoi NextLevel Dev": "Why NextLevel Dev", "Un développeur, pas une agence — et c'est un avantage": "A developer, not an agency — and that's an advantage", "Pas d'intermédiaire, pas de sur-devis : vous parlez directement à la personne qui code votre projet, du premier échange à la mise en ligne.": "No middleman, no inflated quotes: you talk directly to the person writing the code for your project, from the first conversation to launch.", "Sur mesure, pas de template": "Custom-built, no templates", "Chaque site est construit pour votre activité, pas retapé depuis un thème générique.": "Every site is built for your business, not reworked from a generic theme.", "IA quand elle sert vraiment": "AI when it genuinely helps", "Chatbot, automatisations, recherche intelligente — intégrés seulement quand ils apportent une vraie valeur.": "Chatbots, automations, smart search — added only when they bring real value.", "Éco-conception par défaut": "Eco-design by default", "Code allégé, images optimisées, hébergement sobre : des sites rapides et plus légers pour la planète.": "Lean code, optimized images, low-impact hosting: faster sites that are lighter on the planet.", "Trois façons de passer au niveau supérieur": "Three ways to take it to the next level", "Un aperçu rapide — le détail complet, avec les fonctionnalités incluses, est dans la boutique.": "A quick overview — the full details, with everything included, are in the shop.", "Site Vitrine": "Showcase Website", "800 €": "€800", "à partir de": "from", "Une présence en ligne claire et professionnelle pour votre activité.": "A clear, professional online presence for your business.", "Design sur mesure, responsive": "Custom, responsive design", "Jusqu'à 5 pages": "Up to 5 pages", "Formulaire de contact": "Contact form", "Voir le détail": "See details", "Site Pro": "Pro Website", "1 600 €": "€1,600", "Un site complet avec back-office, pour gérer votre activité au quotidien.": "A full website with a back office, to run your business day to day.", "Pages illimitées + CMS": "Unlimited pages + CMS", "Réservation ou catalogue": "Booking or product catalog", "Référencement local (SEO)": "Local SEO", "Application web": "Web application", "4 000 €": "€4,000", "Une application sur mesure pour votre métier : espace client, gestion, outils internes.": "A custom application for your trade: client area, management, internal tools.", "Front + back + base de données": "Front end + back end + database", "Comptes utilisateurs & back-office": "User accounts & back office", "IA intégrable si utile": "AI integration where useful", "Intégration IA": "AI integration", "Chatbot, automatisation ou recherche intelligente ajoutés à un site existant.": "A chatbot, automation or smart search added to an existing website.", "Tarif journalier": "Day rate", "280 €": "€280", "/ jour": "/ day", "Pour les évolutions, renforts ponctuels ou missions en régie.": "For updates, short-term support or time-and-materials work.", "Maintenance": "Maintenance", "49 €": "€49", "/ mois": "/ month", "Mises à jour, sauvegardes, sécurité et petites modifications.": "Updates, backups, security and small changes.", "Comment se déroule un projet": "How a project works", "Échange & cadrage": "Discussion & scoping", "On discute de votre activité, vos besoins réels et votre budget. Devis clair, sans surprise.": "We talk about your business, your real needs and your budget. A clear quote, no surprises.", "Design & maquette": "Design & mockup", "Une proposition visuelle adaptée à votre image, validée avant tout développement.": "A visual proposal that fits your brand, approved before any development starts.", "Développement": "Development", "Code sur mesure, testé, avec des points d'étape réguliers pour suivre l'avancement.": "Custom, tested code, with regular check-ins so you can follow progress.", "Livraison & suivi": "Delivery & follow-up", "Mise en ligne, prise en main, et disponibilité pour les ajustements après lancement.": "Launch, handover, and availability for adjustments after go-live.", "Projets & expérimentations": "Projects & experiments", "Ce que j'ai construit récemment": "What I've built recently", "Quelques projets techniques qui montrent l'étendue du stack — du web classique à l'IA appliquée.": "A few technical projects that show the breadth of the stack — from classic web to applied AI.", "Veille d'offres": "Job monitoring", "Agent IA qui surveille les offres d'emploi (France Travail, Adzuna), les note avec Claude et notifie sur Telegram.": "An AI agent that monitors job postings (France Travail, Adzuna), scores them with Claude and sends alerts on Telegram.", "Application progressive construite avec l'API Anthropic, pensée pour un usage quotidien léger.": "A progressive web app built with the Anthropic API, designed for light daily use.", "Assistant conversationnel": "Conversational assistant", "App conversationnelle SvelteKit + Mistral AI, développée en équipe avec PocketBase.": "A conversational app built with SvelteKit + Mistral AI, developed as a team with PocketBase.", "Un projet en tête ? Parlons-en.": "Got a project in mind? Let's talk.", "Réponse rapide, premier échange sans engagement.": "Quick reply, no-commitment first conversation.", "Écrire un email": "Send an email", "© 2026 NextLevel Dev — Christophe Datcharry · France & international": "© 2026 NextLevel Dev — Christophe Datcharry · France & worldwide", "Mentions légales": "Legal notice", "Outil RH": "HR tool", "Prototype pour cabinets de recrutement : une demande client et une base de CV deviennent des propositions de candidats prêtes à envoyer, avec motifs rédigés par l'IA et données personnelles masquées.": "A prototype for recruitment firms: a client request and a CV database become ready-to-send candidate proposals, with AI-written reasons and personal data hidden.", "Agent IA": "AI agent", "Agent IA pour artisans : analyse de photos de chantier, suivi multi-chantiers, prévision des stocks et devis.": "An AI agent for tradespeople: job-site photo analysis, multi-site tracking, stock forecasting and quotes.", "Voir le site en direct ↗": "View live site ↗", "Voir le projet sur GitHub ↗": "View project on GitHub ↗", "Ou écrivez directement à": "Or write directly to", "Envoyez-moi un message ici": "Send me a message here", "Votre nom": "Your name", "Votre email": "Your email", "Votre message": "Your message", "Ne pas remplir": "Do not fill in"};
+  var DICT = {"dès": "from", "dès 590 €": "from €590", "Méthode": "Process", "Projets": "Projects", "Voir la boutique": "View the shop", "France & international · Développeur freelance": "France & worldwide · Freelance developer", "Des sites": "Websites that are", "rapides": "fast", ", sur mesure, et": ", custom-built, and", "boostés à l'IA": "AI-boosted", "NextLevel Dev conçoit et développe des sites vitrines, des applications web et des outils IA pour les artisans, commerces et entreprises, partout en France et à l'international. Un seul interlocuteur, du cadrage à la mise en ligne.": "NextLevel Dev designs and builds showcase websites, web applications and AI tools for craftspeople, shops and businesses, anywhere in France and around the world. One point of contact, from scoping to launch.", "Au-delà des limites.": "Beyond limits.", "Découvrir les offres": "Explore the offers", "Demander un devis": "Request a quote", "dès 800 €": "from €800", "le site vitrine": "for a showcase site", "France & monde": "France & worldwide", "100 % à distance": "100% remote", "éco-conception": "eco-design", "par défaut": "by default", "Pourquoi NextLevel Dev": "Why NextLevel Dev", "Un développeur, pas une agence — et c'est un avantage": "A developer, not an agency — and that's an advantage", "Pas d'intermédiaire, pas de sur-devis : vous parlez directement à la personne qui code votre projet, du premier échange à la mise en ligne.": "No middleman, no inflated quotes: you talk directly to the person writing the code for your project, from the first conversation to launch.", "Sur mesure, pas de template": "Custom-built, no templates", "Chaque site est construit pour votre activité, pas retapé depuis un thème générique.": "Every site is built for your business, not reworked from a generic theme.", "IA quand elle sert vraiment": "AI when it genuinely helps", "Chatbot, automatisations, recherche intelligente — intégrés seulement quand ils apportent une vraie valeur.": "Chatbots, automations, smart search — added only when they bring real value.", "Éco-conception par défaut": "Eco-design by default", "Code allégé, images optimisées, hébergement sobre : des sites rapides et plus légers pour la planète.": "Lean code, optimized images, low-impact hosting: faster sites that are lighter on the planet.", "Trois façons de passer au niveau supérieur": "Three ways to take it to the next level", "Un aperçu rapide — le détail complet, avec les fonctionnalités incluses, est dans la boutique.": "A quick overview — the full details, with everything included, are in the shop.", "Site Vitrine": "Showcase Website", "800 €": "€800", "à partir de": "from", "Une présence en ligne claire et professionnelle pour votre activité.": "A clear, professional online presence for your business.", "Design sur mesure, responsive": "Custom, responsive design", "Jusqu'à 5 pages": "Up to 5 pages", "Formulaire de contact": "Contact form", "Voir le détail": "See details", "Site Pro": "Pro site", "1 600 €": "€1,600", "Un site complet avec back-office, pour gérer votre activité au quotidien.": "A full website with a back office, to run your business day to day.", "Pages illimitées + CMS": "Unlimited pages + CMS", "Réservation ou catalogue": "Booking or product catalog", "Référencement local (SEO)": "Local SEO", "Application web": "Web application", "4 000 €": "€4,000", "Une application sur mesure pour votre métier : espace client, gestion, outils internes.": "A custom application for your trade: client area, management, internal tools.", "Front + back + base de données": "Front end + back end + database", "Comptes utilisateurs & back-office": "User accounts & back office", "IA intégrable si utile": "AI integration where useful", "Intégration IA": "AI integration", "Chatbot, automatisation ou recherche intelligente ajoutés à un site existant.": "A chatbot, automation or smart search added to an existing website.", "Tarif journalier": "Day rate", "280 €": "€280", "/ jour": "/ day", "Pour les évolutions, renforts ponctuels ou missions en régie.": "For updates, short-term support or time-and-materials work.", "Maintenance": "Maintenance", "49 €": "€49", "/ mois": "/ month", "Mises à jour, sauvegardes, sécurité et petites modifications.": "Updates, backups, security and small changes.", "Comment se déroule un projet": "How a project works", "Échange & cadrage": "Discussion & scoping", "On discute de votre activité, vos besoins réels et votre budget. Devis clair, sans surprise.": "We talk about your business, your real needs and your budget. A clear quote, no surprises.", "Design & maquette": "Design & mockup", "Une proposition visuelle adaptée à votre image, validée avant tout développement.": "A visual proposal that fits your brand, approved before any development starts.", "Développement": "Development", "Code sur mesure, testé, avec des points d'étape réguliers pour suivre l'avancement.": "Custom, tested code, with regular check-ins so you can follow progress.", "Livraison & suivi": "Delivery & follow-up", "Mise en ligne, prise en main, et disponibilité pour les ajustements après lancement.": "Launch, handover, and availability for adjustments after go-live.", "Projets & expérimentations": "Projects & experiments", "Ce que j'ai construit récemment": "What I've built recently", "Quelques projets techniques qui montrent l'étendue du stack — du web classique à l'IA appliquée.": "A few technical projects that show the breadth of the stack — from classic web to applied AI.", "Veille d'offres": "Job monitoring", "Agent IA qui surveille les offres d'emploi (France Travail, Adzuna), les note avec Claude et notifie sur Telegram.": "An AI agent that monitors job postings (France Travail, Adzuna), scores them with Claude and sends alerts on Telegram.", "Application progressive construite avec l'API Anthropic, pensée pour un usage quotidien léger.": "A progressive web app built with the Anthropic API, designed for light daily use.", "Assistant conversationnel": "Conversational assistant", "App conversationnelle SvelteKit + Mistral AI, développée en équipe avec PocketBase.": "A conversational app built with SvelteKit + Mistral AI, developed as a team with PocketBase.", "Un projet en tête ? Parlons-en.": "Got a project in mind? Let's talk.", "Réponse rapide, premier échange sans engagement.": "Quick reply, no-commitment first conversation.", "Écrire un email": "Send an email", "© 2026 NextLevel Dev — Christophe Datcharry · France & international": "© 2026 NextLevel Dev — Christophe Datcharry · France & worldwide", "Mentions légales": "Legal notice", "Outil RH": "HR tool", "Prototype pour cabinets de recrutement : une demande client et une base de CV deviennent des propositions de candidats prêtes à envoyer, avec motifs rédigés par l'IA et données personnelles masquées.": "A prototype for recruitment firms: a client request and a CV database become ready-to-send candidate proposals, with AI-written reasons and personal data hidden.", "Agent IA": "AI agent", "Agent IA pour artisans : analyse de photos de chantier, suivi multi-chantiers, prévision des stocks et devis.": "An AI agent for tradespeople: job-site photo analysis, multi-site tracking, stock forecasting and quotes.", "Voir le site en direct ↗": "View live site ↗", "Voir le projet sur GitHub ↗": "View project on GitHub ↗", "Ou écrivez directement à": "Or write directly to", "Envoyez-moi un message ici": "Send me a message here", "Votre nom": "Your name", "Votre email": "Your email", "Votre message": "Your message", "Ne pas remplir": "Do not fill in", "Développeur web freelance Pays Basque & Béarn · Sites pour artisans · NextLevel Dev": "Freelance web developer Basque Country & Béarn · Websites for craftspeople · NextLevel Dev", "Développeur web freelance près de Saint-Palais : création de site pour artisans et commerces du Pays Basque et du Béarn, applications et IA. Offre de lancement.": "Freelance web developer near Saint-Palais: websites for craftspeople and shops in the Basque Country and Béarn, web apps and AI. Launch offer.", "Pays Basque & Béarn · Développeur freelance": "Basque Country & Béarn · Freelance developer", "NextLevel Dev conçoit et développe des sites vitrines, des applications web et des outils IA pour les artisans, commerces et entreprises du Pays Basque et du Béarn, et 100 % à distance si vous préférez. Un seul interlocuteur, du cadrage à la mise en ligne.": "NextLevel Dev designs and builds showcase websites, web applications and AI tools for craftspeople, shops and businesses in the Basque Country and Béarn, and fully remote if you prefer. One point of contact, from scoping to launch.", "en offre de lancement": "launch offer", "un site clé en main": "a turnkey website", "Pays Basque & Béarn": "Basque Country & Béarn", "100 % à distance possible": "remote work possible", "Trois offres à prix fixe pensées pour les artisans et commerces. Le détail complet est dans la boutique.": "Three fixed-price offers designed for craftspeople and shops. Full details are in the shop.", "1 à 3 pages": "1 to 3 pages", "jusqu'à 5 pages": "up to 5 pages", "avec maintenance": "with maintenance", "Une présence claire pour exister en ligne et rassurer vos clients.": "A clear online presence to exist online and reassure your customers.", "Design adapté à votre métier, lisible sur mobile": "Design tailored to your trade, readable on mobile", "Formulaire de contact et bouton d'appel": "Contact form and call button", "Mise en ligne avec nom de domaine et hébergement": "Launch with domain name and hosting", "Pour être trouvé près de chez vous et montrer votre travail.": "To be found near you and show your work.", "Galerie de réalisations avec photos": "Gallery of your work with photos", "Fiche Google Business et SEO local de base": "Google Business profile and basic local SEO", "Suivi des visites (Google Search Console)": "Visit tracking (Google Search Console)", "L'offre Visible, plus la maintenance : hébergement, sécurité et une modification par mois.": "The Visible offer plus maintenance: hosting, security and one change per month.", "Tout ce que contient l'offre Visible": "Everything included in the Visible offer", "Hébergement et sécurité gérés": "Managed hosting and security", "Réponse rapide en cas de problème": "Quick response if anything goes wrong", "+ 35 €/mois": "+ €35/month", "+ 25 €/mois": "+ €25/month", "Pages illimitées, back-office, réservation ou catalogue, SEO local.": "Unlimited pages, back-office, booking or catalogue, local SEO.", "Réserver ma place": "Reserve my spot", "Voir le détail des offres": "See the offers in detail", "Témoignages": "Testimonials", "Je travaille au Pays Basque et en Béarn, et 100 % à distance si vous préférez.": "I work in the Basque Country and Béarn, and fully remote if you prefer.", "Votre email (pour que je vous réponde)": "Your email (so I can reply)", "L'offre qui vous intéresse": "The offer you are interested in", "Je ne sais pas encore": "I don't know yet", "Votre message (votre métier, votre besoin, vos délais)": "Your message (your trade, your need, your timeline)", "© 2026 NextLevel Dev — Christophe Datcharry · Pays Basque & Béarn · 100 % à distance possible": "© 2026 NextLevel Dev — Christophe Datcharry · Basque Country & Béarn · remote work possible", "🚀 Offre de lancement : 5 sites à tarif réduit pour les artisans et commerces du Pays Basque et du Béarn. Places limitées.": "🚀 Launch offer: 5 websites at a reduced price for craftspeople and shops in the Basque Country and Béarn. Limited spots.", "Voir l'offre": "See the offer"};
   var lang = 'fr', originals = new Map(), listeners = [], origTitle = document.title;
   function norm(s) { return s.replace(/[\s ]+/g, ' ').trim(); }
   function has(k) { return Object.prototype.hasOwnProperty.call(DICT, k); }
@@ -981,6 +1010,7 @@
   setLang(initial(), false);
 })();
 </script>
+<script src="assets/offer.js"></script>
 <script src="assets/fx.js"></script>
 <script>
 (function () {
@@ -1079,5 +1109,6 @@
   });
 })();
 </script>
+<script src="assets/season.js" defer></script>
 </body>
 </html>
