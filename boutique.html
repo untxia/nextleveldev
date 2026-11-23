@@ -599,11 +599,7 @@
   var quoteForm = document.getElementById('quote-form'), quoteField = document.getElementById('quote-field'), quoteSend = document.getElementById('quote-send'), quoteStatus = document.getElementById('quote-status');
   var QL = { send: ['Envoyer ma demande', 'Send my request'], busy: ['Envoi…', 'Sending…'], ok: ['Merci ! Votre demande est bien envoyée, je vous réponds rapidement.', 'Thank you! Your request has been sent, I will reply shortly.'], err: ['Envoi impossible. Écrivez-moi à chris@nextleveldev.fr.', 'Could not send. Please email chris@nextleveldev.fr.'] };
   function qt(k) { return QL[k][I.lang() === 'en' ? 1 : 0]; }
-  function nldSend(form, done) {
-    var data = new URLSearchParams(new FormData(form)).toString();
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
-      .then(function (r) { done(r.ok); }, function () { done(false); });
-  }
+  function nldSend(form, done) { window.NLD_SUBMIT(form, done); }
     quoteForm.addEventListener('submit', function (e) {
     e.preventDefault(); quoteSend.disabled = true; quoteSend.textContent = qt('busy'); quoteStatus.className = 'nld-status'; quoteStatus.textContent = '';
     nldSend(quoteForm, function (ok) {
@@ -769,5 +765,6 @@ function nldCopy(text, done) {
 })();
 </script>
 <script src="assets/season.js" defer></script>
+<script src="assets/mail.js"></script>
 </body>
 </html>

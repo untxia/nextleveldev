@@ -1093,11 +1093,7 @@
   function t(k) { return L[k][en() ? 1 : 0]; }
   send.textContent = t('send');
   if (I) I.onChange(function () { send.textContent = t('send'); st.textContent = ''; });
-  function nldSend(form, done) {
-    var data = new URLSearchParams(new FormData(form)).toString();
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
-      .then(function (r) { done(r.ok); }, function () { done(false); });
-  }
+  function nldSend(form, done) { window.NLD_SUBMIT(form, done); }
   
   f.addEventListener('submit', function (e) {
     e.preventDefault(); send.disabled = true; send.textContent = t('busy'); st.className = 'nld-status'; st.textContent = '';
@@ -1110,5 +1106,6 @@
 })();
 </script>
 <script src="assets/season.js" defer></script>
+<script src="assets/mail.js"></script>
 </body>
 </html>

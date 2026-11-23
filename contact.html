@@ -487,10 +487,7 @@
   cp.addEventListener('click', function () { nldCopy('chris@nextleveldev.fr', function (ok) { cp.textContent = ok ? t('copied') : 'chris@nextleveldev.fr'; setTimeout(function () { cp.textContent = t('copy'); }, 2000); }); });
   f.addEventListener('submit', function (e) {
     e.preventDefault(); send.disabled = true; send.textContent = t('busy'); st.className = 'nld-status'; st.textContent = '';
-    var data = new URLSearchParams(new FormData(f)).toString();
-    fetch('/', { method: 'POST', headers: { 'Content-Type': 'application/x-www-form-urlencoded' }, body: data })
-      .then(function (r) { return r.ok; }, function () { return false; })
-      .then(function (ok) {
+    window.NLD_SUBMIT(f, function (ok) {
         send.disabled = false; send.textContent = t('send');
         st.className = 'nld-status ' + (ok ? 'ok' : 'err'); st.textContent = t(ok ? 'ok' : 'err');
         if (ok) f.reset();
@@ -499,5 +496,6 @@
 })();
 </script>
 <script src="assets/season.js" defer></script>
+<script src="assets/mail.js"></script>
 </body>
 </html>
