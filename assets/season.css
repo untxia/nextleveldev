@@ -1,33 +1,98 @@
-/* Thème du mois : bandeau + décor d'arrière-plan (voir season.js) */
+/* Thème du mois : scène illustrée animée dans le header (voir season.js) */
+.season-bar { position: relative; z-index: 45; height: 6.4em; font-size: 16px; overflow: hidden; background: linear-gradient(180deg, var(--sky1, #08080c) 0%, var(--sky2, #1a1040) 100%); border-bottom: 1px solid rgba(255,255,255,.08); isolation: isolate; }
+.season-bar::before { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 1px; z-index: 9; background: linear-gradient(90deg, transparent, #22d3ee 25%, #8b5cf6 75%, transparent); opacity: .8; }
+.season-bar::after { content: ''; position: absolute; inset: 0; z-index: 7; pointer-events: none; background: linear-gradient(90deg, #08080c 0, rgba(8,8,12,0) 9%, rgba(8,8,12,0) 91%, #08080c 100%), linear-gradient(180deg, rgba(8,8,12,.26) 0, rgba(8,8,12,0) 50%); }
+.season-bar svg { display: block; width: 100%; height: auto; overflow: visible; }
+.season-bar .st { position: static; }
+.ss-ban { position: absolute; top: .4em; left: 0; z-index: 6; display: flex; align-items: center; white-space: nowrap; pointer-events: none; will-change: transform; animation: ssBan var(--bd, 30s) linear var(--bdl, -9s) infinite; }
+.ss-ban .bn { display: block; padding: .34rem .95rem .34rem 1.45rem; font-family: 'JetBrains Mono', monospace; font-size: .72rem; font-weight: 600; letter-spacing: .03em; color: #fff; background: linear-gradient(90deg, color-mix(in srgb, var(--season, #8b5cf6) 78%, #08080c), color-mix(in srgb, var(--season, #8b5cf6) 42%, #12121c)); box-shadow: inset 0 0 0 1px rgba(255,255,255,.4), inset 0 -.5rem .8rem -.5rem rgba(0,0,0,.45); clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%, .7rem 50%); transform-origin: 100% 50%; animation: ssFlag 1.7s ease-in-out infinite alternate; text-shadow: 0 1px 2px rgba(0,0,0,.5); }
+.ss-ban .rope { display: block; width: 1.5em; height: 1px; background: #e5e7eb; opacity: .8; }
+.ss-ban .pl { display: block; width: 3.1em; line-height: 0; animation: ssBoat 2.4s ease-in-out infinite alternate; }
+.ss-ban.sl .pl { width: 7.6em; }
+.ss-ban.sl .rope { width: .8em; margin-right: -.4em; }
+@keyframes ssBan { from { transform: translateX(-100%); } to { transform: translateX(100vw); } }
+@keyframes ssFlag { from { transform: skewY(-2.2deg); } to { transform: skewY(2.2deg); } }
+.ss-g { position: absolute; left: 0; right: 0; bottom: 0; z-index: 2; height: 1.6em !important; width: 100%; }
+.ss-g.tall { height: 2.3em !important; z-index: 1; }
+.ss-g.city { height: 3.7em !important; z-index: 1; }
+.ss-i { position: absolute; z-index: 3; line-height: 0; pointer-events: none; }
+.ss-i.sky { z-index: 1; }
+.ss-i.front { z-index: 5; }
+.ss-a { position: absolute; left: 0; z-index: 4; line-height: 0; pointer-events: none; will-change: transform; animation: ssGo var(--d, 30s) linear var(--dl, 0s) infinite; }
+.ss-a.rev { animation-name: ssGoR; }
+.ss-a.rev .fl { transform: scaleX(-1); }
+.ss-a.half-l { animation-name: ssGoL; }
+.ss-a.half-r { animation-name: ssGoR2; }
+.ss-a.sky { z-index: 1; }
+.ss-a .fl { display: block; }
+.ss-a .hop { animation: ssHop .62s ease-in-out infinite; }
+.ss-a.rev .hop { animation-name: ssHopR; }
+.ss-a .bobw { animation: ssBoat 3s ease-in-out infinite alternate; }
+@keyframes ssGo { from { transform: translateX(-7em); } to { transform: translateX(calc(100vw + 2em)); } }
+@keyframes ssGoR { from { transform: translateX(calc(100vw + 2em)); } to { transform: translateX(-7em); } }
+@keyframes ssGoL { 0% { transform: translateX(-7em); opacity: 1; } 88% { opacity: 1; } 100% { transform: translateX(40vw); opacity: 0; } }
+@keyframes ssGoR2 { 0% { transform: translateX(calc(100vw + 2em)); opacity: 1; } 88% { opacity: 1; } 100% { transform: translateX(54vw); opacity: 0; } }
+@keyframes ssHop { 0%, 100% { transform: translateY(0) rotate(0); } 45% { transform: translateY(-.85em) rotate(-8deg); } }
+@keyframes ssHopR { 0%, 100% { transform: scaleX(-1) translateY(0) rotate(0); } 45% { transform: scaleX(-1) translateY(-.85em) rotate(-8deg); } }
+@keyframes ssBoat { from { transform: rotate(-3deg) translateY(0); } to { transform: rotate(3deg) translateY(-.12em); } }
+/* personnages */
+.pp .lg-a, .pp .lg-b, .pp .am-a, .pp .am-b { transform-box: fill-box; transform-origin: 50% 8%; }
+.pp.walk .lg-a, .pp.walk .am-b.sw { animation: ssSw .56s ease-in-out infinite alternate; }
+.pp.walk .lg-b, .pp.walk .am-a { animation: ssSw .56s ease-in-out infinite alternate-reverse; }
+.pp.run .lg-a, .pp.run .am-b.sw { animation: ssRun .3s ease-in-out infinite alternate; }
+.pp.run .lg-b, .pp.run .am-a { animation: ssRun .3s ease-in-out infinite alternate-reverse; }
+.pp.walk, .pp.run { animation: ssBob .28s ease-in-out infinite alternate; }
+.pp.run { animation-duration: .15s; }
+.pp .am-h { transform: rotate(-55deg); }
+.pp .am-w { animation: ssWave .45s ease-in-out infinite alternate; }
+@keyframes ssSw { from { transform: rotate(-23deg); } to { transform: rotate(23deg); } }
+@keyframes ssRun { from { transform: rotate(-42deg); } to { transform: rotate(42deg); } }
+@keyframes ssBob { from { transform: translateY(0); } to { transform: translateY(-2%); } }
+@keyframes ssWave { from { transform: rotate(-160deg); } to { transform: rotate(-125deg); } }
+/* petites animations */
+.spin { transform-box: fill-box; transform-origin: 50% 50%; animation: ssSpin 1s linear infinite; }
+.spin.slow { animation-duration: 40s; }
+.flap { transform-box: fill-box; transform-origin: 50% 100%; animation: ssFlap .32s ease-in-out infinite alternate; }
+.flapx { transform-box: fill-box; transform-origin: 0 50%; animation: ssFlapX .22s ease-in-out infinite alternate; }
+.flapx.r { transform-origin: 100% 50%; }
+.sway { transform-box: fill-box; transform-origin: 50% 100%; animation: ssSway 3.2s ease-in-out infinite alternate; }
+.swayt { transform-box: fill-box; transform-origin: 50% 0; animation: ssSway 2.6s ease-in-out infinite alternate; }
+.blink { animation: ssBlink 1.2s steps(2) infinite; }
+.blink.b2 { animation-delay: .4s; } .blink.b3 { animation-delay: .8s; }
+.twk { transform-box: fill-box; transform-origin: 50% 50%; animation: ssTwk 1.1s ease-in-out infinite alternate; }
+.gal { transform-box: fill-box; transform-origin: 50% 0; animation: ssSw .28s ease-in-out infinite alternate; }
+.gal.g2 { animation-direction: alternate-reverse; }
+.fw { transform-box: fill-box; transform-origin: 50% 50%; animation: ssFw 2.6s ease-out infinite; }
+.drip { animation: ssDrip .7s linear infinite; }
+.drip.d2 { animation-delay: .35s; }
+.wv { animation: ssWv 5s linear infinite; }
+.wv.w2 { animation-duration: 8s; }
+.ss-i.cloud { animation: ssCloud 60s linear infinite alternate; }
+.ss-i.float { animation: ssFloat 4s ease-in-out infinite alternate; }
+@keyframes ssSpin { to { transform: rotate(360deg); } }
+@keyframes ssFlap { from { transform: scaleY(1); } to { transform: scaleY(-.55); } }
+@keyframes ssFlapX { from { transform: scaleX(1); } to { transform: scaleX(.25); } }
+@keyframes ssSway { from { transform: rotate(-5deg); } to { transform: rotate(5deg); } }
+@keyframes ssBlink { 50% { opacity: .25; } }
+@keyframes ssTwk { from { transform: scale(.6); opacity: .5; } to { transform: scale(1.15); opacity: 1; } }
+@keyframes ssFw { 0% { transform: scale(.05); opacity: 0; } 12% { opacity: 1; } 60% { transform: scale(1); opacity: 1; } 100% { transform: scale(1.12); opacity: 0; } }
+@keyframes ssDrip { from { transform: translateY(0); opacity: 1; } to { transform: translateY(14px); opacity: 0; } }
+@keyframes ssWv { to { transform: translateX(-100px); } }
+@keyframes ssCloud { from { transform: translateX(-3em); } to { transform: translateX(5em); } }
+@keyframes ssFloat { from { transform: translateY(0) rotate(-3deg); } to { transform: translateY(-.35em) rotate(3deg); } }
+/* particules dans le bandeau */
+.ss-f { position: absolute; top: -8px; z-index: 5; width: var(--s, 4px); height: var(--s, 4px); border-radius: 50%; background: var(--c, #fff); opacity: .9; pointer-events: none; animation: ssFall var(--d, 5s) linear var(--dl, 0s) infinite; }
+.ss-f.leaf { border-radius: 0 70% 0 70%; }
+.ss-f.rect { border-radius: 1px; height: calc(var(--s, 4px) * .5); }
+.ss-f.up { top: auto; bottom: -8px; animation-name: ssRise; }
+.ss-s { position: absolute; z-index: 0; width: 2px; height: 2px; border-radius: 50%; background: #fff; animation: ssBlink var(--d, 2s) ease-in-out var(--dl, 0s) infinite; }
+@keyframes ssFall { from { transform: translate(0, 0) rotate(0); } to { transform: translate(var(--dx, 14px), 7.2em) rotate(300deg); } }
+@keyframes ssRise { from { transform: translate(0, 0); opacity: .9; } to { transform: translate(var(--dx, 10px), -6.6em); opacity: 0; } }
 .bg-season { position: fixed; inset: 0; width: 100%; height: 100%; z-index: -1; pointer-events: none; }
-@media (max-width: 520px) { .season-bar { font-size: .68rem; padding: .38rem .6rem; } }
-
-/* Bandeau animé */
-.season-bar { position: relative; z-index: 45; height: 58px; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: .7rem; padding: 0 1rem; font-family: 'JetBrains Mono', monospace; font-size: .82rem; letter-spacing: .03em; color: #fff; text-align: center; border-bottom: 1px solid color-mix(in srgb, var(--season, #8b5cf6) 55%, transparent); background: linear-gradient(100deg, #08080c 0%, color-mix(in srgb, var(--season, #8b5cf6) 34%, #08080c) 30%, color-mix(in srgb, var(--season2, #22d3ee) 30%, #08080c) 70%, #08080c 100%); background-size: 200% 100%; animation: sbShift 14s ease-in-out infinite alternate; }
-.season-bar::before { content: ''; position: absolute; inset: 0; background: linear-gradient(105deg, transparent 40%, rgba(255,255,255,.16) 50%, transparent 60%); transform: translateX(-100%); animation: sbShine 6s ease-in-out infinite; pointer-events: none; }
-.season-bar::after { content: ''; position: absolute; left: 0; right: 0; bottom: 0; height: 6px; background: radial-gradient(circle at 10px 3px, var(--season, #fff) 0 2px, transparent 3px) 0 0 / 26px 6px repeat-x; opacity: .9; animation: sbBlink 1.6s steps(2) infinite; pointer-events: none; }
-.season-bar .st { position: relative; z-index: 2; font-weight: 600; text-shadow: 0 0 14px color-mix(in srgb, var(--season, #fff) 80%, transparent); animation: sbPop 4s ease-in-out infinite; }
-.season-bar .si { position: relative; z-index: 2; font-size: 1.5rem; line-height: 1; display: inline-block; animation: sbWiggle 2.4s ease-in-out infinite; transform-origin: 50% 80%; filter: drop-shadow(0 0 8px var(--season, #fff)); }
-.season-bar .sp { position: absolute; z-index: 1; line-height: 1; pointer-events: none; user-select: none; will-change: transform; opacity: .9; }
-.sp.drift { top: var(--y, 20%); left: -8%; animation: spDrift var(--d, 18s) linear var(--dl, 0s) infinite; }
-.sp.driftl { top: var(--y, 20%); right: -8%; animation: spDriftL var(--d, 18s) linear var(--dl, 0s) infinite; }
-.sp.fall { top: -20px; left: var(--x, 50%); animation: spFall var(--d, 6s) linear var(--dl, 0s) infinite; }
-.sp.rise { bottom: -20px; left: var(--x, 50%); animation: spRise var(--d, 7s) ease-in var(--dl, 0s) infinite; }
-.sp.bob { top: var(--y, 30%); left: var(--x, 50%); animation: spBob var(--d, 3s) ease-in-out var(--dl, 0s) infinite; }
-.sp.twinkle { top: var(--y, 30%); left: var(--x, 50%); animation: spTwinkle var(--d, 2s) ease-in-out var(--dl, 0s) infinite; }
-@keyframes sbShift { to { background-position: 100% 0; } }
-@keyframes sbShine { 0%, 55% { transform: translateX(-100%); } 100% { transform: translateX(100%); } }
-@keyframes sbBlink { 50% { opacity: .25; } }
-@keyframes sbPop { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.04); } }
-@keyframes sbWiggle { 0%, 100% { transform: rotate(-10deg) scale(1); } 50% { transform: rotate(10deg) scale(1.15); } }
-@keyframes spDrift { from { transform: translateX(0) translateY(0) rotate(0); } 50% { transform: translateX(60vw) translateY(8px) rotate(8deg); } to { transform: translateX(118vw) translateY(-4px) rotate(0); } }
-@keyframes spDriftL { from { transform: translateX(0) translateY(0); } 50% { transform: translateX(-60vw) translateY(-8px); } to { transform: translateX(-118vw) translateY(4px); } }
-@keyframes spFall { from { transform: translateY(0) rotate(0) translateX(0); opacity: 0; } 10% { opacity: .95; } 50% { transform: translateY(32px) rotate(180deg) translateX(10px); } to { transform: translateY(80px) rotate(360deg) translateX(-8px); opacity: 0; } }
-@keyframes spRise { from { transform: translateY(0) scale(.7); opacity: 0; } 15% { opacity: .9; } to { transform: translateY(-80px) scale(1.2); opacity: 0; } }
-@keyframes spBob { 0%, 100% { transform: translateY(0) rotate(-6deg); } 50% { transform: translateY(-9px) rotate(6deg); } }
-@keyframes spTwinkle { 0%, 100% { transform: scale(.5) rotate(0); opacity: .2; } 50% { transform: scale(1.3) rotate(45deg); opacity: 1; } }
-@media (max-width: 520px) { .season-bar { height: 50px; font-size: .7rem; padding: 0 .5rem; gap: .4rem; } .season-bar .si { font-size: 1.25rem; } }
-@media (prefers-reduced-motion: reduce) { .season-bar, .season-bar::before, .season-bar::after, .season-bar .st, .season-bar .si, .season-bar .sp { animation: none !important; } .sp.drift, .sp.driftl, .sp.fall, .sp.rise { display: none; } }
-.season-bar .svg svg { width: 2em; height: auto; display: block; }
-.season-bar .si.svg svg { width: 1.6em; color: #fff; }
-.season-bar .sp.svg { color: #e8e8f0; }
+@media (max-width: 720px) { .season-bar { font-size: 12.5px; } .ss-ban .bn { font-size: .64rem; padding: .28rem .7rem .28rem 1.2rem; } .ss-ban { --bd: 22s; } .season-bar .hm { display: none; } }
+@media (prefers-reduced-motion: reduce) {
+  .season-bar *, .season-bar *::before, .season-bar *::after { animation: none !important; }
+  .ss-a { left: var(--sx, 50%); transform: none; }
+  .ss-ban { left: 50%; transform: translateX(-50%); }
+  .ss-f { top: var(--ry, 40%); }
+}

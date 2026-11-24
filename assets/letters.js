@@ -85,8 +85,8 @@
 
   function layoutDelays() {
     targets.forEach(function (e) {
-      var ls = e.el.querySelectorAll('.lt'), step = Math.min(0.022, 0.4 / Math.max(ls.length, 1));
-      Array.prototype.forEach.call(ls, function (s, i) { s.style.setProperty('--ld', (i * step + Math.random() * 0.22).toFixed(3) + 's'); });
+      var ls = e.el.querySelectorAll('.lt'), step = Math.min(0.014, 0.25 / Math.max(ls.length, 1));
+      Array.prototype.forEach.call(ls, function (s, i) { s.style.setProperty('--ld', (i * step + Math.random() * 0.1).toFixed(3) + 's'); });
       var vis = e.runs.filter(function (r) { return r.offsetParent !== null; });
       e.el.setAttribute('aria-label', norm((vis.length ? vis : e.runs).map(function (r) { return r.textContent; }).join('')));
     });
@@ -129,7 +129,7 @@
       l.style.setProperty('--sa', (ang * 180 / Math.PI).toFixed(1) + 'deg');
       l.style.setProperty('--sx', (ts * stretch).toFixed(3));
       l.style.setProperty('--sy', (ts * 0.7).toFixed(3));
-      l.style.setProperty('--dur', ((1.15 + Math.random() * 0.5) * (1 - sp * 0.3)).toFixed(2) + 's');
+      l.style.setProperty('--dur', ((0.62 + Math.random() * 0.28) * (1 - sp * 0.3)).toFixed(2) + 's');
     });
     e.el.getBoundingClientRect(); // fixe l'état de départ avant de lancer la transition
   }

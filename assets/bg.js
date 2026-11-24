@@ -23,7 +23,7 @@
     'import { chatbot } from "./ai/chatbot";',
     'async function ship() { await test(); await release(); }',
     'return <Card glow tilt float />;',
-    'const rate = { day: 280, maintenance: 49 };',
+    'const rate = { day: 280, maintenance: 35 };',
     'while (true) { learn(); build(); ship(); }',
     '$ npx nextleveldev --init',
     'type Lead = { name: string; email: string; need: "site" | "ia" };',

@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="fr">
+<html data-no-intro lang="fr">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -316,8 +316,10 @@
 <link rel="stylesheet" href="assets/bg.css">
 <link rel="stylesheet" href="assets/smooth.css">
 <link rel="stylesheet" href="assets/season.css">
+<link rel="stylesheet" href="assets/portal.css">
 </head>
 <body>
+<script src="assets/intro.js"></script>
 <nav class="nav">
   <div class="nav-inner">
     <a class="brand" href="index.html">
@@ -479,6 +481,7 @@
   cp.addEventListener('click', function () { nldCopy(URL_, function (ok) { cp.textContent = ok ? t('copied') : URL_; setTimeout(labels, 2000); }); });
 })();
 </script>
+<script src="assets/portal.js" defer></script>
 <script src="assets/season.js" defer></script>
 </body>
 </html>
